@@ -1,7 +1,70 @@
+/* TYPE SELECTOR */
 body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    /* YOUR BACKGROUND IMAGE */
     background-image: url("images/Seahawks1.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+
+/* TYPE SELECTOR */
+header {
+    background-color: #002244; /* Seahawks dark blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CLASS SELECTOR */
+.navbar {
+    background-color: #69be28; /* Seahawks green */
+    padding: 10px;
+    text-align: center;
+}
+
+/* CLASS SELECTOR */
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HOVER EFFECT (extra polish 🔥) */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ID SELECTOR */
+#welcome {
+    background-color: rgba(203, 20, 20, 0.9);
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #047cf5;
+}
+
+/* BOX MODEL (TYPE SELECTOR) */
+section {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* ANOTHER BOX MODEL */
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 3px solid #002244;
+    text-align: center;
+    background-color: rgba(236, 240, 241, 0.9);
+}
+
+/* EXTRA STYLE FOR CLEAN LOOK */
+h1, h2 {
+    text-shadow: 1px 1px 3px black;
 }
