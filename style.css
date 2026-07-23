@@ -1,9 +1,8 @@
-/* TYPE SELECTOR */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Times New Roman, sans-serif;
     margin: 0;
 
-    /* YOUR BACKGROUND IMAGE */
+
     background-image: url("images/Seahawks1.jpg");
     background-size: cover;
     background-position: center;
@@ -11,22 +10,18 @@ body {
     background-repeat: no-repeat;
 }
 
-/* TYPE SELECTOR */
 header {
-    background-color: #002244; /* Seahawks dark blue */
+    background-color: #0b25ec;
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-/* CLASS SELECTOR */
 .navbar {
-    background-color: #69be28; /* Seahawks green */
-    padding: 10px;
+    background-color: #69be28;
     text-align: center;
 }
 
-/* CLASS SELECTOR */
 .navbar a {
     color: white;
     margin: 0 10px;
@@ -34,37 +29,32 @@ header {
     font-weight: bold;
 }
 
-/* HOVER EFFECT (extra polish 🔥) */
 .navbar a:hover {
     text-decoration: underline;
 }
 
-/* ID SELECTOR */
 #welcome {
-    background-color: rgba(203, 20, 20, 0.9);
+    background-color: rgba(76, 33, 233, 0.9);
     margin: 20px;
     padding: 20px;
-    border: 2px solid #047cf5;
+    border: 2px solid #0418f5;
 }
 
-/* BOX MODEL (TYPE SELECTOR) */
 section {
     margin: 20px;
     padding: 15px;
     border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(60, 230, 91, 0.9);
 }
 
-/* ANOTHER BOX MODEL */
 footer {
     margin-top: 20px;
     padding: 10px;
     border-top: 3px solid #002244;
     text-align: center;
-    background-color: rgba(236, 240, 241, 0.9);
+    background-color: rgba(23, 192, 234, 0.9);
 }
 
-/* EXTRA STYLE FOR CLEAN LOOK */
 h1, h2 {
     text-shadow: 1px 1px 3px black;
 }
