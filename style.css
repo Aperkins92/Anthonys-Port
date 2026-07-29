@@ -1,122 +1,303 @@
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    padding: 0;
+
     background-image: url("images/Seahawks1.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    color: #111;
+
+    color: #111111;
 }
+
+
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 
 
 header {
-    background-color: rgba(0, 34, 68, 0.9);
+    background-color: rgba(0, 34, 68, 0.95);
     color: white;
+
     text-align: center;
-    padding: 24px; /* 3 x 8px */
+
+    padding: 24px;
+    border-bottom: 4px solid #69BE28;
 }
+
+
 
 
 .navbar {
+
     display: flex;
     justify-content: center;
+    align-items: center;
+
     gap: 24px;
+
     background-color: #69BE28;
+
     padding: 16px;
 }
 
+
 .navbar a {
-    color: black;
+
+    color: #002244;
+
     text-decoration: none;
+
     font-weight: bold;
+
     padding: 8px 16px;
+
+    border-radius: 8px;
 }
 
+
 .navbar a:hover {
+
     background-color: white;
-    border-radius: 4px;
+
+    color: #002244;
+
 }
+
+
 
 
 main {
+
+    max-width: 1000px;
+
+    margin: auto;
+
     padding: 24px;
+
 }
 
-section {
-    background-color: rgba(255, 255, 255, 0.9);
-    margin: 24px 0;
-    padding: 24px;
-    border: 2px solid #002244;
-    border-radius: 8px;
-}
 
-.highlight {
-    color: #69BE28;
-    font-weight: bold;
-}
+
+
 
 #welcome {
+
+    background-color: rgba(255,255,255,0.95);
+
     border: 3px solid #69BE28;
+
 }
+
+
+
+
+
+section {
+
+    background-color: rgba(255,255,255,0.92);
+
+    margin: 24px 0;
+
+    padding: 24px;
+
+    border: 2px solid #002244;
+
+    border-radius: 8px;
+
+}
+
+
+
 
 
 .projects-grid {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 24px;
+
 }
 
+
+
 .projects-grid article {
+
     flex: 1 1 300px;
-    background-color: white;
+
+    background-color: #ffffff;
+
     padding: 16px;
+
     border: 2px solid #69BE28;
+
     border-radius: 8px;
+
 }
+
+
+
+article {
+
+    margin-top: 16px;
+
+    padding: 16px;
+
+}
+
+
+
+article h3 {
+
+    color: #002244;
+
+}
+
+
+
+ul {
+
+    line-height: 1.8;
+
+}
+
+
+
 
 
 footer {
-    text-align: center;
-    padding: 16px;
-    background-color: #002244;
+
+    background-color: rgba(0,34,68,0.95);
+
     color: white;
+
+    text-align: center;
+
+    padding: 16px;
+
+    margin-top: 32px;
+
+    border-top: 4px solid #69BE28;
+
 }
 
 
-/* 📱 MOBILE (default = 320px) */
-body {
-    font-size: 14px;
-}
 
-/* 📱➡️ TABLET */
-@media (min-width: 768px) {
+
+
+@media (max-width: 767px) {
+
+
     body {
-        font-size: 16px;
+
+        font-size: 14px;
+
     }
+
+
+    header {
+
+        padding: 16px;
+
+    }
+
 
     .navbar {
-        justify-content: space-around;
+
+        flex-direction: column;
+
+        gap: 8px;
+
     }
 
+
     main {
-        padding: 32px;
+
+        padding: 16px;
+
     }
+
+
+    section {
+
+        padding: 16px;
+
+        margin: 16px 0;
+
+    }
+
+
+    .projects-grid {
+
+        flex-direction: column;
+
+    }
+
 }
 
-/* 💻 DESKTOP */
-@media (min-width: 1200px) {
+
+
+
+
+@media (min-width: 768px) {
+
+
     body {
-        font-size: 18px;
+
+        font-size: 16px;
+
     }
+
+
+    .navbar {
+
+        justify-content: space-around;
+
+    }
+
 
     main {
-        max-width: 1000px;
-        margin: auto;
+
+        padding: 32px;
+
     }
 
-    .projects-grid article {
-        flex: 1 1 45%;
+
+}
+
+
+
+
+@media (min-width: 1200px) {
+
+
+    body {
+
+        font-size: 18px;
+
     }
+
+
+    main {
+
+        max-width: 1100px;
+
+    }
+
+
+    .projects-grid article {
+
+        flex: 1 1 45%;
+
+    }
+
+
 }
