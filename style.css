@@ -1,60 +1,66 @@
 body {
 
-font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 
-margin:0;
+    margin: 0;
 
-padding:0;
+    padding: 0;
 
-background-image:url("images/Seahawks1.jpg");
+    background-image: url("images/Seahawks1.jpg");
 
-background-size:cover;
+    background-size: cover;
 
-background-position:center;
+    background-position: center;
 
-background-attachment:fixed;
+    background-attachment: fixed;
 
-color:#111;
+    background-repeat: no-repeat;
 
-}
-
-
-
-h1,h2,h3 {
-
-font-family:'Montserrat', sans-serif;
+    color: #111;
 
 }
 
+
+
+h1, h2, h3 {
+
+    font-family: 'Montserrat', sans-serif;
+
+}
 
 
 header {
 
-background:rgba(0,34,68,.95);
+    background: rgba(0,34,68,.95);
 
-color:white;
+    color: white;
 
-text-align:center;
+    text-align: center;
 
-padding:24px;
+    padding: 24px;
 
-border-bottom:4px solid #69BE28;
+    border-bottom: 4px solid #69BE28;
 
 }
 
 
-
 .navbar {
 
-display:flex;
+    display: flex;
 
-justify-content:center;
+    flex-direction: row;
 
-gap:24px;
+    justify-content: center;
 
-background:#69BE28;
+    align-items: center;
 
-padding:16px;
+    flex-wrap: wrap;
+
+    gap: 24px;
+
+    background: #69BE28;
+
+    padding: 16px;
 
 }
 
@@ -62,13 +68,17 @@ padding:16px;
 
 .navbar a {
 
-text-decoration:none;
+    text-decoration: none;
 
-color:#002244;
+    color: #002244;
 
-font-weight:bold;
+    font-weight: bold;
 
-padding:8px 16px;
+    padding: 8px 16px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
 
 }
 
@@ -76,21 +86,20 @@ padding:8px 16px;
 
 .navbar a:hover {
 
-background:white;
+    background: white;
 
-border-radius:8px;
+    color: #002244;
 
 }
 
 
-
 main {
 
-max-width:1100px;
+    max-width: 1100px;
 
-margin:auto;
+    margin: auto;
 
-padding:24px;
+    padding: 24px;
 
 }
 
@@ -98,35 +107,38 @@ padding:24px;
 
 section {
 
-background:rgba(255,255,255,.92);
+    background: rgba(255,255,255,.92);
 
-margin:24px 0;
+    margin: 24px 0;
 
-padding:24px;
+    padding: 24px;
 
-border:2px solid #002244;
+    border: 2px solid #002244;
 
-border-radius:8px;
+    border-radius: 8px;
 
 }
 
 
+
+/* Who do you think will win the Super Bowl? My pick is the Seattle Seahawks! */
 
 #welcome {
 
-border:3px solid #69BE28;
+    border: 3px solid #69BE28;
 
 }
-
 
 
 .projects-grid {
 
-display:flex;
+    display: flex;
 
-flex-wrap:wrap;
+    flex-direction: row;
 
-gap:24px;
+    flex-wrap: wrap;
+
+    gap: 24px;
 
 }
 
@@ -134,35 +146,50 @@ gap:24px;
 
 .projects-grid article {
 
-flex:1 1 300px;
+    flex: 1 1 300px;
 
-padding:16px;
+    padding: 16px;
 
-border:2px solid #69BE28;
+    border: 2px solid #69BE28;
 
-border-radius:8px;
+    border-radius: 8px;
 
-background:white;
+    background: white;
 
 }
 
 
 
+article {
+
+    margin-top: 16px;
+
+}
+
+
+
+article h3 {
+
+    color: #002244;
+
+}
+
+
 button {
 
-background:#69BE28;
+    background: #69BE28;
 
-color:#002244;
+    color: #002244;
 
-padding:12px 20px;
+    padding: 12px 20px;
 
-border:2px solid #002244;
+    border: 2px solid #002244;
 
-border-radius:8px;
+    border-radius: 8px;
 
-cursor:pointer;
+    cursor: pointer;
 
-font-weight:bold;
+    font-weight: bold;
 
 }
 
@@ -170,39 +197,39 @@ font-weight:bold;
 
 button:hover {
 
-background:#002244;
+    background: #002244;
 
-color:white;
+    color: white;
 
 }
-
 
 
 footer {
 
-background:#002244;
+    background: #002244;
 
-color:white;
+    color: white;
 
-text-align:center;
+    text-align: center;
 
-padding:16px;
+    padding: 16px;
 
-margin-top:32px;
+    margin-top: 32px;
+
+    border-top: 4px solid #69BE28;
 
 }
+
 
 
 
 
 /* Charzard is my favorite pokemon */
-
-
 .dark-mode {
 
-background:#111;
+    background: #111;
 
-color:white;
+    color: white;
 
 }
 
@@ -210,9 +237,9 @@ color:white;
 
 .dark-mode section {
 
-background:#222;
+    background: #222;
 
-color:white;
+    color: white;
 
 }
 
@@ -220,10 +247,9 @@ color:white;
 
 .dark-mode article {
 
-background:#333;
+    background: #333;
 
 }
-
 
 
 
@@ -232,56 +258,81 @@ background:#333;
 @media(max-width:767px){
 
 
-.navbar{
+    .navbar {
 
-flex-direction:column;
+        flex-direction: row;
 
-align-items:center;
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 8px;
+
+    }
+
+
+    .navbar a {
+
+        padding: 8px;
+
+        font-size: 14px;
+
+    }
+
+
+    main {
+
+        padding: 16px;
+
+    }
+
+
+    section {
+
+        padding: 16px;
+
+    }
+
+
+    .projects-grid {
+
+        flex-direction: column;
+
+    }
+
 
 }
-
-
-main{
-
-padding:16px;
-
-}
-
-
-.projects-grid{
-
-flex-direction:column;
-
-}
-
-
-}
-
 
 
 
 @media(min-width:768px){
 
 
-main{
+    main {
 
-padding:32px;
+        padding: 32px;
+
+    }
+
+
+    .navbar {
+
+        gap: 24px;
+
+    }
+
 
 }
-
-
-}
-
 
 
 @media(min-width:1200px){
 
 
-.projects-grid article{
+    .projects-grid article {
 
-flex:1 1 45%;
+        flex: 1 1 45%;
 
-}
+    }
 
 
 }
