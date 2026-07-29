@@ -2,202 +2,240 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
 
-    <title>Projects | My Portfolio</title>
+<meta charset="UTF-8">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+<title>Projects | My Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="style.css">
+
+
 </head>
 
 
 <body>
 
+
+
 <header>
-    <h1>My Projects & Experience</h1>
-    <p>A collection of my professional, academic, and technology projects</p>
+
+<h1>My Projects</h1>
+
+<p>Professional, academic, and technology projects</p>
+
+
+<button id="themeButton">
+Change Theme
+</button>
+
+
 </header>
 
 
+
+
+
 <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
+
+
+<a href="index.html">Home</a>
+
+<a href="projects.html">Projects</a>
+
+<a href="about.html">About</a>
+
+
 </nav>
+
+
+
 
 
 
 <main>
 
 
+
+
+
 <section>
 
-    <h2>Professional Experience Projects</h2>
+
+<h2>Project Filter</h2>
 
 
-    <article>
-
-        <h3>Live Event Production & Stagehand Experience</h3>
-
-        <p>
-            Throughout my career in the live event industry, I worked as a stagehand 
-            supporting concerts, sporting events, NFL productions, and large-scale 
-            entertainment events. My responsibilities included assisting with event 
-            setups, equipment movement, organization, and working with production 
-            teams to complete projects under strict deadlines.
-        </p>
-
-        <p>
-            Working in live production taught me how important communication, teamwork, 
-            and preparation are. Every event required multiple departments to work 
-            together while maintaining safety and efficiency.
-        </p>
-
-        <p>
-            This experience helped me develop skills that transfer into many careers, 
-            including leadership, problem-solving, time management, and the ability to 
-            stay focused in high-pressure situations.
-        </p>
+<button onclick="filterProjects('all')">
+All
+</button>
 
 
-        <h4>Skills Developed:</h4>
+<button onclick="filterProjects('technology')">
+Technology
+</button>
 
-        <ul>
-            <li>Teamwork and communication</li>
-            <li>Safety awareness</li>
-            <li>Problem-solving</li>
-            <li>Time management</li>
-            <li>Working under pressure</li>
-        </ul>
 
-    </article>
+<button onclick="filterProjects('research')">
+Research
+</button>
+
+
 
 </section>
 
 
 
 
-<section>
-
-    <h2>Technology Projects</h2>
-
-    <div class="projects-grid">
-
-
-        <article>
-
-            <h3>Personal Portfolio Website</h3>
-
-            <p>
-                This project is a multi-page portfolio website built using HTML and CSS. 
-                The purpose of this website is to showcase my background, skills, 
-                experience, and goals while learning how professional websites are created.
-            </p>
-
-            <p>
-                I created multiple pages including a Home page, Projects page, and 
-                About page. Each page uses semantic HTML elements such as headers, 
-                navigation menus, sections, articles, and footers to create an organized 
-                website structure.
-            </p>
-
-            <p>
-                I applied CSS styling to improve the design by adding a color palette, 
-                background images, spacing, borders, and responsive layouts. I also used 
-                Flexbox to help organize content and make the website adjust for mobile, 
-                tablet, and desktop screens.
-            </p>
-
-
-            <h4>Skills Used:</h4>
-
-            <ul>
-                <li>HTML structure</li>
-                <li>CSS styling</li>
-                <li>Responsive web design</li>
-                <li>Flexbox layouts</li>
-                <li>Debugging and problem-solving</li>
-            </ul>
-
-        </article>
-
-
-
-        <article>
-
-            <h3>Stagehand Safety & Efficiency Research Project</h3>
-
-            <p>
-                This research project focuses on challenges within the live event 
-                industry, specifically how stagehands balance workplace safety with 
-                the pressure to complete setups and breakdowns quickly.
-            </p>
-
-            <p>
-                The project explored how communication, planning, training, and time 
-                pressure can affect workplace safety. I researched ways organizations 
-                can improve safety practices while still maintaining efficiency.
-            </p>
-
-            <p>
-                This project connected my personal experience working in live events 
-                with academic research and helped me improve my writing, research, 
-                and critical thinking skills.
-            </p>
-
-
-            <h4>Skills Used:</h4>
-
-            <ul>
-                <li>Research and analysis</li>
-                <li>Professional writing</li>
-                <li>Critical thinking</li>
-                <li>Source evaluation</li>
-            </ul>
-
-        </article>
-
-
-
-        <article>
-
-            <h3>Future Technology Projects</h3>
-
-            <p>
-                As I continue learning technology, I want to create more advanced 
-                projects that combine creativity and problem-solving. Future goals 
-                include improving my programming skills, creating interactive websites, 
-                and developing tools that help people work more efficiently.
-            </p>
-
-            <p>
-                My goal is to combine my years of hands-on experience with the technical 
-                skills I am developing through education.
-            </p>
-
-        </article>
-
-
-    </div>
-
-</section>
-
 
 
 
 <section>
 
-    <h2>Project Goals</h2>
 
-    <p>
-        Each project represents a step in my growth. My past experience taught me 
-        how to work with teams, solve problems, and complete challenging tasks. 
-        My education is helping me apply those same skills to technology and 
-        creative projects.
-    </p>
+<h2>Technology Projects</h2>
+
+
+
+<div class="projects-grid">
+
+
+
+
+
+<article class="project technology">
+
+
+<h3>Personal Portfolio Website</h3>
+
+
+<p>
+This project is a responsive portfolio website created using HTML, 
+CSS, and JavaScript. The goal was to build a professional website 
+that showcases my background, experience, and skills.
+</p>
+
+
+<p>
+I created multiple connected pages using navigation links and used 
+semantic HTML elements to organize content. CSS was used for colors, 
+spacing, responsive design, and Flexbox layouts.
+</p>
+
+
+<h4>Skills Used:</h4>
+
+
+<ul>
+
+<li>HTML</li>
+
+<li>CSS</li>
+
+<li>Responsive Design</li>
+
+<li>Flexbox</li>
+
+<li>JavaScript</li>
+
+</ul>
+
+
+</article>
+
+
+
+
+
+
+
+
+<article class="project research">
+
+
+<h3>Stagehand Safety Research Project</h3>
+
+
+<p>
+This research project explores how live event crews balance safety 
+and efficiency while working under time pressure.
+</p>
+
+
+<p>
+The project connects my professional stagehand experience with 
+research, writing, and critical thinking skills.
+</p>
+
+
+<h4>Skills Used:</h4>
+
+
+<ul>
+
+<li>Research</li>
+
+<li>Professional Writing</li>
+
+<li>Critical Thinking</li>
+
+<li>Source Analysis</li>
+
+</ul>
+
+
+</article>
+
+
+
+
+
+
+
+
+<article class="project technology">
+
+
+<h3>Future IT Projects</h3>
+
+
+<p>
+As I continue studying Information Technology, I plan to develop 
+more projects involving programming, web applications, and tools 
+that solve real-world problems.
+</p>
+
+
+<h4>Future Skills:</h4>
+
+
+<ul>
+
+<li>Advanced JavaScript</li>
+
+<li>Programming</li>
+
+<li>Database Development</li>
+
+<li>Cybersecurity Concepts</li>
+
+</ul>
+
+
+</article>
+
+
+
+
+</div>
+
+
 
 </section>
+
+
 
 
 
@@ -205,11 +243,23 @@
 
 
 
+
+
+
 <footer>
 
-    <p>© 2026 My Portfolio | Built with HTML and CSS</p>
+
+<p>
+© <span id="year"></span> My Portfolio | Built with HTML, CSS, and JavaScript
+</p>
+
 
 </footer>
+
+
+
+
+<script src="script.js"></script>
 
 
 

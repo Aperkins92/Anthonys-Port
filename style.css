@@ -1,129 +1,132 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
 
-    background-image: url("images/Seahawks1.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+font-family: 'Roboto', sans-serif;
 
-    color: #111111;
+margin:0;
+
+padding:0;
+
+background-image:url("images/Seahawks1.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-attachment:fixed;
+
+color:#111;
+
 }
 
 
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
+h1,h2,h3 {
 
+font-family:'Montserrat', sans-serif;
+
+}
 
 
 
 header {
-    background-color: rgba(0, 34, 68, 0.95);
-    color: white;
 
-    text-align: center;
+background:rgba(0,34,68,.95);
 
-    padding: 24px;
-    border-bottom: 4px solid #69BE28;
+color:white;
+
+text-align:center;
+
+padding:24px;
+
+border-bottom:4px solid #69BE28;
+
 }
-
 
 
 
 .navbar {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+display:flex;
 
-    gap: 24px;
+justify-content:center;
 
-    background-color: #69BE28;
+gap:24px;
 
-    padding: 16px;
+background:#69BE28;
+
+padding:16px;
+
 }
+
 
 
 .navbar a {
 
-    color: #002244;
+text-decoration:none;
 
-    text-decoration: none;
+color:#002244;
 
-    font-weight: bold;
+font-weight:bold;
 
-    padding: 8px 16px;
+padding:8px 16px;
 
-    border-radius: 8px;
 }
+
 
 
 .navbar a:hover {
 
-    background-color: white;
+background:white;
 
-    color: #002244;
+border-radius:8px;
 
 }
-
 
 
 
 main {
 
-    max-width: 1000px;
+max-width:1100px;
 
-    margin: auto;
+margin:auto;
 
-    padding: 24px;
-
-}
-
-
-
-
-
-#welcome {
-
-    background-color: rgba(255,255,255,0.95);
-
-    border: 3px solid #69BE28;
+padding:24px;
 
 }
-
-
 
 
 
 section {
 
-    background-color: rgba(255,255,255,0.92);
+background:rgba(255,255,255,.92);
 
-    margin: 24px 0;
+margin:24px 0;
 
-    padding: 24px;
+padding:24px;
 
-    border: 2px solid #002244;
+border:2px solid #002244;
 
-    border-radius: 8px;
+border-radius:8px;
 
 }
 
 
 
+#welcome {
+
+border:3px solid #69BE28;
+
+}
+
 
 
 .projects-grid {
 
-    display: flex;
+display:flex;
 
-    flex-wrap: wrap;
+flex-wrap:wrap;
 
-    gap: 24px;
+gap:24px;
 
 }
 
@@ -131,144 +134,125 @@ section {
 
 .projects-grid article {
 
-    flex: 1 1 300px;
+flex:1 1 300px;
 
-    background-color: #ffffff;
+padding:16px;
 
-    padding: 16px;
+border:2px solid #69BE28;
 
-    border: 2px solid #69BE28;
+border-radius:8px;
 
-    border-radius: 8px;
-
-}
-
-
-
-article {
-
-    margin-top: 16px;
-
-    padding: 16px;
+background:white;
 
 }
 
 
 
-article h3 {
+button {
 
-    color: #002244;
+background:#69BE28;
+
+color:#002244;
+
+padding:12px 20px;
+
+border:2px solid #002244;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-weight:bold;
 
 }
 
 
 
-ul {
+button:hover {
 
-    line-height: 1.8;
+background:#002244;
+
+color:white;
 
 }
-
-
 
 
 
 footer {
 
-    background-color: rgba(0,34,68,0.95);
+background:#002244;
 
-    color: white;
+color:white;
 
-    text-align: center;
+text-align:center;
 
-    padding: 16px;
+padding:16px;
 
-    margin-top: 32px;
-
-    border-top: 4px solid #69BE28;
+margin-top:32px;
 
 }
 
 
 
 
-
-@media (max-width: 767px) {
-
-
-    body {
-
-        font-size: 14px;
-
-    }
+/* Charzard is my favorite pokemon */
 
 
-    header {
+.dark-mode {
 
-        padding: 16px;
+background:#111;
 
-    }
+color:white;
 
-
-    .navbar {
-
-        flex-direction: column;
-
-        gap: 8px;
-
-    }
+}
 
 
-    main {
 
-        padding: 16px;
+.dark-mode section {
 
-    }
+background:#222;
 
+color:white;
 
-    section {
-
-        padding: 16px;
-
-        margin: 16px 0;
-
-    }
+}
 
 
-    .projects-grid {
 
-        flex-direction: column;
+.dark-mode article {
 
-    }
+background:#333;
 
 }
 
 
 
 
+/* Pikachu is a good pokemon */
 
-@media (min-width: 768px) {
-
-
-    body {
-
-        font-size: 16px;
-
-    }
+@media(max-width:767px){
 
 
-    .navbar {
+.navbar{
 
-        justify-content: space-around;
+flex-direction:column;
 
-    }
+align-items:center;
+
+}
 
 
-    main {
+main{
 
-        padding: 32px;
+padding:16px;
 
-    }
+}
+
+
+.projects-grid{
+
+flex-direction:column;
+
+}
 
 
 }
@@ -276,28 +260,28 @@ footer {
 
 
 
-@media (min-width: 1200px) {
+@media(min-width:768px){
 
 
-    body {
+main{
 
-        font-size: 18px;
+padding:32px;
 
-    }
-
-
-    main {
-
-        max-width: 1100px;
-
-    }
+}
 
 
-    .projects-grid article {
+}
 
-        flex: 1 1 45%;
 
-    }
+
+@media(min-width:1200px){
+
+
+.projects-grid article{
+
+flex:1 1 45%;
+
+}
 
 
 }
