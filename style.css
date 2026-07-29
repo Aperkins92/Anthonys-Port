@@ -222,24 +222,34 @@ footer {
 
 
 
-
-
 /* Charzard is my favorite pokemon */
 .dark-mode {
 
-    background: #111;
+    background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
+    ),
+    url("images/Seahawks1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
 
     color: white;
 
 }
 
 
-
 .dark-mode section {
 
-    background: #222;
+    background: rgba(0, 0, 0, 0.75);
 
     color: white;
+
+    border: 2px solid #69BE28;
 
 }
 
@@ -247,10 +257,29 @@ footer {
 
 .dark-mode article {
 
-    background: #333;
+    background: rgba(0, 34, 68, 0.85);
+
+    color: white;
+
+    border: 2px solid #69BE28;
 
 }
 
+
+
+.dark-mode header {
+
+    background: rgba(0, 0, 0, 0.85);
+
+}
+
+
+
+.dark-mode footer {
+
+    background: rgba(0, 0, 0, 0.9);
+
+}
 
 
 /* Pikachu is a good pokemon */
