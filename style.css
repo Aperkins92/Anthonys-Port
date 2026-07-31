@@ -18,16 +18,26 @@ body {
 
     color: #111;
 
+    transition: 0.5s ease;
+
+    animation: pageLoad 1s ease;
+
 }
 
+html {
 
+    scroll-behavior: smooth;
+
+}
+
+/* I think the Seattle Seahawks will go back to the Super Bowl. They will repeat as champions.*/
+/* I think they will beat the Buffalo Bills in the Super Bowl. The Seahawks will win 31-24. */
 
 h1, h2, h3 {
 
     font-family: 'Montserrat', sans-serif;
 
 }
-
 
 header {
 
@@ -41,8 +51,11 @@ header {
 
     border-bottom: 4px solid #69BE28;
 
-}
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
 
+    animation: slideDown 1s ease;
+
+}
 
 .navbar {
 
@@ -64,8 +77,6 @@ header {
 
 }
 
-
-
 .navbar a {
 
     text-decoration: none;
@@ -78,20 +89,17 @@ header {
 
     border-radius: 8px;
 
-    transition: 0.3s;
+    transition: .3s ease;
 
 }
-
-
 
 .navbar a:hover {
 
     background: white;
 
-    color: #002244;
+    transform: translateY(-4px);
 
 }
-
 
 main {
 
@@ -102,8 +110,6 @@ main {
     padding: 24px;
 
 }
-
-
 
 section {
 
@@ -117,18 +123,23 @@ section {
 
     border-radius: 8px;
 
+    box-shadow: 0 5px 15px rgba(0,0,0,.3);
+
+    transition: .3s ease;
+
 }
 
+section:hover {
 
+    transform: translateY(-5px);
 
-/* Who do you think will win the Super Bowl? My pick is the Seattle Seahawks! */
+}
 
 #welcome {
 
     border: 3px solid #69BE28;
 
 }
-
 
 .projects-grid {
 
@@ -142,145 +153,230 @@ section {
 
 }
 
-
-
 .projects-grid article {
 
     flex: 1 1 300px;
 
     padding: 16px;
 
+    background: white;
+
     border: 2px solid #69BE28;
 
     border-radius: 8px;
 
-    background: white;
+    transition: .3s ease;
 
 }
 
+.projects-grid article:hover {
 
+    transform: translateY(-10px) scale(1.02);
 
-article {
-
-    margin-top: 16px;
+    box-shadow: 0 12px 25px rgba(0,0,0,.4);
 
 }
-
-
 
 article h3 {
 
-    color: #002244;
+    color:#002244;
 
 }
-
 
 button {
 
-    background: #69BE28;
+    background:#69BE28;
 
-    color: #002244;
+    color:#002244;
 
-    padding: 12px 20px;
+    padding:12px 20px;
 
-    border: 2px solid #002244;
+    border:2px solid #002244;
 
-    border-radius: 8px;
+    border-radius:8px;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    font-weight: bold;
+    font-weight:bold;
+
+    transition:.3s ease;
 
 }
-
-
 
 button:hover {
 
-    background: #002244;
+    background:#002244;
 
-    color: white;
+    color:white;
+
+    transform:scale(1.08);
 
 }
-
 
 footer {
 
-    background: #002244;
+    background:#002244;
 
-    color: white;
+    color:white;
 
-    text-align: center;
+    text-align:center;
 
-    padding: 16px;
+    padding:16px;
 
-    margin-top: 32px;
+    margin-top:32px;
 
-    border-top: 4px solid #69BE28;
+    border-top:4px solid #69BE28;
 
 }
-
-
 
 /* Charzard is my favorite pokemon */
+
 .dark-mode {
 
-    background-image: 
+    background-image:
+
     linear-gradient(
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.55)
+
+        rgba(0,34,68,.65),
+
+        rgba(0,0,0,.75)
+
     ),
+
     url("images/Seahawks1.jpg");
 
-    background-size: cover;
 
-    background-position: center;
+    background-size:cover;
 
-    background-attachment: fixed;
+    background-position:center;
 
-    color: white;
+    background-attachment:fixed;
+
+    background-repeat:no-repeat;
+
+    color:white;
 
 }
-
 
 .dark-mode section {
 
-    background: rgba(0, 0, 0, 0.75);
+    background:rgba(0,0,0,.60);
 
-    color: white;
+    backdrop-filter:blur(8px);
 
-    border: 2px solid #69BE28;
+    -webkit-backdrop-filter:blur(8px);
+
+    color:white;
+
+    border:2px solid #69BE28;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.6);
 
 }
-
-
 
 .dark-mode article {
 
-    background: rgba(0, 34, 68, 0.85);
+    background:
 
-    color: white;
+    linear-gradient(
 
-    border: 2px solid #69BE28;
+        135deg,
+
+        rgba(0,34,68,.9),
+
+        rgba(0,0,0,.85)
+
+    );
+
+    color:white;
+
+    border:2px solid #69BE28;
 
 }
 
+.dark-mode h1,
 
+.dark-mode h2,
+
+.dark-mode h3,
+
+.dark-mode p,
+
+.dark-mode li {
+
+    color:white;
+
+    text-shadow:1px 2px 5px black;
+
+}
+
+.dark-mode article h3 {
+
+    color:#69BE28;
+
+}
+
+.dark-mode a {
+
+    color:#69BE28;
+
+}
 
 .dark-mode header {
 
-    background: rgba(0, 0, 0, 0.85);
+    background:
+
+    linear-gradient(
+
+        rgba(0,34,68,.95),
+
+        rgba(0,0,0,.9)
+
+    );
 
 }
 
+.dark-mode .navbar {
 
+    background:#001b33;
+
+}
+
+.dark-mode .navbar a {
+
+    color:#69BE28;
+
+}
+
+.dark-mode .navbar a:hover {
+
+    background:#69BE28;
+
+    color:#002244;
+
+}
+
+.dark-mode button {
+
+    background:#69BE28;
+
+    color:#002244;
+
+}
 
 .dark-mode footer {
 
-    background: rgba(0, 0, 0, 0.9);
+    background:#000;
+
+    border-top:4px solid #69BE28;
 
 }
 
+.dark-mode footer p {
+
+    color:white;
+
+}
 
 /* Pikachu is a good pokemon */
 
@@ -289,77 +385,105 @@ footer {
 
     .navbar {
 
-        flex-direction: row;
+        flex-direction:row;
 
-        justify-content: center;
+        justify-content:center;
 
-        align-items: center;
+        align-items:center;
 
-        gap: 8px;
+        gap:8px;
 
     }
-
 
     .navbar a {
 
-        padding: 8px;
+        padding:8px;
 
-        font-size: 14px;
+        font-size:14px;
 
     }
-
 
     main {
 
-        padding: 16px;
+        padding:16px;
 
     }
-
 
     section {
 
-        padding: 16px;
+        padding:16px;
 
     }
 
-
     .projects-grid {
 
-        flex-direction: column;
+        flex-direction:column;
 
     }
 
 
 }
-
-
 
 @media(min-width:768px){
 
 
     main {
 
-        padding: 32px;
-
-    }
-
-
-    .navbar {
-
-        gap: 24px;
+        padding:32px;
 
     }
 
 
 }
 
-
 @media(min-width:1200px){
 
 
     .projects-grid article {
 
-        flex: 1 1 45%;
+        flex:1 1 45%;
+
+    }
+
+
+}
+
+@keyframes pageLoad {
+
+
+    from {
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+    }
+
+
+}
+
+@keyframes slideDown {
+
+
+    from {
+
+        transform:translateY(-30px);
+
+        opacity:0;
+
+    }
+
+
+    to {
+
+        transform:translateY(0);
+
+        opacity:1;
 
     }
 

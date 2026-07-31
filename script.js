@@ -1,17 +1,49 @@
 const themeButton = document.getElementById("themeButton");
 
 
-if(themeButton){
+// Load saved theme when page opens
 
-themeButton.addEventListener("click", function(){
+const savedTheme = localStorage.getItem("theme");
 
-document.body.classList.toggle("dark-mode");
 
-});
+if(savedTheme === "dark"){
+
+    document.body.classList.add("dark-mode");
 
 }
 
 
+
+// Dark mode button
+
+if(themeButton){
+
+    themeButton.addEventListener("click", function(){
+
+        document.body.classList.toggle("dark-mode");
+
+
+        if(document.body.classList.contains("dark-mode")){
+
+            localStorage.setItem("theme", "dark");
+
+        }
+
+        else{
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+}
+
+
+
+
+
+// Welcome message based on time
 
 const welcomeMessage = document.getElementById("welcomeMessage");
 
@@ -19,81 +51,78 @@ const welcomeMessage = document.getElementById("welcomeMessage");
 if(welcomeMessage){
 
 
-let hour = new Date().getHours();
+    let hour = new Date().getHours();
 
 
-if(hour < 12){
+    if(hour < 12){
 
-welcomeMessage.textContent =
-"Good morning! Thanks for visiting my portfolio.";
+        welcomeMessage.textContent =
+        "Good morning! Thanks for visiting my portfolio.";
+
+    }
+
+    else if(hour < 18){
+
+        welcomeMessage.textContent =
+        "Good afternoon! Thanks for checking out my work.";
+
+    }
+
+    else{
+
+        welcomeMessage.textContent =
+        "Good evening! Welcome to my portfolio.";
+
+    }
+
 
 }
 
-else if(hour < 18){
-
-welcomeMessage.textContent =
-"Good afternoon! Thanks for checking out my work.";
-
-}
-
-else{
-
-welcomeMessage.textContent =
-"Good evening! Welcome to my portfolio.";
-
-}
-
-
-}
 
 
 
 
+// Update copyright year
 
 const year = document.getElementById("year");
 
 
 if(year){
 
-year.textContent = new Date().getFullYear();
+    year.textContent = new Date().getFullYear();
 
 }
 
 
 
+
+
+// Project filter function
 
 function filterProjects(category){
 
 
-const projects=document.querySelectorAll(".project");
+    const projects=document.querySelectorAll(".project");
 
 
-
-projects.forEach(function(project){
-
-
-if(category==="all"){
-
-project.style.display="block";
-
-}
+    projects.forEach(function(project){
 
 
-else if(project.classList.contains(category)){
+        if(category==="all"){
 
-project.style.display="block";
+            project.style.display="block";
 
-}
+        }
 
+        else if(project.classList.contains(category)){
 
-else{
+            project.style.display="block";
 
-project.style.display="none";
+        }
+        else{
 
-}
+            project.style.display="none";
 
-
-});
-
-
+        }
+    });
 }
