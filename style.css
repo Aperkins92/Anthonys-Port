@@ -18,11 +18,12 @@ body {
 
     color: #111;
 
-    transition: 0.5s ease;
+    transition: .5s ease;
 
     animation: pageLoad 1s ease;
 
 }
+
 
 html {
 
@@ -30,14 +31,13 @@ html {
 
 }
 
-/* I think the Seattle Seahawks will go back to the Super Bowl. They will repeat as champions.*/
-/* I think they will beat the Buffalo Bills in the Super Bowl. The Seahawks will win 31-24. */
 
 h1, h2, h3 {
 
     font-family: 'Montserrat', sans-serif;
 
 }
+
 
 header {
 
@@ -56,6 +56,8 @@ header {
     animation: slideDown 1s ease;
 
 }
+
+
 
 .navbar {
 
@@ -77,6 +79,7 @@ header {
 
 }
 
+
 .navbar a {
 
     text-decoration: none;
@@ -93,6 +96,7 @@ header {
 
 }
 
+
 .navbar a:hover {
 
     background: white;
@@ -100,6 +104,7 @@ header {
     transform: translateY(-4px);
 
 }
+
 
 main {
 
@@ -110,6 +115,7 @@ main {
     padding: 24px;
 
 }
+
 
 section {
 
@@ -129,17 +135,20 @@ section {
 
 }
 
+
 section:hover {
 
     transform: translateY(-5px);
 
 }
 
+
 #welcome {
 
     border: 3px solid #69BE28;
 
 }
+
 
 .projects-grid {
 
@@ -153,11 +162,14 @@ section:hover {
 
 }
 
+
 .projects-grid article {
 
     flex: 1 1 300px;
 
     padding: 16px;
+
+    margin: 8px;
 
     background: white;
 
@@ -169,6 +181,7 @@ section:hover {
 
 }
 
+
 .projects-grid article:hover {
 
     transform: translateY(-10px) scale(1.02);
@@ -177,11 +190,20 @@ section:hover {
 
 }
 
+
 article h3 {
 
-    color:#002244;
+    color: #002244;
 
 }
+
+
+ul {
+
+    line-height: 1.8;
+
+}
+
 
 button {
 
@@ -203,6 +225,8 @@ button {
 
 }
 
+
+
 button:hover {
 
     background:#002244;
@@ -213,6 +237,8 @@ button:hover {
 
 }
 
+
+
 footer {
 
     background:#002244;
@@ -221,7 +247,7 @@ footer {
 
     text-align:center;
 
-    padding:16px;
+    padding:20px;
 
     margin-top:32px;
 
@@ -229,9 +255,40 @@ footer {
 
 }
 
+
+footer button {
+
+    margin-top:16px;
+
+    background:#69BE28;
+
+    color:#002244;
+
+    padding:12px 24px;
+
+    border:2px solid white;
+
+    border-radius:8px;
+
+    font-weight:bold;
+
+}
+
+
+footer button:hover {
+
+    background:white;
+
+    color:#002244;
+
+}
+
+
 /* Charzard is my favorite pokemon */
 
+
 .dark-mode {
+
 
     background-image:
 
@@ -252,75 +309,10 @@ footer {
 
     background-attachment:fixed;
 
-    background-repeat:no-repeat;
-
     color:white;
 
 }
 
-.dark-mode section {
-
-    background:rgba(0,0,0,.60);
-
-    backdrop-filter:blur(8px);
-
-    -webkit-backdrop-filter:blur(8px);
-
-    color:white;
-
-    border:2px solid #69BE28;
-
-    box-shadow:0 8px 25px rgba(0,0,0,.6);
-
-}
-
-.dark-mode article {
-
-    background:
-
-    linear-gradient(
-
-        135deg,
-
-        rgba(0,34,68,.9),
-
-        rgba(0,0,0,.85)
-
-    );
-
-    color:white;
-
-    border:2px solid #69BE28;
-
-}
-
-.dark-mode h1,
-
-.dark-mode h2,
-
-.dark-mode h3,
-
-.dark-mode p,
-
-.dark-mode li {
-
-    color:white;
-
-    text-shadow:1px 2px 5px black;
-
-}
-
-.dark-mode article h3 {
-
-    color:#69BE28;
-
-}
-
-.dark-mode a {
-
-    color:#69BE28;
-
-}
 
 .dark-mode header {
 
@@ -336,66 +328,135 @@ footer {
 
 }
 
-.dark-mode .navbar {
 
-    background:#001b33;
+.dark-mode section {
 
-}
 
-.dark-mode .navbar a {
+    background:rgba(0,0,0,.65);
 
-    color:#69BE28;
+    backdrop-filter:blur(8px);
 
-}
+    color:white;
 
-.dark-mode .navbar a:hover {
-
-    background:#69BE28;
-
-    color:#002244;
+    border:2px solid #69BE28;
 
 }
 
-.dark-mode button {
 
-    background:#69BE28;
 
-    color:#002244;
+.dark-mode section h2,
 
-}
+.dark-mode section h3,
 
-.dark-mode footer {
+.dark-mode section h4,
 
-    background:#000;
+.dark-mode section p,
 
-    border-top:4px solid #69BE28;
+.dark-mode section li {
 
-}
-
-.dark-mode footer p {
 
     color:white;
 
 }
 
+
+
+.dark-mode article {
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        rgba(0,34,68,.95),
+
+        rgba(0,0,0,.85)
+
+    );
+
+
+    color:white;
+
+    border:2px solid #69BE28;
+
+}
+
+
+
+.dark-mode article h3 {
+
+
+    color:#69BE28;
+
+}
+
+
+.dark-mode a {
+
+
+    color:#69BE28;
+
+}
+
+
+.dark-mode .navbar {
+
+
+    background:#001b33;
+
+}
+
+
+.dark-mode .navbar a {
+
+
+    color:#69BE28;
+
+}
+
+
+.dark-mode .navbar a:hover {
+
+
+    background:#69BE28;
+
+    color:#002244;
+
+}
+
+
+.dark-mode footer {
+
+
+    background:#000;
+
+}
+
+
+
+
+
+
 /* Pikachu is a good pokemon */
+
 
 @media(max-width:767px){
 
 
+
     .navbar {
 
-        flex-direction:row;
-
-        justify-content:center;
-
-        align-items:center;
 
         gap:8px;
 
     }
 
+
+
     .navbar a {
+
 
         padding:8px;
 
@@ -403,19 +464,28 @@ footer {
 
     }
 
+
+
     main {
+
 
         padding:16px;
 
     }
+
+
 
     section {
 
+
         padding:16px;
 
     }
 
+
+
     .projects-grid {
+
 
         flex-direction:column;
 
@@ -424,10 +494,12 @@ footer {
 
 }
 
+
 @media(min-width:768px){
 
 
     main {
+
 
         padding:32px;
 
@@ -436,17 +508,22 @@ footer {
 
 }
 
+
+
 @media(min-width:1200px){
 
 
     .projects-grid article {
 
+
         flex:1 1 45%;
+
 
     }
 
 
 }
+
 
 @keyframes pageLoad {
 
@@ -467,14 +544,17 @@ footer {
 
 }
 
+
 @keyframes slideDown {
 
 
     from {
 
+
         transform:translateY(-30px);
 
         opacity:0;
+
 
     }
 
@@ -484,6 +564,7 @@ footer {
         transform:translateY(0);
 
         opacity:1;
+
 
     }
 
