@@ -9,55 +9,29 @@
 
 <title>About | My Portfolio</title>
 
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-
 
 <link rel="stylesheet" href="style.css">
 
-
 </head>
-
 
 <body>
 
-
-
 <header>
-
 <h1>About Me</h1>
-
 <p>My background, skills, and goals</p>
-
-
-
 </header>
 
-
-
 <nav class="navbar">
-
-
 <a href="index.html">Home</a>
-
 <a href="projects.html">Projects</a>
-
 <a href="about.html">About Me</a>
-
-
 </nav>
-
 
 <main>
 
-
-
 <section>
-
-
 <h2>Who I Am</h2>
-
-
 
 <p>
 My name is Anthony, and I am a college student focused on building
@@ -66,16 +40,12 @@ and professionally. My background combines hands-on experience,
 creativity, teamwork, and a passion for learning new technology.
 </p>
 
-
-
 <p>
 Before returning to school, I spent many years working in the live
 event industry as a stagehand. I helped build concerts, sporting
 events, NFL productions, and large-scale entertainment events where
 teamwork, preparation, and safety were extremely important.
 </p>
-
-
 
 <p>
 Working behind the scenes taught me how to communicate with different
@@ -84,16 +54,12 @@ high-pressure environments. Every event required planning,
 organization, and people working together toward a shared goal.
 </p>
 
-
-
 <p>
 My experience in event production helped me develop leadership skills,
 attention to detail, reliability, and the ability to adapt when
 unexpected challenges happened. These skills continue to help me as I
 learn technology and work on new projects.
 </p>
-
-
 
 <p>
 I am currently studying Information Technology and developing skills
@@ -102,124 +68,58 @@ I am learning how technology can create useful solutions and improve
 the way people work, communicate, and interact with digital tools.
 </p>
 
-
-
 <p>
 My goal is to combine my real-world experience with my growing IT
 knowledge to create projects that demonstrate creativity, teamwork,
 problem-solving, and technical ability.
 </p>
 
-
-
 </section>
 
-
-
-
 <section>
-
-
 <h2>Technology Skills</h2>
-
-
 
 <div class="projects-grid">
 
-
-
 <article>
-
-
 <h3>Web Development</h3>
-
-
 <ul>
-
 <li>HTML and semantic website structure</li>
-
 <li>CSS styling and responsive design</li>
-
 <li>JavaScript interactive features</li>
-
 <li>Flexbox layouts</li>
-
 <li>GitHub website management</li>
-
 </ul>
-
-
 </article>
 
-
-
 <article>
-
-
 <h3>Information Technology</h3>
-
-
 <ul>
-
 <li>Computer systems concepts</li>
-
 <li>Software and hardware knowledge</li>
-
 <li>Problem solving</li>
-
 <li>Learning programming concepts</li>
-
 <li>Digital solutions</li>
-
 </ul>
-
-
 </article>
-
-
 
 <article>
-
-
 <h3>Creative Skills</h3>
-
-
 <ul>
-
 <li>Drawing and visual creativity</li>
-
 <li>Project planning</li>
-
 <li>Critical thinking</li>
-
 <li>Finding creative solutions</li>
-
 <li>Learning new skills</li>
-
 </ul>
-
-
 </article>
-
-
-
-
-
-
 
 </div>
 
-
-
 </section>
 
-
 <section>
-
-
 <h2>My Interests</h2>
-
-
 
 <p>
 Outside of school and technology, I enjoy drawing, listening to music,
@@ -227,23 +127,15 @@ following sports, gaming, and exploring new creative ideas. Creativity
 has always helped me look at challenges from different perspectives.
 </p>
 
-
-
 <p>
 I believe combining creativity, experience, and technology can create
 projects that are useful, meaningful, and enjoyable for people to use.
 </p>
 
-
-
 </section>
 
 <section>
-
-
 <h2>Contact</h2>
-
-
 
 <p>
 Email:
@@ -252,24 +144,40 @@ Adperkins1992@gmail.com
 </a>
 </p>
 
-
-
 <p>
 I am always interested in learning new technology skills, improving
 my abilities, and connecting with others who enjoy creating and
 building new ideas.
 </p>
 
+<!-- ⭐ CONTACT FORM ADDED HERE -->
+<form id="contact-form" novalidate>
+  <fieldset>
+    <legend>Contact Information</legend>
 
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+  </fieldset>
+
+  <label for="subject">Subject</label>
+  <input id="subject" name="subject" type="text" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <button type="submit">Send</button>
+
+  <p id="error-message" aria-live="polite"></p>
+</form>
 
 </section>
-
 
 </main>
 
 <footer>
-
-
 <p>
 © <span id="year"></span> My Portfolio | Built with HTML, CSS, and JavaScript
 </p>
@@ -277,11 +185,22 @@ building new ideas.
 <button id="themeButton">
 Dark Theme
 </button>
-
 </footer>
 
 <script src="script.js"></script>
 
-</body>
+<!-- ⭐ VALIDATION SCRIPT ADDED HERE -->
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    const error = document.getElementById('error-message');
+    error.textContent = '';
 
+    if (!this.checkValidity()) {
+      e.preventDefault();
+      error.textContent = 'Please fill out all required fields.';
+    }
+  });
+</script>
+
+</body>
 </html>
