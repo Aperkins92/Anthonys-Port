@@ -6,7 +6,7 @@ body {
 
     padding: 0;
 
-    background-image: url("images/Seahawks1.jpg");
+    background-image: url("Images/Seahawks1.jpg");
 
     background-size: cover;
 
@@ -300,7 +300,7 @@ footer button:hover {
 
     ),
 
-    url("images/Seahawks1.jpg");
+    url("Images/Seahawks1.jpg");
 
 
     background-size:cover;
