@@ -1,37 +1,23 @@
 const themeButton = document.getElementById("themeButton");
 
 
-// Load saved theme when page opens
+if (themeButton) {
 
-const savedTheme = localStorage.getItem("theme");
-
-
-if(savedTheme === "dark"){
-
-    document.body.classList.add("dark-mode");
-
-}
-
-
-
-// Dark mode button
-
-if(themeButton){
-
-    themeButton.addEventListener("click", function(){
+    themeButton.addEventListener("click", function () {
 
         document.body.classList.toggle("dark-mode");
 
-
-        if(document.body.classList.contains("dark-mode")){
+        if (document.body.classList.contains("dark-mode")) {
 
             localStorage.setItem("theme", "dark");
 
-        }
+            themeButton.textContent = "Light Theme";
 
-        else{
+        } else {
 
             localStorage.setItem("theme", "light");
+
+            themeButton.textContent = "Dark Theme";
 
         }
 
@@ -40,89 +26,117 @@ if(themeButton){
 }
 
 
+/* Keep the selected theme when switching pages */
+
+const savedTheme = localStorage.getItem("theme");
 
 
+if (savedTheme === "dark") {
 
-// Welcome message based on time
+    document.body.classList.add("dark-mode");
 
-const welcomeMessage = document.getElementById("welcomeMessage");
+    if (themeButton) {
 
-
-if(welcomeMessage){
-
-
-    let hour = new Date().getHours();
-
-
-    if(hour < 12){
-
-        welcomeMessage.textContent =
-        "Good morning! Thanks for visiting my portfolio.";
+        themeButton.textContent = "Light Theme";
 
     }
-
-    else if(hour < 18){
-
-        welcomeMessage.textContent =
-        "Good afternoon! Thanks for checking out my work.";
-
-    }
-
-    else{
-
-        welcomeMessage.textContent =
-        "Good evening! Welcome to my portfolio.";
-
-    }
-
 
 }
 
 
+/* Welcome message */
+
+const welcomeMessage = document.getElementById("welcomeMessage");
 
 
+if (welcomeMessage) {
 
-// Update copyright year
+    let hour = new Date().getHours();
+
+
+    if (hour < 12) {
+
+        welcomeMessage.textContent =
+            "Good morning! Thanks for visiting my portfolio.";
+
+    }
+
+    else if (hour < 18) {
+
+        welcomeMessage.textContent =
+            "Good afternoon! Thanks for checking out my work.";
+
+    }
+
+    else {
+
+        welcomeMessage.textContent =
+            "Good evening! Welcome to my portfolio.";
+
+    }
+
+}
+
+
+/* Current year */
 
 const year = document.getElementById("year");
 
 
-if(year){
+if (year) {
 
     year.textContent = new Date().getFullYear();
 
 }
 
 
+/* Project filter */
+
+function filterProjects(category) {
+
+    const projects = document.querySelectorAll(".project");
 
 
+    projects.forEach(function (project) {
 
-// Project filter function
+        if (category === "all") {
 
-function filterProjects(category){
-
-
-    const projects=document.querySelectorAll(".project");
-
-
-    projects.forEach(function(project){
-
-
-        if(category==="all"){
-
-            project.style.display="block";
+            project.style.display = "block";
 
         }
 
-        else if(project.classList.contains(category)){
+        else if (project.classList.contains(category)) {
 
-            project.style.display="block";
-
-        }
-        else{
-
-            project.style.display="none";
+            project.style.display = "block";
 
         }
+
+        else {
+
+            project.style.display = "none";
+
+        }
+
     });
+
+}
+
+
+/* Contact form message */
+
+const contactForm = document.querySelector(".contact-section form");
+
+
+if (contactForm) {
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thanks for your message! Please email me directly at Adperkins1992@gmail.com."
+        );
+
+    });
+
 }
