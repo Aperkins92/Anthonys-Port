@@ -208,61 +208,64 @@
 </section>
 
 
-<section class="contact-section">
+        <section class="contact-section">
 
     <h2>Contact Me</h2>
 
-    <form>
+    <form id="contactForm" novalidate>
 
-        <label for="name-id-input">
-            Enter your name:
-        </label>
+        <label for="name-id-input">Enter your name:</label>
 
         <input
             id="name-id-input"
             type="text"
             placeholder="Your Name"
-            required
+            aria-describedby="name-error"
         >
 
+        <p id="name-error" class="form-error"></p>
 
-        <label for="email-id">
-            Enter your email:
-        </label>
+
+        <label for="email-id">Enter your email:</label>
 
         <input
             id="email-id"
             type="email"
             placeholder="Your Email"
-            required
+            aria-describedby="email-error"
         >
 
+        <p id="email-error" class="form-error"></p>
 
-        <label for="message">
-            Your Message:
-        </label>
+
+        <label for="message">Your Message:</label>
 
         <textarea
             id="message"
             placeholder="Your Message"
-            required
+            aria-describedby="message-error"
         ></textarea>
+
+        <p id="message-error" class="form-error"></p>
 
 
         <p class="contact-email">
-
             Or email me directly at:
-
             <a href="mailto:Adperkins1992@gmail.com">
                 Adperkins1992@gmail.com
             </a>
-
         </p>
 
 
         <button type="submit">
             Send
         </button>
+
+        <p
+            id="form-success"
+            class="form-success"
+            aria-live="polite"
+        ></p>
 
     </form>
 

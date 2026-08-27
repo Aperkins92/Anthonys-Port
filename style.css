@@ -281,6 +281,76 @@ footer button {
 
 /* Charzard is my favorite pokemon */
 
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-section label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 2px solid #002244;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.contact-section textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-error {
+    min-height: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.contact-section input[aria-invalid="true"],
+.contact-section textarea[aria-invalid="true"] {
+    border: 2px solid #d00000;
+}
+
+.form-success {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.contact-email {
+    margin-top: 16px;
+}
+
+.contact-email a {
+    color: #69BE28;
+    font-weight: bold;
+}
+
+.contact-email a:hover {
+    text-decoration: underline;
+}
+
+.filter-button {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid #69BE28;
+    outline-offset: 3px;
+}
+
+
 .dark-mode {
     background-image:
         linear-gradient(

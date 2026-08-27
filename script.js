@@ -1,119 +1,213 @@
-const themeButton = document.getElementById("themeButton");
-
+const themeButton = document.querySelector("#themeButton");
 
 if (themeButton) {
-
     themeButton.addEventListener("click", function () {
 
         document.body.classList.toggle("dark-mode");
 
         if (document.body.classList.contains("dark-mode")) {
-
             localStorage.setItem("theme", "dark");
-
             themeButton.textContent = "Light Theme";
-
         } else {
-
             localStorage.setItem("theme", "light");
-
             themeButton.textContent = "Dark Theme";
-
         }
 
     });
-
 }
 
-
-/* Keep the selected theme when switching pages */
 
 const savedTheme = localStorage.getItem("theme");
 
-
 if (savedTheme === "dark") {
-
     document.body.classList.add("dark-mode");
 
     if (themeButton) {
-
         themeButton.textContent = "Light Theme";
-
     }
-
 }
 
 
-/* Welcome message */
-
-const welcomeMessage = document.getElementById("welcomeMessage");
-
+const welcomeMessage = document.querySelector("#welcomeMessage");
 
 if (welcomeMessage) {
 
-    let hour = new Date().getHours();
-
+    const hour = new Date().getHours();
 
     if (hour < 12) {
 
         welcomeMessage.textContent =
             "Good morning! Thanks for visiting my portfolio.";
 
-    }
-
-    else if (hour < 18) {
+    } else if (hour < 18) {
 
         welcomeMessage.textContent =
             "Good afternoon! Thanks for checking out my work.";
 
-    }
-
-    else {
+    } else {
 
         welcomeMessage.textContent =
             "Good evening! Welcome to my portfolio.";
 
     }
-
 }
 
 
-/* Current year */
-
-const year = document.getElementById("year");
-
+const year = document.querySelector("#year");
 
 if (year) {
-
     year.textContent = new Date().getFullYear();
-
 }
 
 
-/* Project filter */
+const filterButtons = document.querySelectorAll(".filter-button");
+const projects = document.querySelectorAll(".project");
 
-function filterProjects(category) {
+filterButtons.forEach(function (button) {
 
-    const projects = document.querySelectorAll(".project");
+    button.addEventListener("click", function () {
+
+        const category = button.dataset.filter;
+
+        projects.forEach(function (project) {
+
+            if (category === "all") {
+
+                project.style.display = "block";
+
+            } else if (project.classList.contains(category)) {
+
+                project.style.display = "block";
+
+            } else {
+
+                project.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
 
 
-    projects.forEach(function (project) {
+const contactForm = document.querySelector("#contactForm");
 
-        if (category === "all") {
+if (contactForm) {
 
-            project.style.display = "block";
+    const nameInput = document.querySelector("#name-id-input");
+    const emailInput = document.querySelector("#email-id");
+    const messageInput = document.querySelector("#message");
+
+    const nameError = document.querySelector("#name-error");
+    const emailError = document.querySelector("#email-error");
+    const messageError = document.querySelector("#message-error");
+
+    function clearError(input, errorElement) {
+
+        input.removeAttribute("aria-invalid");
+        errorElement.textContent = "";
+    }
+
+
+    function validateName() {
+
+        if (nameInput.value.trim() === "") {
+
+            nameInput.setAttribute("aria-invalid", "true");
+
+            nameError.textContent = "Please enter your name.";
+
+            return false;
 
         }
 
-        else if (project.classList.contains(category)) {
+        clearError(nameInput, nameError);
 
-            project.style.display = "block";
+        return true;
+    }
 
+
+    function validateEmail() {
+
+        const emailValue = emailInput.value.trim();
+
+        if (emailValue === "") {
+
+            emailInput.setAttribute("aria-invalid", "true");
+
+            emailError.textContent = "Please enter your email address.";
+
+            return false;
         }
 
-        else {
+        if (!emailInput.validity.valid) {
 
-            project.style.display = "none";
+            emailInput.setAttribute("aria-invalid", "true");
+
+            emailError.textContent =
+                "Please enter a valid email address.";
+
+            return false;
+        }
+
+        clearError(emailInput, emailError);
+
+        return true;
+    }
+
+
+    function validateMessage() {
+
+        if (messageInput.value.trim() === "") {
+
+            messageInput.setAttribute("aria-invalid", "true");
+
+            messageError.textContent = "Please enter a message.";
+
+            return false;
+        }
+
+        clearError(messageInput, messageError);
+
+        return true;
+    }
+
+
+    nameInput.addEventListener("input", validateName);
+
+    emailInput.addEventListener("input", validateEmail);
+
+    messageInput.addEventListener("input", validateMessage);
+
+
+    contactForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        const nameValid = validateName();
+        const emailValid = validateEmail();
+        const messageValid = validateMessage();
+
+        if (nameValid && emailValid && messageValid) {
+
+            const successMessage =
+                document.querySelector("#form-success");
+
+            successMessage.textContent =
+                "Thanks! Your message has been filled out successfully.";
+
+            contactForm.reset();
+
+        } else {
+
+            const firstInvalid =
+                contactForm.querySelector('[aria-invalid="true"]');
+
+            if (firstInvalid) {
+                firstInvalid.focus();
+            }
 
         }
 
@@ -122,20 +216,43 @@ function filterProjects(category) {
 }
 
 
-/* Contact form message */
+const apiButton = document.querySelector("#apiButton");
+const apiResult = document.querySelector("#apiResult");
 
-const contactForm = document.querySelector(".contact-section form");
+if (apiButton && apiResult) {
 
+    apiButton.addEventListener("click", function () {
 
-if (contactForm) {
+        apiResult.textContent = "Loading information...";
 
-    contactForm.addEventListener("submit", function (event) {
+        fetch("https://api.github.com/users/github")
 
-        event.preventDefault();
+            .then(function (response) {
 
-        alert(
-            "Thanks for your message! Please email me directly at Adperkins1992@gmail.com."
-        );
+                if (!response.ok) {
+                    throw new Error("API request failed.");
+                }
+
+                return response.json();
+
+            })
+
+            .then(function (data) {
+
+                apiResult.innerHTML =
+                    "<strong>GitHub:</strong> " +
+                    data.name +
+                    "<br>Public Repositories: " +
+                    data.public_repos;
+
+            })
+
+            .catch(function () {
+
+                apiResult.textContent =
+                    "Sorry, the GitHub information could not be loaded.";
+
+            });
 
     });
 
