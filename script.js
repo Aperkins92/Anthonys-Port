@@ -1,213 +1,289 @@
 const themeButton = document.querySelector("#themeButton");
 
+
 if (themeButton) {
+
     themeButton.addEventListener("click", function () {
 
         document.body.classList.toggle("dark-mode");
 
+
         if (document.body.classList.contains("dark-mode")) {
+
             localStorage.setItem("theme", "dark");
+
             themeButton.textContent = "Light Theme";
+
         } else {
+
             localStorage.setItem("theme", "light");
+
             themeButton.textContent = "Dark Theme";
+
         }
 
     });
+
 }
 
 
 const savedTheme = localStorage.getItem("theme");
 
+
 if (savedTheme === "dark") {
+
     document.body.classList.add("dark-mode");
 
+
     if (themeButton) {
+
         themeButton.textContent = "Light Theme";
+
     }
+
 }
 
 
-const welcomeMessage = document.querySelector("#welcomeMessage");
+const welcomeMessage =
+    document.querySelector("#welcomeMessage");
+
 
 if (welcomeMessage) {
 
     const hour = new Date().getHours();
+
 
     if (hour < 12) {
 
         welcomeMessage.textContent =
             "Good morning! Thanks for visiting my portfolio.";
 
-    } else if (hour < 18) {
+    }
+
+    else if (hour < 18) {
 
         welcomeMessage.textContent =
             "Good afternoon! Thanks for checking out my work.";
 
-    } else {
+    }
+
+    else {
 
         welcomeMessage.textContent =
             "Good evening! Welcome to my portfolio.";
 
     }
+
 }
 
 
-const year = document.querySelector("#year");
+const year =
+    document.querySelector("#year");
+
 
 if (year) {
-    year.textContent = new Date().getFullYear();
+
+    year.textContent =
+        new Date().getFullYear();
+
 }
 
 
-const filterButtons = document.querySelectorAll(".filter-button");
-const projects = document.querySelectorAll(".project");
+/* Button changes visible page content */
 
-filterButtons.forEach(function (button) {
 
-    button.addEventListener("click", function () {
+const messageButton =
+    document.querySelector("#messageButton");
 
-        const category = button.dataset.filter;
 
-        projects.forEach(function (project) {
+const interactiveMessage =
+    document.querySelector("#interactiveMessage");
 
-            if (category === "all") {
 
-                project.style.display = "block";
+if (messageButton && interactiveMessage) {
 
-            } else if (project.classList.contains(category)) {
+    messageButton.addEventListener("click", function () {
 
-                project.style.display = "block";
+        interactiveMessage.textContent =
+            "My goal is to combine my live event experience with my Information Technology education. I want to continue developing skills in web development, programming, troubleshooting, and other areas of IT so I can create useful technology solutions.";
 
-            } else {
-
-                project.style.display = "none";
-
-            }
-
-        });
+        messageButton.textContent =
+            "Thanks for Learning More!";
 
     });
 
-});
+}
 
 
-const contactForm = document.querySelector("#contactForm");
+/* Style changes while the user types */
+
+
+const nameInput =
+    document.querySelector("#name-id-input");
+
+
+if (nameInput) {
+
+    nameInput.addEventListener("input", function () {
+
+        if (nameInput.value.trim() !== "") {
+
+            nameInput.classList.add("input-active");
+
+        }
+
+        else {
+
+            nameInput.classList.remove("input-active");
+
+        }
+
+    });
+
+}
+
+
+/* Contact form validation */
+
+
+const contactForm =
+    document.querySelector("#contactForm");
+
 
 if (contactForm) {
 
-    const nameInput = document.querySelector("#name-id-input");
-    const emailInput = document.querySelector("#email-id");
-    const messageInput = document.querySelector("#message");
+    const nameField =
+        document.querySelector("#name-id-input");
 
-    const nameError = document.querySelector("#name-error");
-    const emailError = document.querySelector("#email-error");
-    const messageError = document.querySelector("#message-error");
+    const emailField =
+        document.querySelector("#email-id");
 
-    function clearError(input, errorElement) {
+    const messageField =
+        document.querySelector("#message");
 
-        input.removeAttribute("aria-invalid");
-        errorElement.textContent = "";
-    }
+    const nameError =
+        document.querySelector("#nameError");
 
+    const emailError =
+        document.querySelector("#emailError");
 
-    function validateName() {
+    const messageError =
+        document.querySelector("#messageError");
 
-        if (nameInput.value.trim() === "") {
-
-            nameInput.setAttribute("aria-invalid", "true");
-
-            nameError.textContent = "Please enter your name.";
-
-            return false;
-
-        }
-
-        clearError(nameInput, nameError);
-
-        return true;
-    }
-
-
-    function validateEmail() {
-
-        const emailValue = emailInput.value.trim();
-
-        if (emailValue === "") {
-
-            emailInput.setAttribute("aria-invalid", "true");
-
-            emailError.textContent = "Please enter your email address.";
-
-            return false;
-        }
-
-        if (!emailInput.validity.valid) {
-
-            emailInput.setAttribute("aria-invalid", "true");
-
-            emailError.textContent =
-                "Please enter a valid email address.";
-
-            return false;
-        }
-
-        clearError(emailInput, emailError);
-
-        return true;
-    }
-
-
-    function validateMessage() {
-
-        if (messageInput.value.trim() === "") {
-
-            messageInput.setAttribute("aria-invalid", "true");
-
-            messageError.textContent = "Please enter a message.";
-
-            return false;
-        }
-
-        clearError(messageInput, messageError);
-
-        return true;
-    }
-
-
-    nameInput.addEventListener("input", validateName);
-
-    emailInput.addEventListener("input", validateEmail);
-
-    messageInput.addEventListener("input", validateMessage);
+    const formMessage =
+        document.querySelector("#formMessage");
 
 
     contactForm.addEventListener("submit", function (event) {
 
         event.preventDefault();
 
-        const nameValid = validateName();
-        const emailValid = validateEmail();
-        const messageValid = validateMessage();
 
-        if (nameValid && emailValid && messageValid) {
+        let formIsValid = true;
 
-            const successMessage =
-                document.querySelector("#form-success");
 
-            successMessage.textContent =
-                "Thanks! Your message has been filled out successfully.";
+        nameError.textContent = "";
 
-            contactForm.reset();
+        emailError.textContent = "";
 
-        } else {
+        messageError.textContent = "";
 
-            const firstInvalid =
-                contactForm.querySelector('[aria-invalid="true"]');
+        formMessage.textContent = "";
 
-            if (firstInvalid) {
-                firstInvalid.focus();
-            }
+        formMessage.classList.remove("form-error");
+
+        formMessage.classList.remove("form-success");
+
+
+        if (nameField.value.trim() === "") {
+
+            nameError.textContent =
+                "Please enter your name.";
+
+            formIsValid = false;
+
+        }
+
+
+        if (emailField.value.trim() === "") {
+
+            emailError.textContent =
+                "Please enter your email address.";
+
+            formIsValid = false;
+
+        }
+
+        else if (!emailField.validity.valid) {
+
+            emailError.textContent =
+                "Please enter a valid email address.";
+
+            formIsValid = false;
+
+        }
+
+
+        if (messageField.value.trim() === "") {
+
+            messageError.textContent =
+                "Please enter a message.";
+
+            formIsValid = false;
+
+        }
+
+
+        if (!formIsValid) {
+
+            formMessage.textContent =
+                "Please correct the errors above.";
+
+            formMessage.classList.add("form-error");
+
+            return;
+
+        }
+
+
+        formMessage.textContent =
+            "Thank you! Your message has been completed successfully.";
+
+        formMessage.classList.add("form-success");
+
+    });
+
+
+    nameField.addEventListener("input", function () {
+
+        if (nameField.value.trim() !== "") {
+
+            nameError.textContent = "";
+
+        }
+
+    });
+
+
+    emailField.addEventListener("input", function () {
+
+        if (
+            emailField.value.trim() !== "" &&
+            emailField.validity.valid
+        ) {
+
+            emailError.textContent = "";
+
+        }
+
+    });
+
+
+    messageField.addEventListener("input", function () {
+
+        if (messageField.value.trim() !== "") {
+
+            messageError.textContent = "";
 
         }
 
@@ -216,44 +292,131 @@ if (contactForm) {
 }
 
 
-const apiButton = document.querySelector("#apiButton");
-const apiResult = document.querySelector("#apiResult");
+/* Dynamic skill list */
 
-if (apiButton && apiResult) {
 
-    apiButton.addEventListener("click", function () {
+const skillInput =
+    document.querySelector("#skillInput");
 
-        apiResult.textContent = "Loading information...";
 
-        fetch("https://api.github.com/users/github")
+const addSkillButton =
+    document.querySelector("#addSkillButton");
 
-            .then(function (response) {
 
-                if (!response.ok) {
-                    throw new Error("API request failed.");
+const skillList =
+    document.querySelector("#skillList");
+
+
+if (
+    skillInput &&
+    addSkillButton &&
+    skillList
+) {
+
+
+    function addSkill() {
+
+        const skillText =
+            skillInput.value.trim();
+
+
+        if (skillText === "") {
+
+            skillInput.focus();
+
+            return;
+
+        }
+
+
+        const listItem =
+            document.createElement("li");
+
+
+        listItem.textContent =
+            skillText + " ";
+
+
+        const removeButton =
+            document.createElement("button");
+
+
+        removeButton.textContent =
+            "Remove";
+
+
+        removeButton.type =
+            "button";
+
+
+        removeButton.classList.add(
+            "remove-skill"
+        );
+
+
+        removeButton.addEventListener(
+            "click",
+            function () {
+
+                listItem.remove();
+
+            }
+        );
+
+
+        listItem.appendChild(removeButton);
+
+
+        skillList.appendChild(listItem);
+
+
+        skillInput.value = "";
+
+
+        skillInput.focus();
+
+    }
+
+
+    addSkillButton.addEventListener(
+        "click",
+        addSkill
+    );
+
+
+    skillInput.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Enter") {
+
+                event.preventDefault();
+
+                addSkill();
+
+            }
+
+        }
+    );
+
+
+    const existingRemoveButtons =
+        document.querySelectorAll(".remove-skill");
+
+
+    existingRemoveButtons.forEach(
+        function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    button.parentElement.remove();
+
                 }
+            );
 
-                return response.json();
-
-            })
-
-            .then(function (data) {
-
-                apiResult.innerHTML =
-                    "<strong>GitHub:</strong> " +
-                    data.name +
-                    "<br>Public Repositories: " +
-                    data.public_repos;
-
-            })
-
-            .catch(function () {
-
-                apiResult.textContent =
-                    "Sorry, the GitHub information could not be loaded.";
-
-            });
-
-    });
+        }
+    );
 
 }

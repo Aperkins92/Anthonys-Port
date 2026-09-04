@@ -7,9 +7,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Projects | Anthony Perkins Portfolio</title>
+    <title>Projects | My Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
@@ -34,8 +34,6 @@
 
     <a href="about.html">About</a>
 
-    <a href="it-portfolio.html">IT Portfolio</a>
-
 </nav>
 
 
@@ -43,36 +41,9 @@
 
     <section>
 
-        <h2>Project Filter</h2>
-
-        <p>
-            Use the buttons below to view different types of projects.
-        </p>
-
-         <div class="project-filters">
-
-    <button type="button" class="filter-button" data-filter="all">
-        All
-    </button>
-
-    <button type="button" class="filter-button" data-filter="technology">
-        Technology
-    </button>
-
-    <button type="button" class="filter-button" data-filter="research">
-        Research
-    </button>
-
-</div>
-    </section>
-
-
-    <section>
-
         <h2>Technology Projects</h2>
 
         <div class="projects-grid">
-
 
             <article class="project technology">
 
@@ -80,23 +51,19 @@
 
                 <p>
                     This project is a responsive portfolio website
-                    created using HTML, CSS, and JavaScript.
+                    created using HTML, CSS, and JavaScript. The goal
+                    was to build a professional website that showcases
+                    my background, experience, and skills.
                 </p>
 
                 <p>
-                    I created multiple connected pages and used
-                    semantic HTML to organize the content. CSS was
-                    used for colors, spacing, responsive design,
-                    backgrounds, and Flexbox layouts.
+                    I created multiple connected pages using navigation
+                    links and used semantic HTML elements to organize
+                    content. CSS was used for colors, spacing, responsive
+                    design, and Flexbox layouts.
                 </p>
 
-                <p>
-                    JavaScript was added to create interactive
-                    features such as the Dark Theme, welcome message,
-                    project filters, and saved theme preferences.
-                </p>
-
-                <h4>Skills Used</h4>
+                <h4>Skills Used:</h4>
 
                 <ul>
 
@@ -104,15 +71,11 @@
 
                     <li>CSS</li>
 
-                    <li>JavaScript</li>
+                    <li>Responsive Design</li>
 
                     <li>Flexbox</li>
 
-                    <li>Responsive Design</li>
-
-                    <li>GitHub</li>
-
-                    <li>GitHub Pages</li>
+                    <li>JavaScript</li>
 
                 </ul>
 
@@ -135,13 +98,7 @@
                     thinking skills.
                 </p>
 
-                <p>
-                    I researched how deadlines and production demands
-                    can affect safety practices during event setups
-                    and breakdowns.
-                </p>
-
-                <h4>Skills Used</h4>
+                <h4>Skills Used:</h4>
 
                 <ul>
 
@@ -153,50 +110,6 @@
 
                     <li>Source Analysis</li>
 
-                    <li>Problem Solving</li>
-
-                </ul>
-
-            </article>
-
-
-            <article class="project technology">
-
-                <h3>JavaScript Interactive Features</h3>
-
-                <p>
-                    I added JavaScript functionality to my portfolio
-                    website to make it more interactive.
-                </p>
-
-                <p>
-                    The website can display different welcome messages
-                    based on the time of day and allows visitors to
-                    filter projects by category.
-                </p>
-
-                <p>
-                    I also added a Dark Theme feature and used local
-                    storage so the selected theme remains active when
-                    moving between pages.
-                </p>
-
-                <h4>Skills Used</h4>
-
-                <ul>
-
-                    <li>JavaScript</li>
-
-                    <li>DOM Manipulation</li>
-
-                    <li>Event Listeners</li>
-
-                    <li>Functions</li>
-
-                    <li>Local Storage</li>
-
-                    <li>CSS Classes</li>
-
                 </ul>
 
             </article>
@@ -207,19 +120,13 @@
                 <h3>Future IT Projects</h3>
 
                 <p>
-                    As I continue studying Information Technology, I
-                    plan to develop more projects involving programming,
-                    databases, networking, cybersecurity, and computer
-                    systems.
+                    As I continue studying Information Technology,
+                    I plan to develop more projects involving
+                    programming, web applications, and tools that
+                    solve real-world problems.
                 </p>
 
-                <p>
-                    I want to continue building projects that solve
-                    real-world problems and give me practical experience
-                    that I can eventually discuss with employers.
-                </p>
-
-                <h4>Future Skills</h4>
+                <h4>Future Skills:</h4>
 
                 <ul>
 
@@ -229,11 +136,7 @@
 
                     <li>Database Development</li>
 
-                    <li>Networking</li>
-
                     <li>Cybersecurity Concepts</li>
-
-                    <li>IT Troubleshooting</li>
 
                 </ul>
 
@@ -243,17 +146,75 @@
 
     </section>
 
+
+    <section class="skills-list-section">
+
+        <h2>My Skills List</h2>
+
+        <p>
+            Add a skill you are currently learning or would like
+            to develop while studying Information Technology.
+        </p>
+
+
+        <div class="skill-input-area">
+
+            <label for="skillInput">
+                Add a skill:
+            </label>
+
+            <input
+                id="skillInput"
+                type="text"
+                placeholder="Example: Networking"
+            >
+
+
+            <button id="addSkillButton" type="button">
+                Add Skill
+            </button>
+
+        </div>
+
+
+        <ul id="skillList">
+
+            <li>
+                HTML
+                <button class="remove-skill" type="button">
+                    Remove
+                </button>
+            </li>
+
+            <li>
+                CSS
+                <button class="remove-skill" type="button">
+                    Remove
+                </button>
+            </li>
+
+            <li>
+                JavaScript
+                <button class="remove-skill" type="button">
+                    Remove
+                </button>
+            </li>
+
+        </ul>
+
+    </section>
+
 </main>
 
 
 <footer>
 
-    <button id="themeButton">
+    <button id="themeButton" type="button">
         Dark Theme
     </button>
 
     <p>
-        © <span id="year"></span> Anthony Perkins |
+        © <span id="year"></span> My Portfolio |
         Built with HTML, CSS, and JavaScript
     </p>
 
