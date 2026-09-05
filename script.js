@@ -1,4 +1,5 @@
-const themeButton = document.querySelector("#themeButton");
+const themeButton =
+    document.querySelector("#themeButton");
 
 
 if (themeButton) {
@@ -27,7 +28,9 @@ if (themeButton) {
 }
 
 
-const savedTheme = localStorage.getItem("theme");
+
+const savedTheme =
+    localStorage.getItem("theme");
 
 
 if (savedTheme === "dark") {
@@ -37,11 +40,13 @@ if (savedTheme === "dark") {
 
     if (themeButton) {
 
-        themeButton.textContent = "Light Theme";
+        themeButton.textContent =
+            "Light Theme";
 
     }
 
 }
+
 
 
 const welcomeMessage =
@@ -50,7 +55,8 @@ const welcomeMessage =
 
 if (welcomeMessage) {
 
-    const hour = new Date().getHours();
+    const hour =
+        new Date().getHours();
 
 
     if (hour < 12) {
@@ -77,6 +83,7 @@ if (welcomeMessage) {
 }
 
 
+
 const year =
     document.querySelector("#year");
 
@@ -89,8 +96,6 @@ if (year) {
 }
 
 
-/* Button changes visible page content */
-
 
 const messageButton =
     document.querySelector("#messageButton");
@@ -100,50 +105,30 @@ const interactiveMessage =
     document.querySelector("#interactiveMessage");
 
 
-if (messageButton && interactiveMessage) {
+if (
+    messageButton &&
+    interactiveMessage
+) {
 
-    messageButton.addEventListener("click", function () {
+    messageButton.addEventListener(
+        "click",
+        function () {
 
-        interactiveMessage.textContent =
-            "My goal is to combine my live event experience with my Information Technology education. I want to continue developing skills in web development, programming, troubleshooting, and other areas of IT so I can create useful technology solutions.";
+            interactiveMessage.textContent =
+                "My goal is to combine my live event experience with my Information Technology education. I want to continue developing skills in web development, programming, troubleshooting, and other areas of IT so I can create useful technology solutions.";
 
-        messageButton.textContent =
-            "Thanks for Learning More!";
 
-    });
+            messageButton.textContent =
+                "Thanks for Learning More!";
+
+        }
+    );
 
 }
 
 
-/* Style changes while the user types */
 
-
-const nameInput =
-    document.querySelector("#name-id-input");
-
-
-if (nameInput) {
-
-    nameInput.addEventListener("input", function () {
-
-        if (nameInput.value.trim() !== "") {
-
-            nameInput.classList.add("input-active");
-
-        }
-
-        else {
-
-            nameInput.classList.remove("input-active");
-
-        }
-
-    });
-
-}
-
-
-/* Contact form validation */
+/* Homework 8 Form Validation */
 
 
 const contactForm =
@@ -152,147 +137,342 @@ const contactForm =
 
 if (contactForm) {
 
+
     const nameField =
         document.querySelector("#name-id-input");
+
 
     const emailField =
         document.querySelector("#email-id");
 
+
+    const phoneField =
+        document.querySelector("#phone");
+
+
+    const subjectField =
+        document.querySelector("#subject");
+
+
     const messageField =
         document.querySelector("#message");
+
+
 
     const nameError =
         document.querySelector("#nameError");
 
+
     const emailError =
         document.querySelector("#emailError");
 
+
+    const phoneError =
+        document.querySelector("#phoneError");
+
+
+    const subjectError =
+        document.querySelector("#subjectError");
+
+
     const messageError =
         document.querySelector("#messageError");
+
 
     const formMessage =
         document.querySelector("#formMessage");
 
 
-    contactForm.addEventListener("submit", function (event) {
 
-        event.preventDefault();
-
-
-        let formIsValid = true;
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
 
 
-        nameError.textContent = "";
-
-        emailError.textContent = "";
-
-        messageError.textContent = "";
-
-        formMessage.textContent = "";
-
-        formMessage.classList.remove("form-error");
-
-        formMessage.classList.remove("form-success");
+            event.preventDefault();
 
 
-        if (nameField.value.trim() === "") {
+            let formIsValid = true;
 
-            nameError.textContent =
-                "Please enter your name.";
-
-            formIsValid = false;
-
-        }
-
-
-        if (emailField.value.trim() === "") {
-
-            emailError.textContent =
-                "Please enter your email address.";
-
-            formIsValid = false;
-
-        }
-
-        else if (!emailField.validity.valid) {
-
-            emailError.textContent =
-                "Please enter a valid email address.";
-
-            formIsValid = false;
-
-        }
-
-
-        if (messageField.value.trim() === "") {
-
-            messageError.textContent =
-                "Please enter a message.";
-
-            formIsValid = false;
-
-        }
-
-
-        if (!formIsValid) {
-
-            formMessage.textContent =
-                "Please correct the errors above.";
-
-            formMessage.classList.add("form-error");
-
-            return;
-
-        }
-
-
-        formMessage.textContent =
-            "Thank you! Your message has been completed successfully.";
-
-        formMessage.classList.add("form-success");
-
-    });
-
-
-    nameField.addEventListener("input", function () {
-
-        if (nameField.value.trim() !== "") {
 
             nameError.textContent = "";
 
-        }
-
-    });
-
-
-    emailField.addEventListener("input", function () {
-
-        if (
-            emailField.value.trim() !== "" &&
-            emailField.validity.valid
-        ) {
-
             emailError.textContent = "";
 
-        }
+            phoneError.textContent = "";
 
-    });
-
-
-    messageField.addEventListener("input", function () {
-
-        if (messageField.value.trim() !== "") {
+            subjectError.textContent = "";
 
             messageError.textContent = "";
 
-        }
+            formMessage.textContent = "";
 
-    });
+
+            formMessage.classList.remove(
+                "form-error"
+            );
+
+
+            formMessage.classList.remove(
+                "form-success"
+            );
+
+
+
+            /* Name validation */
+
+
+            if (
+                nameField.value.trim() === ""
+            ) {
+
+                nameError.textContent =
+                    "Please enter your name.";
+
+                formIsValid = false;
+
+            }
+
+
+
+            /* Email validation */
+
+
+            if (
+                emailField.value.trim() === ""
+            ) {
+
+                emailError.textContent =
+                    "Please enter your email address.";
+
+                formIsValid = false;
+
+            }
+
+            else if (
+                !emailField.validity.valid
+            ) {
+
+                emailError.textContent =
+                    "Please enter a valid email address.";
+
+                formIsValid = false;
+
+            }
+
+
+
+            /* Phone validation */
+
+
+            if (
+                phoneField.value.trim() === ""
+            ) {
+
+                phoneError.textContent =
+                    "Please enter your phone number.";
+
+                formIsValid = false;
+
+            }
+
+            else {
+
+                const phonePattern =
+                    /^[0-9()\-\s+]{10,}$/;
+
+
+                if (
+                    !phonePattern.test(
+                        phoneField.value.trim()
+                    )
+                ) {
+
+                    phoneError.textContent =
+                        "Please enter a valid phone number.";
+
+                    formIsValid = false;
+
+                }
+
+            }
+
+
+
+            /* Subject validation */
+
+
+            if (
+                subjectField.value.trim() === ""
+            ) {
+
+                subjectError.textContent =
+                    "Please enter a subject.";
+
+                formIsValid = false;
+
+            }
+
+
+
+            /* Message validation */
+
+
+            if (
+                messageField.value.trim() === ""
+            ) {
+
+                messageError.textContent =
+                    "Please enter a message.";
+
+                formIsValid = false;
+
+            }
+
+
+
+            /* Display validation result */
+
+
+            if (!formIsValid) {
+
+                formMessage.textContent =
+                    "Please correct the errors above.";
+
+                formMessage.classList.add(
+                    "form-error"
+                );
+
+                return;
+
+            }
+
+
+
+            formMessage.textContent =
+                "Form submitted successfully! All fields are valid.";
+
+
+            formMessage.classList.add(
+                "form-success"
+            );
+
+        }
+    );
+
+
+
+    /* Clear name error */
+
+
+    nameField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                nameField.value.trim() !== ""
+            ) {
+
+                nameError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear email error automatically */
+
+
+    emailField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                emailField.value.trim() !== "" &&
+                emailField.validity.valid
+            ) {
+
+                emailError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear phone error automatically */
+
+
+    phoneField.addEventListener(
+        "input",
+        function () {
+
+            const phonePattern =
+                /^[0-9()\-\s+]{10,}$/;
+
+
+            if (
+                phoneField.value.trim() !== "" &&
+                phonePattern.test(
+                    phoneField.value.trim()
+                )
+            ) {
+
+                phoneError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear subject error */
+
+
+    subjectField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                subjectField.value.trim() !== ""
+            ) {
+
+                subjectError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear message error */
+
+
+    messageField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                messageField.value.trim() !== ""
+            ) {
+
+                messageError.textContent = "";
+
+            }
+
+        }
+    );
 
 }
 
 
-/* Dynamic skill list */
+
+/* Dynamic Skills List */
 
 
 const skillInput =
@@ -316,11 +496,14 @@ if (
 
     function addSkill() {
 
+
         const skillText =
             skillInput.value.trim();
 
 
-        if (skillText === "") {
+        if (
+            skillText === ""
+        ) {
 
             skillInput.focus();
 
@@ -329,12 +512,14 @@ if (
         }
 
 
+
         const listItem =
             document.createElement("li");
 
 
         listItem.textContent =
             skillText + " ";
+
 
 
         const removeButton =
@@ -354,6 +539,7 @@ if (
         );
 
 
+
         removeButton.addEventListener(
             "click",
             function () {
@@ -364,10 +550,15 @@ if (
         );
 
 
-        listItem.appendChild(removeButton);
+
+        listItem.appendChild(
+            removeButton
+        );
 
 
-        skillList.appendChild(listItem);
+        skillList.appendChild(
+            listItem
+        );
 
 
         skillInput.value = "";
@@ -378,17 +569,21 @@ if (
     }
 
 
+
     addSkillButton.addEventListener(
         "click",
         addSkill
     );
 
 
+
     skillInput.addEventListener(
         "keydown",
         function (event) {
 
-            if (event.key === "Enter") {
+            if (
+                event.key === "Enter"
+            ) {
 
                 event.preventDefault();
 
@@ -400,8 +595,11 @@ if (
     );
 
 
+
     const existingRemoveButtons =
-        document.querySelectorAll(".remove-skill");
+        document.querySelectorAll(
+            ".remove-skill"
+        );
 
 
     existingRemoveButtons.forEach(
@@ -412,6 +610,87 @@ if (
                 function () {
 
                     button.parentElement.remove();
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+
+/* Homework 8 API Fetch Bonus */
+
+
+const quoteButton =
+    document.querySelector("#quoteButton");
+
+
+const quoteResult =
+    document.querySelector("#quoteResult");
+
+
+if (
+    quoteButton &&
+    quoteResult
+) {
+
+
+    quoteButton.addEventListener(
+        "click",
+        function () {
+
+
+            quoteResult.textContent =
+                "Loading quote...";
+
+
+            fetch(
+                "https://dummyjson.com/quotes/random"
+            )
+
+
+            .then(
+                function (response) {
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Unable to retrieve quote."
+                        );
+
+                    }
+
+
+                    return response.json();
+
+                }
+            )
+
+
+            .then(
+                function (data) {
+
+
+                    quoteResult.textContent =
+                        `"${data.quote}" — ${data.author}`;
+
+                }
+            )
+
+
+            .catch(
+                function (error) {
+
+
+                    quoteResult.textContent =
+                        "Sorry, the quote could not be loaded. Please try again.";
+
+
+                    console.error(error);
 
                 }
             );

@@ -1,795 +1,649 @@
-body {
-
-    font-family: 'Roboto', sans-serif;
-
-    margin: 0;
-
-    padding: 0;
-
-    background-image: url("images/Seahawks1.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-attachment: fixed;
-
-    background-repeat: no-repeat;
-
-    color: #111;
-
-    transition: 0.5s ease;
-
-    animation: pageLoad 1s ease;
-
+* {
+    box-sizing: border-box;
 }
 
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 
-/* I think the Seattle Seahawks will go back to the Super Bowl. They will repeat as champions. I think they will beat the Buffalo Bills in the Super Bowl. The Seahawks will win 31-24. */
+body {
+    font-family: "Roboto", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("images/Seahawks1.jpg");
 
-h1,
-h2,
-h3 {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 
-    font-family: 'Montserrat', sans-serif;
+    color: #1f2937;
 
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
 
 header {
-
-    background: rgba(0, 34, 68, .95);
-
-    color: white;
-
     text-align: center;
 
-    padding: 24px;
+    padding: 3rem 1rem;
 
-    border-bottom: 4px solid #69BE28;
+    background: rgba(0, 46, 93, 0.9);
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    color: white;
+}
 
-    animation: slideDown 1s ease;
 
+header h1 {
+    font-family: "Montserrat", sans-serif;
+
+    margin-bottom: 0.5rem;
+
+    font-size: 2.5rem;
+}
+
+
+header p {
+    font-size: 1.1rem;
 }
 
 
 .navbar {
-
     display: flex;
-
-    flex-direction: row;
 
     justify-content: center;
 
     align-items: center;
 
-    flex-wrap: wrap;
+    gap: 2rem;
 
-    gap: 24px;
+    padding: 1rem;
 
-    background: #69BE28;
-
-    padding: 16px;
-
+    background: #002e5d;
 }
 
 
 .navbar a {
+    color: white;
 
     text-decoration: none;
 
-    color: #002244;
+    font-weight: 700;
 
-    font-weight: bold;
+    padding: 0.5rem 1rem;
 
-    padding: 8px 16px;
+    border-radius: 6px;
 
-    border-radius: 8px;
-
-    transition: .3s ease;
-
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
 }
 
 
 .navbar a:hover {
+    background: #0076a8;
 
-    background: white;
-
-    transform: translateY(-4px);
-
-}
-
-
-.navbar a:focus {
-
-    outline: 3px solid white;
-
-    outline-offset: 3px;
-
+    transform: translateY(-2px);
 }
 
 
 main {
-
     max-width: 1100px;
 
-    margin: auto;
+    margin: 2rem auto;
 
-    padding: 24px;
-
+    padding: 0 1rem;
 }
 
 
 section {
+    margin-bottom: 2rem;
 
-    background: rgba(255, 255, 255, .92);
+    padding: 2rem;
 
-    margin: 24px 0;
+    background: rgba(255, 255, 255, 0.94);
 
-    padding: 24px;
+    border-radius: 12px;
 
-    border: 2px solid #002244;
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2);
 
-    border-radius: 8px;
+    backdrop-filter: blur(4px);
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-
-    transition: .3s ease;
-
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
 }
 
 
 section:hover {
-
-    transform: translateY(-5px);
-
+    transform: translateY(-3px);
 }
 
 
-#welcome {
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Montserrat", sans-serif;
+}
 
-    border: 3px solid #69BE28;
 
+h2 {
+    color: #002e5d;
+
+    margin-top: 0;
+}
+
+
+h3 {
+    color: #005a8d;
+}
+
+
+h4 {
+    color: #002e5d;
 }
 
 
 .projects-grid {
-
     display: flex;
-
-    flex-direction: row;
 
     flex-wrap: wrap;
 
-    gap: 24px;
-
+    gap: 1.5rem;
 }
 
 
 .projects-grid article {
-
     flex: 1 1 300px;
 
-    padding: 16px;
+    padding: 1.5rem;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
 
-    border: 2px solid #69BE28;
+    border-radius: 10px;
 
-    border-radius: 8px;
+    border-left: 5px solid #69be28;
 
-    transition: .3s ease;
-
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 .projects-grid article:hover {
+    transform: translateY(-5px);
 
-    transform: translateY(-10px) scale(1.02);
-
-    box-shadow: 0 12px 25px rgba(0, 0, 0, .4);
-
-}
-
-
-article h3 {
-
-    color: #002244;
-
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 
 button {
+    font-family: "Roboto", sans-serif;
 
-    background: #69BE28;
+    background: #0076a8;
 
-    color: #002244;
+    color: white;
 
-    padding: 12px 20px;
+    border: none;
 
-    border: 2px solid #002244;
+    padding: 0.8rem 1.2rem;
 
     border-radius: 8px;
 
     cursor: pointer;
 
-    font-weight: bold;
+    font-weight: 700;
 
-    transition: .3s ease;
-
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
 }
 
 
 button:hover {
+    background: #005a8d;
 
-    background: #002244;
-
-    color: white;
-
-    transform: scale(1.05);
-
+    transform: translateY(-2px);
 }
 
 
 button:focus {
+    outline: 3px solid #69be28;
 
-    outline: 3px solid #69BE28;
-
-    outline-offset: 3px;
-
+    outline-offset: 2px;
 }
 
 
 footer {
+    text-align: center;
 
-    background: #002244;
+    padding: 2rem 1rem;
+
+    background: #002e5d;
 
     color: white;
 
-    text-align: center;
-
-    padding: 16px;
-
-    margin-top: 32px;
-
-    border-top: 4px solid #69BE28;
-
+    margin-top: 2rem;
 }
 
 
 footer button {
-
-    margin-bottom: 16px;
-
+    margin-bottom: 1rem;
 }
 
 
-/* Charzard is my favorite pokemon */
-
-
-.dark-mode {
-
-    background-image:
-
-        linear-gradient(
-
-            rgba(0, 34, 68, .65),
-
-            rgba(0, 0, 0, .75)
-
-        ),
-
-        url("images/Seahawks1.jpg");
-
-    background-size: cover;
-
-    background-position: center;
-
-    background-attachment: fixed;
-
-    background-repeat: no-repeat;
-
-    color: white;
-
+footer p {
+    margin: 0;
 }
 
 
-.dark-mode section {
-
-    background: rgba(0, 0, 0, .65);
-
-    backdrop-filter: blur(8px);
-
-    -webkit-backdrop-filter: blur(8px);
-
-    color: white;
-
-    border: 2px solid #69BE28;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, .6);
-
-}
-
-
-.dark-mode article {
-
-    background:
-
-        linear-gradient(
-
-            135deg,
-
-            rgba(0, 34, 68, .9),
-
-            rgba(0, 0, 0, .8)
-
-        );
-
-    color: white;
-
-    border: 2px solid #69BE28;
-
-}
-
-
-.dark-mode article h3 {
-
-    color: #69BE28;
-
-}
-
-
-.dark-mode article h4 {
-
-    color: white;
-
-}
-
-
-.dark-mode header {
-
-    background:
-
-        linear-gradient(
-
-            rgba(0, 34, 68, .95),
-
-            rgba(0, 0, 0, .9)
-
-        );
-
-}
-
-
-.dark-mode .navbar {
-
-    background: #001b33;
-
-}
-
-
-.dark-mode .navbar a {
-
-    color: #69BE28;
-
-}
-
-
-.dark-mode .navbar a:hover {
-
-    background: #69BE28;
-
-    color: #002244;
-
-}
-
-
-.dark-mode button {
-
-    background: #69BE28;
-
-    color: #002244;
-
-}
-
-
-.dark-mode footer {
-
-    background: #000;
-
-    border-top: 4px solid #69BE28;
-
-}
-
-
-.interactive-section {
-
-    text-align: center;
-
-}
-
-
-.interactive-section button {
-
-    margin-top: 16px;
-
-}
-
+/* Homework 8 Form */
 
 .contact-section form {
+    width: 100%;
+}
 
+
+.form-group {
     display: flex;
 
     flex-direction: column;
 
-    gap: 8px;
-
+    margin-bottom: 1.5rem;
 }
 
 
-.contact-section label {
+.form-group label {
+    margin-bottom: 0.5rem;
 
-    margin-top: 8px;
+    font-weight: 700;
 
-    font-weight: bold;
-
+    color: #002e5d;
 }
 
 
-.contact-section input,
-.contact-section textarea {
-
+.form-group input,
+.form-group textarea {
     width: 100%;
 
-    box-sizing: border-box;
+    padding: 0.8rem;
 
-    padding: 12px;
-
-    border: 2px solid #002244;
+    border: 2px solid #cccccc;
 
     border-radius: 8px;
 
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 
-    font-size: 16px;
+    font-size: 1rem;
 
+    background: white;
+
+    color: #1f2937;
 }
 
 
-.contact-section textarea {
-
+.form-group textarea {
     min-height: 150px;
 
     resize: vertical;
-
 }
 
 
-.contact-email {
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 3px solid rgba(0, 118, 168, 0.25);
 
-    margin-top: 16px;
-
-}
-
-
-.contact-email a {
-
-    color: #002244;
-
-    font-weight: bold;
-
-}
-
-
-.contact-email a:hover {
-
-    text-decoration: underline;
-
+    border-color: #0076a8;
 }
 
 
 .error-message {
+    min-height: 1.2rem;
 
-    min-height: 18px;
+    margin-top: 0.35rem;
 
-    color: #c00000;
+    color: #c62828;
 
-    font-weight: bold;
-
-    font-size: 14px;
-
+    font-weight: 700;
 }
 
 
 .form-error {
+    color: #c62828;
 
-    color: #c00000;
+    font-weight: 700;
 
-    font-weight: bold;
-
+    margin-top: 1rem;
 }
 
 
 .form-success {
+    color: #16803c;
 
-    color: #69BE28;
+    font-weight: 700;
 
-    font-weight: bold;
+    margin-top: 1rem;
+}
 
+
+.contact-email {
+    margin-top: 1.5rem;
+}
+
+
+.contact-email a {
+    color: #0076a8;
+
+    font-weight: 700;
 }
 
 
 .input-active {
+    border-color: #16803c !important;
 
-    border: 3px solid #69BE28 !important;
-
-    box-shadow: 0 0 12px rgba(105, 190, 40, .6);
-
-    background: #f0ffe5;
-
+    box-shadow:
+        0 0 0 3px rgba(22, 128, 60, 0.2);
 }
 
 
-.skills-list-section {
+/* Homework 8 API */
 
-    margin-top: 24px;
-
+.api-section {
+    text-align: center;
 }
 
 
-.skill-input-area {
+.quote-result {
+    margin-top: 1.5rem;
 
-    display: flex;
+    padding: 1.25rem;
 
-    flex-direction: column;
+    border-radius: 10px;
 
-    gap: 8px;
+    background: rgba(0, 118, 168, 0.1);
 
-    max-width: 600px;
+    line-height: 1.6;
 
+    font-size: 1.1rem;
+
+    min-height: 60px;
 }
 
 
-.skill-input-area input {
-
-    padding: 12px;
-
-    border: 2px solid #002244;
-
-    border-radius: 8px;
-
-    font-size: 16px;
-
-    font-family: 'Roboto', sans-serif;
-
+.api-section button {
+    margin-top: 0.5rem;
 }
 
 
-.skill-input-area button {
+/* My favorite Pokemon */
 
-    align-self: flex-start;
+ /* Charzard is my favorite pokemon */
 
-    margin-top: 8px;
 
+ul {
+    padding-left: 1.5rem;
+}
+
+
+li {
+    margin-bottom: 0.5rem;
 }
 
 
 #skillList {
-
-    margin-top: 24px;
-
-    padding-left: 24px;
-
+    margin-top: 1.5rem;
 }
 
 
 #skillList li {
-
-    margin-bottom: 16px;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
+    margin-bottom: 0.75rem;
 }
 
 
 .remove-skill {
+    margin-left: 0.5rem;
 
-    margin-left: 12px;
+    padding: 0.4rem 0.7rem;
 
-    padding: 6px 12px;
-
-    font-size: 14px;
-
+    font-size: 0.85rem;
 }
 
 
-.remove-skill:hover {
+.skill-input-area {
+    display: flex;
 
-    background: #002244;
+    flex-direction: column;
 
-    color: white;
-
+    gap: 0.7rem;
 }
 
 
-input:focus,
-textarea:focus {
+.skill-input-area input {
+    padding: 0.8rem;
 
-    outline: 3px solid #69BE28;
+    border: 2px solid #cccccc;
 
-    outline-offset: 3px;
+    border-radius: 8px;
 
+    font-size: 1rem;
 }
 
 
-.dark-mode .contact-section input,
-.dark-mode .contact-section textarea,
-.dark-mode .skill-input-area input {
+.skill-input-area input:focus {
+    outline: 3px solid rgba(0, 118, 168, 0.25);
 
-    background: #222;
+    border-color: #0076a8;
+}
 
-    color: white;
 
-    border-color: #69BE28;
+/* Dark Mode */
 
+.dark-mode {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.85)
+        ),
+        url("images/Seahawks1.jpg");
+
+    color: #f1f5f9;
+}
+
+
+.dark-mode header {
+    background: rgba(0, 20, 45, 0.95);
+}
+
+
+.dark-mode .navbar {
+    background: #001f3f;
+}
+
+
+.dark-mode section {
+    background: rgba(15, 23, 42, 0.94);
+
+    color: #f1f5f9;
+}
+
+
+.dark-mode h2 {
+    color: #7dd3fc;
+}
+
+
+.dark-mode h3 {
+    color: #93c5fd;
+}
+
+
+.dark-mode h4 {
+    color: #7dd3fc;
+}
+
+
+.dark-mode .projects-grid article {
+    background: rgba(30, 41, 59, 0.95);
+
+    color: #f1f5f9;
 }
 
 
 .dark-mode .contact-email a {
+    color: #7dd3fc;
+}
 
-    color: #69BE28;
 
+.dark-mode .form-group label {
+    color: #f1f5f9;
+}
+
+
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+    background: #1f2937;
+
+    color: white;
+
+    border-color: #64748b;
+}
+
+
+.dark-mode .form-group input::placeholder,
+.dark-mode .form-group textarea::placeholder {
+    color: #cbd5e1;
+}
+
+
+.dark-mode .quote-result {
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
 }
 
 
 .dark-mode #skillList li {
-
-    color: white;
-
+    color: #f1f5f9;
 }
 
 
-.dark-mode .interactive-section {
-
-    color: white;
-
+.dark-mode footer {
+    background: #001f3f;
 }
 
 
-@media (max-width: 767px) {
+/* Responsive design */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
 
     .navbar {
-
-        flex-direction: row;
-
-        justify-content: center;
-
-        align-items: center;
-
-        gap: 8px;
-
+        gap: 0.5rem;
     }
 
 
     .navbar a {
-
-        padding: 8px;
-
-        font-size: 14px;
-
+        padding: 0.5rem;
     }
 
 
     main {
-
-        padding: 16px;
-
+        margin-top: 1rem;
     }
 
 
     section {
-
-        padding: 16px;
-
+        padding: 1.5rem;
     }
 
 
     .projects-grid {
-
         flex-direction: column;
-
     }
 
 
     .projects-grid article {
+        flex: 1 1 auto;
+    }
 
+}
+
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 2rem 1rem;
+    }
+
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+
+    header p {
+        font-size: 1rem;
+    }
+
+
+    .navbar {
+        flex-direction: row;
+
+        justify-content: space-around;
+
+        gap: 0.25rem;
+
+        padding: 0.75rem 0.25rem;
+    }
+
+
+    .navbar a {
+        font-size: 0.9rem;
+
+        padding: 0.4rem;
+    }
+
+
+    main {
+        padding: 0 0.75rem;
+    }
+
+
+    section {
+        padding: 1rem;
+    }
+
+
+    .contact-section button,
+    .api-section button {
         width: 100%;
-
-        box-sizing: border-box;
-
     }
 
 
     .remove-skill {
-
         display: block;
 
         margin-left: 0;
 
-        margin-top: 8px;
-
-    }
-
-}
-
-
-@media (min-width: 768px) {
-
-    main {
-
-        padding: 32px;
-
-    }
-
-}
-
-
-@media (min-width: 1200px) {
-
-    .projects-grid article {
-
-        flex: 1 1 300px;
-
-    }
-
-}
-
-
-@keyframes pageLoad {
-
-    from {
-
-        opacity: 0;
-
-    }
-
-    to {
-
-        opacity: 1;
-
-    }
-
-}
-
-
-@keyframes slideDown {
-
-    from {
-
-        transform: translateY(-30px);
-
-        opacity: 0;
-
-    }
-
-    to {
-
-        transform: translateY(0);
-
-        opacity: 1;
-
+        margin-top: 0.5rem;
     }
 
 }

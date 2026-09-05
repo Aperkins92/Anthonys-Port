@@ -5,23 +5,36 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Projects | My Portfolio</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet"
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
+
 <body>
+
 
 <header>
 
     <h1>My Projects</h1>
 
-    <p>Professional, academic, and technology projects</p>
+    <p>
+        Professional, academic, and technology projects
+    </p>
 
 </header>
 
@@ -39,183 +52,227 @@
 
 <main>
 
-    <section>
 
-        <h2>Technology Projects</h2>
+<section>
 
-        <div class="projects-grid">
-
-            <article class="project technology">
-
-                <h3>Personal Portfolio Website</h3>
-
-                <p>
-                    This project is a responsive portfolio website
-                    created using HTML, CSS, and JavaScript. The goal
-                    was to build a professional website that showcases
-                    my background, experience, and skills.
-                </p>
-
-                <p>
-                    I created multiple connected pages using navigation
-                    links and used semantic HTML elements to organize
-                    content. CSS was used for colors, spacing, responsive
-                    design, and Flexbox layouts.
-                </p>
-
-                <h4>Skills Used:</h4>
-
-                <ul>
-
-                    <li>HTML</li>
-
-                    <li>CSS</li>
-
-                    <li>Responsive Design</li>
-
-                    <li>Flexbox</li>
-
-                    <li>JavaScript</li>
-
-                </ul>
-
-            </article>
+    <h2>Technology Projects</h2>
 
 
-            <article class="project research">
-
-                <h3>Stagehand Safety Research Project</h3>
-
-                <p>
-                    This research project explores how live event crews
-                    balance safety and efficiency while working under
-                    time pressure.
-                </p>
-
-                <p>
-                    The project connects my professional stagehand
-                    experience with research, writing, and critical
-                    thinking skills.
-                </p>
-
-                <h4>Skills Used:</h4>
-
-                <ul>
-
-                    <li>Research</li>
-
-                    <li>Professional Writing</li>
-
-                    <li>Critical Thinking</li>
-
-                    <li>Source Analysis</li>
-
-                </ul>
-
-            </article>
+    <div class="projects-grid">
 
 
-            <article class="project technology">
+        <article class="project technology">
 
-                <h3>Future IT Projects</h3>
+            <h3>
+                Personal Portfolio Website
+            </h3>
 
-                <p>
-                    As I continue studying Information Technology,
-                    I plan to develop more projects involving
-                    programming, web applications, and tools that
-                    solve real-world problems.
-                </p>
+            <p>
+                This project is a responsive portfolio website
+                created using HTML, CSS, and JavaScript.
+            </p>
 
-                <h4>Future Skills:</h4>
+            <p>
+                I created multiple connected pages using navigation
+                links and used semantic HTML elements to organize
+                content.
+            </p>
 
-                <ul>
+            <h4>Skills Used:</h4>
 
-                    <li>Advanced JavaScript</li>
+            <ul>
 
-                    <li>Programming</li>
+                <li>HTML</li>
 
-                    <li>Database Development</li>
+                <li>CSS</li>
 
-                    <li>Cybersecurity Concepts</li>
+                <li>Responsive Design</li>
 
-                </ul>
+                <li>Flexbox</li>
 
-            </article>
+                <li>JavaScript</li>
 
-        </div>
+            </ul>
 
-    </section>
-
-
-    <section class="skills-list-section">
-
-        <h2>My Skills List</h2>
-
-        <p>
-            Add a skill you are currently learning or would like
-            to develop while studying Information Technology.
-        </p>
+        </article>
 
 
-        <div class="skill-input-area">
 
-            <label for="skillInput">
-                Add a skill:
-            </label>
+        <article class="project research">
 
-            <input
-                id="skillInput"
-                type="text"
-                placeholder="Example: Networking"
+            <h3>
+                Stagehand Safety Research Project
+            </h3>
+
+            <p>
+                This research project explores how live event crews
+                balance safety and efficiency while working under
+                time pressure.
+            </p>
+
+            <p>
+                The project connects my professional stagehand
+                experience with research, writing, and critical
+                thinking skills.
+            </p>
+
+            <h4>Skills Used:</h4>
+
+            <ul>
+
+                <li>Research</li>
+
+                <li>Professional Writing</li>
+
+                <li>Critical Thinking</li>
+
+                <li>Source Analysis</li>
+
+            </ul>
+
+        </article>
+
+
+
+        <article class="project technology">
+
+            <h3>
+                Future IT Projects
+            </h3>
+
+            <p>
+                As I continue studying Information Technology,
+                I plan to develop more projects involving
+                programming, web applications, and tools that
+                solve real-world problems.
+            </p>
+
+            <h4>Future Skills:</h4>
+
+            <ul>
+
+                <li>Advanced JavaScript</li>
+
+                <li>Programming</li>
+
+                <li>Database Development</li>
+
+                <li>Cybersecurity Concepts</li>
+
+            </ul>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+
+
+<section class="skills-list-section">
+
+    <h2>
+        My Skills List
+    </h2>
+
+    <p>
+        Add a skill you are currently learning or would like
+        to develop while studying Information Technology.
+    </p>
+
+
+    <div class="skill-input-area">
+
+        <label for="skillInput">
+            Add a skill:
+        </label>
+
+
+        <input
+            id="skillInput"
+            type="text"
+            placeholder="Example: Networking"
+        >
+
+
+        <button
+            id="addSkillButton"
+            type="button"
+        >
+            Add Skill
+        </button>
+
+    </div>
+
+
+    <ul id="skillList">
+
+        <li>
+
+            HTML
+
+            <button
+                class="remove-skill"
+                type="button"
             >
-
-
-            <button id="addSkillButton" type="button">
-                Add Skill
+                Remove
             </button>
 
-        </div>
+        </li>
 
 
-        <ul id="skillList">
+        <li>
 
-            <li>
-                HTML
-                <button class="remove-skill" type="button">
-                    Remove
-                </button>
-            </li>
+            CSS
 
-            <li>
-                CSS
-                <button class="remove-skill" type="button">
-                    Remove
-                </button>
-            </li>
+            <button
+                class="remove-skill"
+                type="button"
+            >
+                Remove
+            </button>
 
-            <li>
-                JavaScript
-                <button class="remove-skill" type="button">
-                    Remove
-                </button>
-            </li>
+        </li>
 
-        </ul>
 
-    </section>
+        <li>
+
+            JavaScript
+
+            <button
+                class="remove-skill"
+                type="button"
+            >
+                Remove
+            </button>
+
+        </li>
+
+    </ul>
+
+</section>
+
 
 </main>
 
 
 <footer>
 
-    <button id="themeButton" type="button">
+    <button
+        id="themeButton"
+        type="button"
+    >
         Dark Theme
     </button>
 
+
     <p>
+
         © <span id="year"></span> My Portfolio |
+
         Built with HTML, CSS, and JavaScript
+
     </p>
 
 </footer>
