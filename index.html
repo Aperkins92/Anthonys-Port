@@ -1,618 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+        content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Anthony's personal portfolio showcasing his journey from football and live event production into Information Technology."
-    >
+        content="Personal portfolio website showcasing IT skills, projects, work experience, and goals.">
 
-    <title>Anthony | From the Field to the Future</title>
+    <title>My Portfolio | IT & Creative Projects</title>
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Seahawks + anime energy belong together. -->
-<!-- Hidden level: The 12s are always watching. Blue. Green. Code. -->
-<!-- If you found this, you are officially in the source-code huddle. -->
+    <!-- Seahawks + anime energy belong together. -->
     <!-- Hidden level: The 12s are always watching. Blue. Green. Code. -->
     <!-- If you found this, you are officially in the source-code huddle. -->
 
-    <a
-        class="skip-link"
-        href="#main-content"
-    >
-        Skip to main content
-    </a>
 
-    <header class="site-header">
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
 
-        <div class="header-inner">
+    <header>
 
-            <a
-                class="brand"
-                href="index.html"
-                aria-label="Anthony home page"
-            >
-                <span class="brand-mark">A</span>
+        <div class="header-container">
 
-                <span>
-                    <strong>ANTHONY</strong>
-                    <small>IT • PRODUCTION • TECHNOLOGY</small>
-                </span>
-            </a>
-
-            <nav
-                class="main-navigation"
-                aria-label="Main navigation"
-            >
-
-                <a
-                    href="index.html"
-                    aria-current="page"
-                >
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-            </nav>
+            <div class="logo">
+                <h1>My Portfolio</h1>
+            </div>
 
             <button
-                id="themeButton"
-                class="theme-button"
+                id="menuButton"
                 type="button"
-                aria-label="Toggle dark mode"
-            >
-                Dark Mode
+                aria-expanded="false"
+                aria-label="Open navigation menu">
+                Menu
             </button>
+
+            <nav id="navMenu">
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Me
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="projects.html">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <button
+                            id="themeButton"
+                            class="theme-button"
+                            type="button"
+                            aria-label="Toggle dark mode">
+                            Dark Theme
+                        </button>
+                    </li>
+
+                </ul>
+
+            </nav>
 
         </div>
 
     </header>
 
-    <main id="main-content">
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
 
         <!-- HERO -->
 
-        <section class="hero-section">
+        <section class="hero">
 
             <div class="hero-content">
 
-                <p class="eyebrow">
-                    FROM THE FIELD TO THE FUTURE
+                <p id="welcomeMessage">
+                    Welcome to my portfolio.
                 </p>
 
                 <h1>
-                    I learned how to
-                    <span>make things happen.</span>
+                    Welcome to My Portfolio
                 </h1>
 
-                <p class="hero-text">
-                    My path into Information Technology did not begin
-                    behind a computer. It began with football, live events,
-                    stage production, special effects, and years of solving
-                    problems in environments where teamwork and timing matter.
+                <p>
+                    IT, creativity, problem solving,
+                    and a lifelong passion for learning.
                 </p>
 
-                <div class="hero-buttons">
+                <br>
 
-                    <a
-                        class="primary-button"
-                        href="about.html"
-                    >
-                        Read My Story
-                    </a>
+                <button
+                    id="messageButton"
+                    type="button">
+                    Show Me a Message
+                </button>
 
-                    <a
-                        class="secondary-button"
-                        href="projects.html"
-                    >
-                        Explore My Work
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hero-badge">
-
-                <span class="badge-number">
-                    01
-                </span>
-
-                <span class="badge-text">
-                    NEXT<br>
-                    <strong>ARC</strong>
-                </span>
+                <p
+                    id="interactiveMessage"
+                    aria-live="polite">
+                </p>
 
             </div>
 
         </section>
 
 
-        <!-- INTRO -->
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
 
-        <section class="intro-section">
+        <section>
 
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    THE SHORT VERSION
-                </p>
+            <div class="content-card">
 
                 <h2>
-                    More than a career change.
-                </h2>
-
-            </div>
-
-            <div class="intro-grid">
-
-                <div class="intro-main">
-
-                    <p class="lead">
-                        I grew up in Yakima, Washington, with football
-                        being a huge part of my life. I played, watched,
-                        studied, and analyzed the game whenever I could.
-                    </p>
-
-                    <p>
-                        Eventually, an injury changed the direction of
-                        playing football, but it did not take away my
-                        interest in the game. Instead, I found other ways
-                        to stay connected to it and to technology.
-                    </p>
-
-                    <p>
-                        Years of stagehand work introduced me to concerts,
-                        sporting events, special effects, production crews,
-                        and technical environments. That experience eventually
-                        led to opportunities with JDL FX and SkyCam.
-                    </p>
-
-                    <p>
-                        Now I am bringing everything I have learned from
-                        those environments into Information Technology.
-                    </p>
-
-                </div>
-
-                <aside class="quote-card">
-
-                    <span class="quote-mark">
-                        “
-                    </span>
-
-                    <p>
-                        Real-world experience taught me how to stay calm,
-                        communicate with a team, and figure things out when
-                        the plan changes.
-                    </p>
-
-                    <span class="quote-author">
-                        — My approach to IT
-                    </span>
-
-                </aside>
-
-            </div>
-
-        </section>
-
-
-        <!-- CAREER JOURNEY -->
-
-        <section class="journey-section">
-
-            <div class="section-heading centered">
-
-                <p class="eyebrow">
-                    THE JOURNEY
-                </p>
-
-                <h2>
-                    Every chapter built the next one.
+                    Welcome
                 </h2>
 
                 <p>
-                    My experience may look like several different worlds,
-                    but each one developed skills I use today.
+                    Welcome to my personal portfolio.
+                    This website is a place to showcase
+                    my work, interests, skills, goals,
+                    and the projects I have been building
+                    while developing my IT knowledge.
+                </p>
+
+                <p>
+                    My background has taken me from Yakima,
+                    Washington, into football, live events,
+                    stagehand work, special effects,
+                    camera operations, and now further
+                    into the world of information technology.
+                </p>
+
+                <p>
+                    I enjoy learning by doing, solving
+                    problems, working with a team, and
+                    figuring out how things work.
                 </p>
 
             </div>
 
-            <div class="journey-grid">
+        </section>
 
-                <article class="journey-card">
 
-                    <span class="chapter-number">
-                        01
+        <!-- =================================================
+             SKILLS
+        ================================================== -->
+
+        <section>
+
+            <div class="content-card">
+
+                <h2>
+                    Skills & Interests
+                </h2>
+
+                <div class="skills-container">
+
+                    <span class="tag">
+                        HTML
                     </span>
 
-                    <div class="chapter-icon">
-                        🏈
-                    </div>
+                    <span class="tag">
+                        CSS
+                    </span>
 
-                    <h3>
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        Problem Solving
+                    </span>
+
+                    <span class="tag">
+                        Teamwork
+                    </span>
+
+                    <span class="tag">
+                        Troubleshooting
+                    </span>
+
+                    <span class="tag">
+                        Live Events
+                    </span>
+
+                    <span class="tag">
                         Football
-                    </h3>
-
-                    <p>
-                        A lifelong passion for the game taught me
-                        observation, analysis, competition, and teamwork.
-                    </p>
-
-                </article>
-
-
-                <article class="journey-card">
-
-                    <span class="chapter-number">
-                        02
                     </span>
-
-                    <div class="chapter-icon">
-                        🎭
-                    </div>
-
-                    <h3>
-                        Stagehand
-                    </h3>
-
-                    <p>
-                        Years of live production taught me how to work
-                        safely, efficiently, and under serious time pressure.
-                    </p>
-
-                </article>
-
-
-                <article class="journey-card">
-
-                    <span class="chapter-number">
-                        03
-                    </span>
-
-                    <div class="chapter-icon">
-                        ⚡
-                    </div>
-
-                    <h3>
-                        JDL FX
-                    </h3>
-
-                    <p>
-                        Special effects work added another layer of technical
-                        problem solving and production experience.
-                    </p>
-
-                </article>
-
-
-                <article class="journey-card">
-
-                    <span class="chapter-number">
-                        04
-                    </span>
-
-                    <div class="chapter-icon">
-                        📹
-                    </div>
-
-                    <h3>
-                        SkyCam
-                    </h3>
-
-                    <p>
-                        Working around football production connected my
-                        production experience directly back to the sport.
-                    </p>
-
-                </article>
-
-
-                <article class="journey-card active">
-
-                    <span class="chapter-number">
-                        05
-                    </span>
-
-                    <div class="chapter-icon">
-                        💻
-                    </div>
-
-                    <h3>
-                        Information Technology
-                    </h3>
-
-                    <p>
-                        Now I am developing the programming, web development,
-                        troubleshooting, and technical skills to move into IT.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- REAL WORLD EXPERIENCE -->
-
-        <section class="experience-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    REAL-WORLD EXPERIENCE
-                </p>
-
-                <h2>
-                    I have worked where the pressure is real.
-                </h2>
-
-            </div>
-
-            <div class="experience-grid">
-
-                <article class="experience-card">
-
-                    <div class="experience-top">
-                        <span class="experience-icon">🎤</span>
-
-                        <span class="experience-label">
-                            LIVE EVENTS
-                        </span>
-                    </div>
-
-                    <h3>
-                        Stagehand & Event Production
-                    </h3>
-
-                    <p>
-                        Setting up and supporting concerts, sporting events,
-                        and productions requires communication, attention
-                        to detail, physical problem solving, and teamwork.
-                    </p>
-
-                    <ul>
-                        <li>Equipment setup</li>
-                        <li>Event preparation</li>
-                        <li>Crew communication</li>
-                        <li>Safety awareness</li>
-                    </ul>
-
-                </article>
-
-
-                <article class="experience-card">
-
-                    <div class="experience-top">
-                        <span class="experience-icon">⚡</span>
-
-                        <span class="experience-label">
-                            SPECIAL EFFECTS
-                        </span>
-                    </div>
-
-                    <h3>
-                        JDL FX
-                    </h3>
-
-                    <p>
-                        Working with a special effects company introduced
-                        me to another highly technical production environment
-                        where preparation and precision mattered.
-                    </p>
-
-                    <ul>
-                        <li>Technical preparation</li>
-                        <li>Production teamwork</li>
-                        <li>Problem solving</li>
-                        <li>Working under deadlines</li>
-                    </ul>
-
-                </article>
-
-
-                <article class="experience-card">
-
-                    <div class="experience-top">
-                        <span class="experience-icon">🏈</span>
-
-                        <span class="experience-label">
-                            FOOTBALL PRODUCTION
-                        </span>
-                    </div>
-
-                    <h3>
-                        SkyCam & Football Games
-                    </h3>
-
-                    <p>
-                        My stagehand experience eventually opened the door
-                        to working with SkyCam and being part of football
-                        game production.
-                    </p>
-
-                    <ul>
-                        <li>Football production</li>
-                        <li>Technical equipment</li>
-                        <li>Fast-paced environments</li>
-                        <li>Team coordination</li>
-                    </ul>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- PHOTO STRIP -->
-
-        <section class="photo-strip-section">
-
-            <div class="photo-strip">
-
-                <figure class="photo-card large">
-
-                    <img
-                        src="images/seahawksgame.jpg"
-                        alt="Football game experience"
-                    >
-
-                    <figcaption>
-                        <span>FIELD</span>
-                        Football & production
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="photo-card">
-
-                    <img
-                        src="images/k9.jpg"
-                        alt="K9 event or work experience"
-                    >
-
-                    <figcaption>
-                        <span>WORK</span>
-                        Real-world experience
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="photo-card">
-
-                    <img
-                        src="images/bass.jpg"
-                        alt="Live music production experience"
-                    >
-
-                    <figcaption>
-                        <span>STAGE</span>
-                        Live events
-                    </figcaption>
-
-                </figure>
-
-
-                <figure class="photo-card">
-
-                    <img
-                        src="images/Bert.jpg"
-                        alt="Live entertainment experience"
-                    >
-
-                    <figcaption>
-                        <span>EVENTS</span>
-                        Entertainment production
-                    </figcaption>
-
-                </figure>
-
-            </div>
-
-        </section>
-
-
-        <!-- WHY IT -->
-
-        <section class="why-it-section">
-
-            <div class="why-it-content">
-
-                <div>
-
-                    <p class="eyebrow">
-                        THE NEXT CHAPTER
-                    </p>
-
-                    <h2>
-                        Why Information Technology?
-                    </h2>
-
-                    <p class="lead">
-                        Because technology gives me another way to solve
-                        problems.
-                    </p>
-
-                    <p>
-                        The environments I have worked in have always
-                        required me to figure things out. Equipment does
-                        not always cooperate. Schedules change. People
-                        need answers. Something has to get done.
-                    </p>
-
-                    <p>
-                        IT gives me an opportunity to apply that same
-                        mindset to technology while continuing to learn
-                        new skills.
-                    </p>
-
-                    <a
-                        class="primary-button"
-                        href="projects.html"
-                    >
-                        See My IT Work
-                    </a>
-
-                </div>
-
-                <div class="level-up-card">
-
-                    <span class="level-label">
-                        LEVEL UP
-                    </span>
-
-                    <div class="level-circle">
-                        <strong>IT</strong>
-                    </div>
-
-                    <p>
-                        Learn.<br>
-                        Build.<br>
-                        Troubleshoot.<br>
-                        Improve.
-                    </p>
 
                 </div>
 
@@ -621,264 +225,248 @@
         </section>
 
 
-        <!-- INTERACTIVE -->
+        <!-- =================================================
+             EXPERIENCE
+        ================================================== -->
 
-        <section class="interactive-section">
+        <section>
 
-            <div class="section-heading centered">
+            <div class="card-grid">
 
-                <p class="eyebrow">
-                    INTERACTIVE
-                </p>
+                <article class="card">
 
-                <h2>
-                    A little personality.
-                </h2>
+                    <h3>
+                        Stagehand Experience
+                    </h3>
+
+                    <p>
+                        I have worked as a stagehand for
+                        many years, helping set up concerts,
+                        events, productions, equipment,
+                        staging, and other live-event
+                        environments.
+                    </p>
+
+                    <p>
+                        This work taught me the importance
+                        of communication, teamwork,
+                        troubleshooting, preparation,
+                        and staying calm when things
+                        change quickly.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        Football & SkyCam
+                    </h3>
+
+                    <p>
+                        My passion for football eventually
+                        connected with my professional
+                        experience when my stagehand work
+                        led to opportunities involving
+                        SkyCam.
+                    </p>
+
+                    <p>
+                        I have worked many football games
+                        and experienced the production side
+                        of the sport I have followed for
+                        most of my life.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>
+                        IT Journey
+                    </h3>
+
+                    <p>
+                        I am continuing to build my IT
+                        knowledge through hands-on practice,
+                        web development, troubleshooting,
+                        and personal projects.
+                    </p>
+
+                    <p>
+                        This portfolio is one of the projects
+                        I am using to demonstrate that
+                        progress.
+                    </p>
+
+                </article>
 
             </div>
 
-            <div class="interactive-grid">
+        </section>
 
-                <div class="interactive-card">
 
-                    <h3>
-                        Want to know what drives me?
-                    </h3>
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
 
-                    <p id="welcomeMessage">
-                        Welcome to my portfolio.
-                    </p>
+        <section id="contact">
+
+            <div class="content-card">
+
+                <h2>
+                    Contact Me
+                </h2>
+
+                <p>
+                    Use the form below to send a message.
+                </p>
+
+
+                <form id="contactForm">
+
+                    <div>
+
+                        <label for="name-id-input">
+                            Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name-id-input"
+                            name="name"
+                            placeholder="Enter your name">
+
+                        <p
+                            id="nameError"
+                            class="error">
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="email-id">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email-id"
+                            name="email"
+                            placeholder="Enter your email">
+
+                        <p
+                            id="emailError"
+                            class="error">
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="phone">
+                            Phone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone number">
+
+                        <p
+                            id="phoneError"
+                            class="error">
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="subject">
+                            Subject
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Enter a subject">
+
+                        <p
+                            id="subjectError"
+                            class="error">
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Enter your message"></textarea>
+
+                        <p
+                            id="messageError"
+                            class="error">
+                        </p>
+
+                    </div>
+
 
                     <button
-                        id="messageButton"
-                        type="button"
-                    >
-                        Start the Conversation
+                        type="submit">
+                        Send Message
                     </button>
 
                     <p
-                        id="interactiveMessage"
-                        aria-live="polite"
-                    ></p>
-
-                </div>
-
-
-                <div class="interactive-card">
-
-                    <h3>
-                        Random Sports Motivation
-                    </h3>
-
-                    <p>
-                        Sometimes you just need the next play.
+                        id="formMessage"
+                        aria-live="polite">
                     </p>
 
-                    <button
-                        id="sportsQuoteButton"
-                        type="button"
-                    >
-                        Give Me a Quote
-                    </button>
-
-                    <div
-                        id="sportsQuoteResult"
-                        class="quote-result"
-                        aria-live="polite"
-                    >
-                        Your quote will appear here.
-                    </div>
-
-                </div>
+                </form>
 
             </div>
-
-        </section>
-
-
-        <!-- FEATURED PROJECTS -->
-
-        <section class="featured-projects-section">
-
-            <div class="section-heading">
-
-                <p class="eyebrow">
-                    FEATURED WORK
-                </p>
-
-                <h2>
-                    From hands-on work to digital projects.
-                </h2>
-
-                <p>
-                    My portfolio reflects both where I have worked and
-                    where I am going.
-                </p>
-
-            </div>
-
-            <div class="featured-grid">
-
-                <article class="featured-card">
-
-                    <span class="project-number">
-                        01
-                    </span>
-
-                    <h3>
-                        Personal Portfolio
-                    </h3>
-
-                    <p>
-                        A responsive multi-page website built with HTML,
-                        CSS, and JavaScript.
-                    </p>
-
-                    <div class="tag-row">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                </article>
-
-
-                <article class="featured-card">
-
-                    <span class="project-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Stagehand Safety Research
-                    </h3>
-
-                    <p>
-                        A research project connecting professional live
-                        event experience with safety, efficiency, and
-                        critical thinking.
-                    </p>
-
-                    <div class="tag-row">
-                        <span>Research</span>
-                        <span>Safety</span>
-                        <span>Analysis</span>
-                    </div>
-
-                </article>
-
-
-                <article class="featured-card">
-
-                    <span class="project-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Movie Quotes
-                    </h3>
-
-                    <p>
-                        An interactive JavaScript project that displays
-                        random movie quotes.
-                    </p>
-
-                    <div class="tag-row">
-                        <span>JavaScript</span>
-                        <span>DOM</span>
-                        <span>Interaction</span>
-                    </div>
-
-                </article>
-
-            </div>
-
-            <div class="center-button">
-
-                <a
-                    class="secondary-button"
-                    href="projects.html"
-                >
-                    View All Projects
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- CAPSTONE -->
-
-        <section class="capstone-section">
-
-            <div>
-
-                <p class="eyebrow">
-                    CURRENT MISSION
-                </p>
-
-                <h2>
-                    Building the next version of myself.
-                </h2>
-
-                <p>
-                    This portfolio is part of my continuing Information
-                    Technology development. My goal is to keep improving
-                    my programming, web development, troubleshooting,
-                    networking, and technical problem-solving skills.
-                </p>
-
-            </div>
-
-            <a
-                class="primary-button"
-                href="projects.html"
-            >
-                Follow the Progress
-            </a>
 
         </section>
 
     </main>
 
 
-    <footer class="site-footer">
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
 
-        <div class="footer-inner">
+    <footer>
 
-            <div>
+        <p>
+            &copy;
+            <span id="year"></span>
+            My Portfolio. All rights reserved.
+        </p>
 
-                <strong>
-                    ANTHONY
-                </strong>
+        <p>
+            Built with HTML, CSS, and JavaScript.
+        </p>
 
-                <p>
-                    From the field to the stage to technology.
-                </p>
-
-            </div>
-
-            <div class="footer-links">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="projects.html">
-                    Projects
-                </a>
-
-            </div>
-
-            <p class="copyright">
-                &copy; <span id="year"></span> Anthony's Portfolio
-            </p>
-
-        </div>
+        <button
+            id="themeButton"
+            type="button"
+            aria-label="Toggle dark mode">
+            Dark Theme
+        </button>
 
     </footer>
 
@@ -886,5 +474,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
