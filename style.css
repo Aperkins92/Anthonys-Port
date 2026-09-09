@@ -18,6 +18,7 @@ body {
 
     color: #1f2937;
 
+
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.25),
@@ -26,8 +27,10 @@ body {
         url("images/Seahawks1.jpg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
+
+    /* Keeps the background fixed while the page scrolls */
     background-attachment: fixed;
 
     background-color: #f6f8fb;
@@ -47,6 +50,8 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
     text-align: center;
+
+    backdrop-filter: blur(4px);
 }
 
 h1,
@@ -66,32 +71,44 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+
     gap: 20px;
+
     flex-wrap: wrap;
 }
 
 nav a {
     color: #006778;
+
     text-decoration: none;
+
     font-weight: 700;
 
     padding: 8px 12px;
 
     border-radius: 6px;
 
-    transition: 0.2s ease;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
 }
 
 nav a:hover {
     background-color: #006778;
+
     color: white;
+
+    transform: translateY(-2px);
 }
 
 /* Main */
 
 main {
     max-width: 1000px;
+
     margin: 0 auto;
+
     padding: 20px;
 }
 
@@ -102,20 +119,24 @@ article {
     background: rgba(255, 255, 255, 0.94);
 
     padding: 25px;
+
     margin-bottom: 25px;
 
     border-radius: 12px;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18);
 
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
 }
 
 /* Projects */
 
 .projects-grid {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 20px;
 }
 
@@ -128,13 +149,35 @@ article {
 
     border-radius: 10px;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .project:hover {
     transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Project filter buttons */
+
+.filter-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 20px;
 }
 
 /* Buttons */
@@ -143,52 +186,51 @@ button {
     padding: 10px 16px;
 
     border: none;
+
     border-radius: 6px;
 
     background-color: #006778;
+
     color: white;
 
     font-family: 'Roboto', sans-serif;
+
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.2s ease;
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
 }
 
 button:hover {
     transform: translateY(-2px);
+
     opacity: 0.9;
 }
 
 button:focus {
     outline: 3px solid #8cc63f;
+
     outline-offset: 2px;
-}
-
-/* Filter buttons */
-
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 20px;
 }
 
 /* Contact Form */
 
 form {
     display: flex;
+
     flex-direction: column;
+
     gap: 15px;
 }
 
 .form-group {
     display: flex;
+
     flex-direction: column;
+
     gap: 5px;
 }
 
@@ -208,13 +250,20 @@ select {
     border-radius: 6px;
 
     font-family: 'Roboto', sans-serif;
+
     font-size: 1rem;
 
     background-color: white;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.15s ease;
 }
 
 textarea {
     min-height: 140px;
+
     resize: vertical;
 }
 
@@ -225,10 +274,11 @@ select:focus {
 
     border-color: #006778;
 
-    box-shadow: 0 0 0 3px rgba(0, 103, 120, 0.15);
+    box-shadow:
+        0 0 0 3px rgba(0, 103, 120, 0.15);
 }
 
-/* Validation */
+/* Validation messages */
 
 .error-message {
     display: block;
@@ -238,6 +288,7 @@ select:focus {
     color: #b91c1c;
 
     font-size: 0.9rem;
+
     font-weight: 600;
 }
 
@@ -245,8 +296,6 @@ select:focus {
 
 .input-active {
     transform: scale(1.01);
-
-    transition: transform 0.15s ease;
 }
 
 /* Contact Email */
@@ -257,19 +306,29 @@ select:focus {
 
 .contact-email a {
     color: #006778;
+
     font-weight: 700;
+
+    text-decoration: none;
+}
+
+.contact-email a:hover {
+    text-decoration: underline;
 }
 
 /* Skills */
 
 #skillList {
     list-style: none;
+
     padding-left: 0;
 }
 
 #skillList li {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     padding: 10px 14px;
@@ -279,10 +338,19 @@ select:focus {
     background: rgba(255, 255, 255, 0.85);
 
     border-radius: 8px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+#skillList li:hover {
+    transform: translateX(4px);
 }
 
 #skillList li button {
     padding: 5px 10px;
+
     font-size: 0.85rem;
 }
 
@@ -290,6 +358,7 @@ select:focus {
 
 #apiResult {
     margin-top: 15px;
+
     padding: 15px;
 
     min-height: 50px;
@@ -299,10 +368,25 @@ select:focus {
     border-radius: 8px;
 }
 
+/* Interactive message */
+
+#interactiveMessage {
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    background: rgba(0, 103, 120, 0.08);
+
+    min-height: 25px;
+}
+
 /* Footer */
 
 footer {
     max-width: 1000px;
+
     margin: 30px auto;
 
     padding: 25px;
@@ -313,25 +397,31 @@ footer {
 
     text-align: center;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+
+    backdrop-filter: blur(4px);
 }
 
 footer p {
     margin: 8px 0;
 }
 
-/* Theme Button */
+/* Dark Theme button */
 
 #themeButton {
     margin-top: 10px;
 }
+
+/*
+The Seahawks are winning the Super Bowl.
+*/
 
 /* Dark Mode */
 
 body.dark-mode {
     color: #f8fafc;
 
-    /* Keep Seahawks background fixed in dark mode */
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.70),
@@ -340,8 +430,11 @@ body.dark-mode {
         url("images/Seahawks1.jpg");
 
     background-size: cover;
-    background-position: center;
+
+    background-position: center center;
+
     background-repeat: no-repeat;
+
     background-attachment: fixed;
 
     background-color: #020617;
@@ -352,6 +445,7 @@ body.dark-mode {
 .dark-mode article,
 .dark-mode footer {
     background: rgba(15, 23, 42, 0.94);
+
     color: #f8fafc;
 }
 
@@ -361,6 +455,7 @@ body.dark-mode {
 
 .dark-mode nav a:hover {
     background-color: #8cc63f;
+
     color: #020617;
 }
 
@@ -380,6 +475,13 @@ body.dark-mode {
 
 .dark-mode .project {
     background: rgba(30, 41, 59, 0.95);
+
+    color: #f8fafc;
+}
+
+.dark-mode .project h3,
+.dark-mode .project h4,
+.dark-mode .project p {
     color: #f8fafc;
 }
 
@@ -387,6 +489,7 @@ body.dark-mode {
 .dark-mode textarea,
 .dark-mode select {
     background-color: #1e293b;
+
     color: #ffffff;
 
     border-color: #64748b;
@@ -399,6 +502,7 @@ body.dark-mode {
 
 .dark-mode #skillList li {
     background: rgba(30, 41, 59, 0.95);
+
     color: #ffffff;
 }
 
@@ -408,16 +512,27 @@ body.dark-mode {
 
 .dark-mode #apiResult {
     background: rgba(140, 198, 63, 0.12);
+
     color: #ffffff;
 }
 
-/* Seahawks Super Bowl prediction stays here */
+.dark-mode #interactiveMessage {
+    background: rgba(140, 198, 63, 0.12);
+
+    color: #ffffff;
+}
+
+.dark-mode .error-message {
+    color: #fca5a5;
+}
 
 /* Tablet */
 
 @media (max-width: 768px) {
+
     header {
         margin: 15px;
+
         padding: 20px;
     }
 
@@ -457,6 +572,7 @@ body.dark-mode {
 
     header {
         margin: 10px;
+
         padding: 15px;
     }
 
@@ -470,18 +586,22 @@ body.dark-mode {
 
     nav {
         flex-direction: row;
+
         justify-content: center;
+
         gap: 5px;
     }
 
     nav a {
         font-size: 0.9rem;
+
         padding: 6px 8px;
     }
 
     section,
     article {
         padding: 15px;
+
         margin-bottom: 15px;
     }
 
@@ -501,8 +621,13 @@ body.dark-mode {
         width: 100%;
     }
 
+    #skillList li {
+        gap: 10px;
+    }
+
     footer {
         margin: 15px 10px;
+
         padding: 20px;
     }
 }
