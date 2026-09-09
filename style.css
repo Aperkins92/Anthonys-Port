@@ -2499,10 +2499,37 @@ body.dark-mode .remove-skill:hover {
     background: #7A3030;
     border-color: #B85C5C;
 }
-/
+
 body.dark-mode .quote-result {
     color: #E7EEF2;
     background: #123B55;
     border-left: 4px solid #69BE28;
     border-radius: 8px;
+}
+
+
+/*  Blue + green = home. Good code = teamwork. Keep leveling up. */
+/* If the CSS gets weird, breathe, inspect, and troubleshoot. The next play is coming. */
+
+
+/* =========================================================
+   SEATTLE BACKGROUND
+========================================================= */
+
+body {
+    background-image: linear-gradient(
+        rgba(0, 34, 68, 0.82),
+        rgba(0, 21, 43, 0.90)
+    ), url("images/Seahawks1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body.dark-mode {
+    background-image: linear-gradient(
+        rgba(0, 10, 22, 0.88),
+        rgba(0, 21, 43, 0.94)
+    ), url("images/Seahawks1.jpg");
 }

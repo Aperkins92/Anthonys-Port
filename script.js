@@ -1,181 +1,101 @@
-/* =========================================================
-   PORTFOLIO JAVASCRIPT
-   Seahawks energy + anime training arc included.
-========================================================= */
 
 
-/* =========================================================
-   WAIT FOR PAGE
-========================================================= */
+/* 01000111 01101111 00100000 01001000 01100001 01110111 01101011 01110011 */
+/* Learn -> Practice -> Fail -> Improve -> Level Up */
+/* The bug is not the final boss. It is just the next training arc. */
+/* Blue outside. Green inside. JavaScript underneath. */
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        initializeTheme();
-
-        initializeGreeting();
-
-        initializeYear();
-
-        initializeInteractiveMessage();
-
-        initializeSportsQuote();
-
-        initializeContactForm();
-
-        initializeSkills();
-
-        initializeMovieQuotes();
-
-        initializeGoals();
-
-        initializeRandomQuote();
-
-    }
-);
+const themeButton =
+    document.querySelector("#themeButton");
 
 
-/* =========================================================
-   DARK MODE
-========================================================= */
+if (themeButton) {
 
-function initializeTheme() {
+    themeButton.addEventListener("click", function () {
 
-    const themeButton =
-        document.getElementById(
-            "themeButton"
-        );
-
-    if (!themeButton) {
-        return;
-    }
+        document.body.classList.toggle("dark-mode");
 
 
-    const savedTheme =
-        localStorage.getItem(
-            "portfolioTheme"
-        );
+        if (document.body.classList.contains("dark-mode")) {
 
+            localStorage.setItem("theme", "dark");
 
-    if (savedTheme === "dark") {
+            themeButton.textContent = "Light Theme";
 
-        document.body.classList.add(
-            "dark-mode"
-        );
+        } else {
 
-        themeButton.textContent =
-            "Light Mode";
-    }
+            localStorage.setItem("theme", "light");
 
-
-    else {
-
-        themeButton.textContent =
-            "Dark Mode";
-    }
-
-
-    themeButton.addEventListener(
-        "click",
-        function () {
-
-            document.body.classList.toggle(
-                "dark-mode"
-            );
-
-
-            const isDark =
-                document.body.classList.contains(
-                    "dark-mode"
-                );
-
-
-            localStorage.setItem(
-                "portfolioTheme",
-                isDark
-                    ? "dark"
-                    : "light"
-            );
-
-
-            themeButton.textContent =
-                isDark
-                    ? "Light Mode"
-                    : "Dark Mode";
+            themeButton.textContent = "Dark Theme";
 
         }
-    );
+
+    });
 
 }
 
 
-/* =========================================================
-   TIME GREETING
-========================================================= */
 
-function initializeGreeting() {
+const savedTheme =
+    localStorage.getItem("theme");
 
-    const welcomeMessage =
-        document.getElementById(
-            "welcomeMessage"
-        );
 
-    if (!welcomeMessage) {
-        return;
+if (savedTheme === "dark") {
+
+    document.body.classList.add("dark-mode");
+
+
+    if (themeButton) {
+
+        themeButton.textContent =
+            "Light Theme";
+
     }
 
+}
+
+
+
+const welcomeMessage =
+    document.querySelector("#welcomeMessage");
+
+
+if (welcomeMessage) {
 
     const hour =
         new Date().getHours();
 
 
-    let greeting;
-
-
     if (hour < 12) {
 
-        greeting =
-            "Good morning. Thanks for stopping by.";
+        welcomeMessage.textContent =
+            "Good morning! Thanks for visiting my portfolio.";
 
     }
 
     else if (hour < 18) {
 
-        greeting =
-            "Good afternoon. Welcome to my portfolio.";
+        welcomeMessage.textContent =
+            "Good afternoon! Thanks for checking out my work.";
 
     }
 
     else {
 
-        greeting =
-            "Good evening. Welcome to my portfolio.";
+        welcomeMessage.textContent =
+            "Good evening! Welcome to my portfolio.";
 
     }
-
-
-    welcomeMessage.textContent =
-        greeting;
 
 }
 
 
-/* =========================================================
-   COPYRIGHT YEAR
-========================================================= */
 
-function initializeYear() {
+const year =
+    document.querySelector("#year");
 
-    const year =
-        document.getElementById(
-            "year"
-        );
 
-    if (!year) {
-        return;
-    }
-
+if (year) {
 
     year.textContent =
         new Date().getFullYear();
@@ -183,61 +103,30 @@ function initializeYear() {
 }
 
 
-/* =========================================================
-   INTERACTIVE MESSAGE
-========================================================= */
 
-function initializeInteractiveMessage() {
-
-    const messageButton =
-        document.getElementById(
-            "messageButton"
-        );
-
-    const interactiveMessage =
-        document.getElementById(
-            "interactiveMessage"
-        );
+const messageButton =
+    document.querySelector("#messageButton");
 
 
-    if (
-        !messageButton ||
-        !interactiveMessage
-    ) {
-
-        return;
-
-    }
+const interactiveMessage =
+    document.querySelector("#interactiveMessage");
 
 
-    const messages = [
-
-        "Football taught me to study the game. Production taught me to solve problems. IT gives me a new field to do both.",
-
-        "The best skill I learned working live events is staying calm when something changes.",
-
-        "Every new project is another chance to level up.",
-
-        "The next play is always the one that matters.",
-
-        "Different environments. Same goal: figure it out and get it done."
-
-    ];
-
+if (
+    messageButton &&
+    interactiveMessage
+) {
 
     messageButton.addEventListener(
         "click",
         function () {
 
-            const randomIndex =
-                Math.floor(
-                    Math.random() *
-                    messages.length
-                );
-
-
             interactiveMessage.textContent =
-                messages[randomIndex];
+                "My goal is to combine my live event experience with my Information Technology education. I want to continue developing skills in web development, programming, troubleshooting, and other areas of IT so I can create useful technology solutions.";
+
+
+            messageButton.textContent =
+                "Thanks for Learning More!";
 
         }
     );
@@ -245,157 +134,71 @@ function initializeInteractiveMessage() {
 }
 
 
-/* =========================================================
-   SPORTS QUOTE API
-========================================================= */
-
-function initializeSportsQuote() {
-
-    const button =
-        document.getElementById(
-            "sportsQuoteButton"
-        );
-
-    const result =
-        document.getElementById(
-            "sportsQuoteResult"
-        );
 
 
-    if (!button || !result) {
-        return;
-    }
+
+const contactForm =
+    document.querySelector("#contactForm");
 
 
-    button.addEventListener(
-        "click",
-        async function () {
-
-            result.textContent =
-                "Loading motivation...";
+if (contactForm) {
 
 
-            try {
-
-                const response =
-                    await fetch(
-                        "https://dummyjson.com/quotes/random"
-                    );
+    const nameField =
+        document.querySelector("#name-id-input");
 
 
-                if (!response.ok) {
-
-                    throw new Error(
-                        "Quote request failed."
-                    );
-
-                }
+    const emailField =
+        document.querySelector("#email-id");
 
 
-                const data =
-                    await response.json();
+    const phoneField =
+        document.querySelector("#phone");
 
 
-                result.textContent =
-                    `"${data.quote}" — ${data.author}`;
-
-            }
-
-            catch (error) {
-
-                result.textContent =
-                    "The play broke down, but the next one is coming. Try again.";
-
-            }
-
-        }
-    );
-
-}
+    const subjectField =
+        document.querySelector("#subject");
 
 
-/* =========================================================
-   CONTACT FORM
-========================================================= */
+    const messageField =
+        document.querySelector("#message");
 
-function initializeContactForm() {
-
-    const form =
-        document.getElementById(
-            "contactForm"
-        );
-
-
-    if (!form) {
-        return;
-    }
-
-
-    const nameInput =
-        document.getElementById(
-            "name-id-input"
-        );
-
-    const emailInput =
-        document.getElementById(
-            "email-id"
-        );
-
-    const phoneInput =
-        document.getElementById(
-            "phone"
-        );
-
-    const subjectInput =
-        document.getElementById(
-            "subject"
-        );
-
-    const messageInput =
-        document.getElementById(
-            "message"
-        );
 
 
     const nameError =
-        document.getElementById(
-            "nameError"
-        );
+        document.querySelector("#nameError");
+
 
     const emailError =
-        document.getElementById(
-            "emailError"
-        );
+        document.querySelector("#emailError");
+
 
     const phoneError =
-        document.getElementById(
-            "phoneError"
-        );
+        document.querySelector("#phoneError");
+
 
     const subjectError =
-        document.getElementById(
-            "subjectError"
-        );
+        document.querySelector("#subjectError");
+
 
     const messageError =
-        document.getElementById(
-            "messageError"
-        );
+        document.querySelector("#messageError");
+
 
     const formMessage =
-        document.getElementById(
-            "formMessage"
-        );
+        document.querySelector("#formMessage");
 
 
-    form.addEventListener(
+
+    contactForm.addEventListener(
         "submit",
         function (event) {
+
 
             event.preventDefault();
 
 
-            let isValid = true;
+            let formIsValid = true;
 
 
             nameError.textContent = "";
@@ -410,116 +213,261 @@ function initializeContactForm() {
 
             formMessage.textContent = "";
 
-            formMessage.className = "";
+
+            formMessage.classList.remove(
+                "form-error"
+            );
 
 
-            /* NAME */
+            formMessage.classList.remove(
+                "form-success"
+            );
+
+
+
+    
+
 
             if (
-                nameInput.value.trim().length <
-                2
+                nameField.value.trim() === ""
             ) {
 
                 nameError.textContent =
                     "Please enter your name.";
 
-                isValid = false;
+                formIsValid = false;
 
             }
 
 
-            /* EMAIL */
 
-            const emailPattern =
-                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
 
 
             if (
-                !emailPattern.test(
-                    emailInput.value.trim()
-                )
+                emailField.value.trim() === ""
+            ) {
+
+                emailError.textContent =
+                    "Please enter your email address.";
+
+                formIsValid = false;
+
+            }
+
+            else if (
+                !emailField.validity.valid
             ) {
 
                 emailError.textContent =
                     "Please enter a valid email address.";
 
-                isValid = false;
+                formIsValid = false;
 
             }
 
 
-            /* PHONE */
 
-            const phoneValue =
-                phoneInput.value.trim();
 
 
             if (
-                phoneValue.length > 0 &&
-                !/^[0-9()+\-\s.]{7,}$/.test(
-                    phoneValue
-                )
+                phoneField.value.trim() === ""
             ) {
 
                 phoneError.textContent =
-                    "Please enter a valid phone number.";
+                    "Please enter your phone number.";
 
-                isValid = false;
+                formIsValid = false;
+
+            }
+
+            else {
+
+                const phonePattern =
+                    /^[0-9()\-\s+]{10,}$/;
+
+
+                if (
+                    !phonePattern.test(
+                        phoneField.value.trim()
+                    )
+                ) {
+
+                    phoneError.textContent =
+                        "Please enter a valid phone number.";
+
+                    formIsValid = false;
+
+                }
 
             }
 
 
-            /* SUBJECT */
+
+          
+
 
             if (
-                subjectInput.value.trim().length <
-                2
+                subjectField.value.trim() === ""
             ) {
 
                 subjectError.textContent =
                     "Please enter a subject.";
 
-                isValid = false;
+                formIsValid = false;
 
             }
 
 
-            /* MESSAGE */
+
+           
+
 
             if (
-                messageInput.value.trim().length <
-                10
+                messageField.value.trim() === ""
             ) {
 
                 messageError.textContent =
-                    "Please enter a message with at least 10 characters.";
+                    "Please enter a message.";
 
-                isValid = false;
+                formIsValid = false;
 
             }
 
 
-            if (!isValid) {
+
+
+
+            if (!formIsValid) {
 
                 formMessage.textContent =
-                    "Please correct the highlighted fields.";
+                    "Please correct the errors above.";
 
-                formMessage.className =
-                    "form-error";
+                formMessage.classList.add(
+                    "form-error"
+                );
 
                 return;
 
             }
 
 
+
             formMessage.textContent =
-                "Thanks! Your message passed validation. This demo form does not send email yet.";
-
-            formMessage.className =
-                "form-success";
+                "Form submitted successfully! All fields are valid.";
 
 
-            form.reset();
+            formMessage.classList.add(
+                "form-success"
+            );
+
+        }
+    );
+
+
+
+    /* Clear name error */
+
+
+    nameField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                nameField.value.trim() !== ""
+            ) {
+
+                nameError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear email error automatically */
+
+
+    emailField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                emailField.value.trim() !== "" &&
+                emailField.validity.valid
+            ) {
+
+                emailError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear phone error automatically */
+
+
+    phoneField.addEventListener(
+        "input",
+        function () {
+
+            const phonePattern =
+                /^[0-9()\-\s+]{10,}$/;
+
+
+            if (
+                phoneField.value.trim() !== "" &&
+                phonePattern.test(
+                    phoneField.value.trim()
+                )
+            ) {
+
+                phoneError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear subject error */
+
+
+    subjectField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                subjectField.value.trim() !== ""
+            ) {
+
+                subjectError.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* Clear message error */
+
+
+    messageField.addEventListener(
+        "input",
+        function () {
+
+            if (
+                messageField.value.trim() !== ""
+            ) {
+
+                messageError.textContent = "";
+
+            }
 
         }
     );
@@ -527,84 +475,73 @@ function initializeContactForm() {
 }
 
 
-/* =========================================================
-   DYNAMIC SKILLS
-========================================================= */
 
-function initializeSkills() {
-
-    const input =
-        document.getElementById(
-            "skillInput"
-        );
-
-    const addButton =
-        document.getElementById(
-            "addSkillButton"
-        );
-
-    const skillList =
-        document.getElementById(
-            "skillList"
-        );
+/* Dynamic Skills List */
 
 
-    if (
-        !input ||
-        !addButton ||
-        !skillList
-    ) {
+const skillInput =
+    document.querySelector("#skillInput");
 
-        return;
 
-    }
+const addSkillButton =
+    document.querySelector("#addSkillButton");
+
+
+const skillList =
+    document.querySelector("#skillList");
+
+
+if (
+    skillInput &&
+    addSkillButton &&
+    skillList
+) {
 
 
     function addSkill() {
 
-        const skill =
-            input.value.trim();
+
+        const skillText =
+            skillInput.value.trim();
 
 
-        if (skill === "") {
+        if (
+            skillText === ""
+        ) {
+
+            skillInput.focus();
 
             return;
 
         }
 
 
+
         const listItem =
-            document.createElement(
-                "li"
-            );
+            document.createElement("li");
 
 
-        const skillText =
-            document.createElement(
-                "span"
-            );
+        listItem.textContent =
+            skillText + " ";
 
-
-        skillText.textContent =
-            skill;
 
 
         const removeButton =
-            document.createElement(
-                "button"
-            );
+            document.createElement("button");
+
+
+        removeButton.textContent =
+            "Remove";
 
 
         removeButton.type =
             "button";
 
 
-        removeButton.className =
-            "remove-skill";
+        removeButton.classList.add(
+            "remove-skill"
+        );
 
-
-        removeButton.textContent =
-            "Remove";
 
 
         removeButton.addEventListener(
@@ -617,10 +554,6 @@ function initializeSkills() {
         );
 
 
-        listItem.appendChild(
-            skillText
-        );
-
 
         listItem.appendChild(
             removeButton
@@ -632,26 +565,28 @@ function initializeSkills() {
         );
 
 
-        input.value = "";
+        skillInput.value = "";
 
-        input.focus();
+
+        skillInput.focus();
 
     }
 
 
-    addButton.addEventListener(
+
+    addSkillButton.addEventListener(
         "click",
         addSkill
     );
 
 
-    input.addEventListener(
+
+    skillInput.addEventListener(
         "keydown",
         function (event) {
 
             if (
-                event.key ===
-                "Enter"
+                event.key === "Enter"
             ) {
 
                 event.preventDefault();
@@ -664,312 +599,106 @@ function initializeSkills() {
     );
 
 
-    document
-        .querySelectorAll(
+
+    const existingRemoveButtons =
+        document.querySelectorAll(
             ".remove-skill"
-        )
-        .forEach(
-            function (button) {
-
-                button.addEventListener(
-                    "click",
-                    function () {
-
-                        button
-                            .parentElement
-                            .remove();
-
-                    }
-                );
-
-            }
-        );
-
-}
-
-
-/* =========================================================
-   MOVIE QUOTES
-========================================================= */
-
-function initializeMovieQuotes() {
-
-    const button =
-        document.getElementById(
-            "movieQuoteButton"
-        );
-
-    const result =
-        document.getElementById(
-            "movieQuoteResult"
         );
 
 
-    if (!button || !result) {
-        return;
-    }
+    existingRemoveButtons.forEach(
+        function (button) {
 
+            button.addEventListener(
+                "click",
+                function () {
 
-    const movieQuotes = [
-
-        {
-            quote:
-                "May the Force be with you.",
-            movie:
-                "Star Wars"
-        },
-
-        {
-            quote:
-                "I'll be back.",
-            movie:
-                "The Terminator"
-        },
-
-        {
-            quote:
-                "There's no place like home.",
-            movie:
-                "The Wizard of Oz"
-        },
-
-        {
-            quote:
-                "Why so serious?",
-            movie:
-                "The Dark Knight"
-        },
-
-        {
-            quote:
-                "Keep your friends close, but your enemies closer.",
-            movie:
-                "The Godfather Part II"
-        },
-
-        {
-            quote:
-                "To infinity and beyond!",
-            movie:
-                "Toy Story"
-        },
-
-        {
-            quote:
-                "Just keep swimming.",
-            movie:
-                "Finding Nemo"
-        },
-
-        {
-            quote:
-                "I feel the need—the need for speed.",
-            movie:
-                "Top Gun"
-        }
-
-    ];
-
-
-    button.addEventListener(
-        "click",
-        function () {
-
-            const randomIndex =
-                Math.floor(
-                    Math.random() *
-                    movieQuotes.length
-                );
-
-
-            const selected =
-                movieQuotes[
-                    randomIndex
-                ];
-
-
-            result.textContent =
-                `"${selected.quote}" — ${selected.movie}`;
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   IT GOALS
-========================================================= */
-
-function initializeGoals() {
-
-    const button =
-        document.getElementById(
-            "goalsButton"
-        );
-
-    const message =
-        document.getElementById(
-            "goalsMessage"
-        );
-
-
-    if (!button || !message) {
-        return;
-    }
-
-
-    const goals = [
-
-        "Continue improving HTML, CSS, and JavaScript skills.",
-
-        "Build more responsive and accessible websites.",
-
-        "Develop stronger programming and troubleshooting abilities.",
-
-        "Learn more about networking and databases.",
-
-        "Explore cybersecurity concepts.",
-
-        "Create projects that solve practical problems.",
-
-        "Continue connecting real-world experience with technology."
-
-    ];
-
-
-    button.addEventListener(
-        "click",
-        function () {
-
-            message.innerHTML = "";
-
-
-            const heading =
-                document.createElement(
-                    "strong"
-                );
-
-
-            heading.textContent =
-                "My current goals:";
-
-
-            const list =
-                document.createElement(
-                    "ul"
-                );
-
-
-            goals.forEach(
-                function (goal) {
-
-                    const item =
-                        document.createElement(
-                            "li"
-                        );
-
-
-                    item.textContent =
-                        goal;
-
-
-                    list.appendChild(
-                        item
-                    );
+                    button.parentElement.remove();
 
                 }
             );
 
-
-            message.appendChild(
-                heading
-            );
-
-
-            message.appendChild(
-                list
-            );
-
         }
     );
 
 }
 
 
-/* =========================================================
-   RANDOM QUOTE API
-========================================================= */
-
-function initializeRandomQuote() {
-
-    const button =
-        document.getElementById(
-            "quoteButton"
-        );
-
-    const result =
-        document.getElementById(
-            "quoteResult"
-        );
 
 
-    if (!button || !result) {
-        return;
-    }
+
+const quoteButton =
+    document.querySelector("#quoteButton");
 
 
-    button.addEventListener(
+const quoteResult =
+    document.querySelector("#quoteResult");
+
+
+if (
+    quoteButton &&
+    quoteResult
+) {
+
+
+    quoteButton.addEventListener(
         "click",
-        async function () {
+        function () {
 
-            result.textContent =
+
+            quoteResult.textContent =
                 "Loading quote...";
 
 
-            try {
-
-                const response =
-                    await fetch(
-                        "https://dummyjson.com/quotes/random"
-                    );
+            fetch(
+                "https://dummyjson.com/quotes/random"
+            )
 
 
-                if (!response.ok) {
+            .then(
+                function (response) {
 
-                    throw new Error(
-                        "Unable to retrieve quote."
-                    );
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            "Unable to retrieve quote."
+                        );
+
+                    }
+
+
+                    return response.json();
 
                 }
+            )
 
 
-                const data =
-                    await response.json();
+            .then(
+                function (data) {
 
 
-                result.textContent =
-                    `"${data.quote}" — ${data.author}`;
+                    quoteResult.textContent =
+                        `"${data.quote}" — ${data.author}`;
 
-            }
+                }
+            )
 
-            catch (error) {
 
-                result.textContent =
-                    "Unable to load a quote right now. Please try again.";
+            .catch(
+                function (error) {
 
-            }
+
+                    quoteResult.textContent =
+                        "Sorry, the quote could not be loaded. Please try again.";
+
+
+                    console.error(error);
+
+                }
+            );
 
         }
     );
 
 }
-
-
-/*
-    01001000 01100101 01101100 01101100 01101111
-
-    Hello.
-
-    Even debugging deserves a training arc.
-*/
