@@ -1,48 +1,146 @@
-Overview
-This milestone improves the accessibility, structure, and visual design of my portfolio website. All updates were applied across the Home, Projects, and About/Contact pages to ensure WCAG AA compliance, intentional visual design, and an accessible contact form.
+# My Information Technology Portfolio
 
- Accessibility Improvements (WAVE + WCAG AA)
-All three pages were tested using the WAVE Web Accessibility Evaluation Tool.
-Each page now passes with 0 errors, 0 contrast errors, and 0 alerts.
+## Capstone Draft Submission
 
-Documented Fixes
-Alt text improvements — Added descriptive alt text to all images so screen readers can understand visual content.
+This website is my working draft for my Information Technology
+capstone portfolio.
 
-Heading structure — Updated headings to follow a clear H1 → H2 → H3 hierarchy, improving navigation for assistive technologies.
+The purpose of this draft is to bring together the major parts of
+my portfolio so I can receive peer feedback and make revisions before
+the final capstone submission.
 
-Link purpose clarity — Ensured all navigation and project links include meaningful text describing their destination.
+## Portfolio Pages
 
-ARIA cleanup — Removed unnecessary ARIA attributes to prevent duplicate announcements and improve screen reader clarity.
+The website contains three complete HTML pages:
 
-Color contrast — Adjusted text and background colors to meet WCAG AA contrast ratios for readability.
+- Home
+- Projects
+- About
 
-Color Contrast Verification
-All text/background color combinations were checked using the WebAIM Contrast Checker:
+Each page contains real portfolio content rather than placeholder
+text.
 
-Normal text meets 4.5:1
+## Technologies Used
 
-Large text meets 3:1
+- HTML5
+- CSS3
+- JavaScript
+- Flexbox
+- Responsive Web Design
+- JavaScript DOM Manipulation
+- Fetch API
 
-My color palette is now consistent across all pages, improving readability and visual cohesion.
+## JavaScript Features
 
- Visual Design Enhancements (Gestalt Principles)
-I applied two Gestalt principles intentionally to improve clarity and user experience:
+The website includes several working JavaScript interactions:
 
-Proximity — Grouped related content such as project cards, navigation links, and section text so users can quickly understand which items belong together.
+1. Dark and light theme switching
+2. Time-based welcome message
+3. Interactive IT goals message
+4. Contact form validation
+5. Dynamic skills list
+6. Random quote API
 
-Similarity — Used consistent colors, typography, and card layouts across all pages to visually signal that these elements share a common purpose.
+## Responsive Design
 
-These principles help create a clean, organized, and predictable layout throughout the site.
+The website uses CSS media queries to provide a usable layout on:
 
- Accessible Contact Form
-The About/Contact page now includes a fully accessible form with:
+- Desktop computers
+- Tablets
+- Mobile phones
 
-Proper <label> elements linked using for=""
+## Accessibility
 
-A <fieldset> and <legend> grouping contact information
+Accessibility was considered throughout the project.
 
-Four required fields: Name, Email, Subject, and Message
+The website includes:
 
-Accessible error messages using DOM updates with aria-live="polite"
+- Semantic HTML
+- Logical heading structure
+- Descriptive page titles
+- Navigation labels
+- Skip-to-content link
+- Proper form labels
+- Fieldset and legend for contact information
+- Keyboard-friendly controls
+- Visible focus indicators
+- Accessible live error messages
+- Readable color contrast
 
-Semantic HTML and keyboard‑friendly focus order
+The goal is for the website to pass a basic WAVE accessibility
+evaluation with zero errors.
+
+## Visual Design
+
+The website uses consistent typography, spacing, colors, and card
+layouts throughout the three pages.
+
+Gestalt principles used include:
+
+### Proximity
+
+Related information is grouped together through sections, project
+cards, navigation elements, and form groups.
+
+### Similarity
+
+Consistent typography, colors, buttons, and card designs help users
+understand that related elements serve similar purposes.
+
+## Professional Background
+
+My background includes many years of experience working in the live
+event industry as a stagehand.
+
+That experience helped me develop:
+
+- Teamwork
+- Communication
+- Preparation
+- Safety awareness
+- Organization
+- Problem solving
+- Working under pressure
+
+I am currently studying Information Technology and developing skills
+in web development, programming, troubleshooting, and other areas of
+technology.
+
+## Capstone Goals
+
+For the final version of this portfolio, I would like to continue
+improving:
+
+- Accessibility
+- Responsive design
+- Visual design
+- JavaScript functionality
+- Website organization
+- IT project documentation
+
+I also plan to add additional IT projects as I continue developing
+my technical skills.
+
+## GitHub Pages
+
+The final draft should be deployed using GitHub Pages.
+
+After deployment, the live website URL should be submitted with the
+capstone draft assignment.
+
+Example:
+
+https://YOUR-USERNAME.github.io/MyPortfolio/
+
+## Final Checklist
+
+- [x] At least two complete HTML pages
+- [x] Real portfolio content
+- [x] CSS styling
+- [x] Responsive design
+- [x] Working JavaScript interaction
+- [x] Accessible contact form
+- [ ] Verify with WAVE
+- [ ] Deploy to GitHub Pages
+- [ ] Test the live URL
+- [ ] Submit the live GitHub Pages URL

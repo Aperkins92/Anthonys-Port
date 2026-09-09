@@ -10,10 +10,26 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Projects | My Portfolio</title>
+    <meta
+        name="description"
+        content="Anthony's professional production experience and Information Technology projects."
+    >
+
+    <title>Projects | Anthony</title>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap"
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
         rel="stylesheet"
     >
 
@@ -22,263 +38,1030 @@
         href="style.css"
     >
 
-</head>
+    <link
+        rel="stylesheet"
+        href="projects.css"
+    >
 
+</head>
 
 <body>
 
-
-<header>
-
-    <h1>My Projects</h1>
-
-    <p>
-        Professional, academic, and technology projects
-    </p>
-
-</header>
-
-
-<nav class="navbar">
-
-    <a href="index.html">Home</a>
-
-    <a href="projects.html">Projects</a>
-
-    <a href="about.html">About</a>
-
-</nav>
-
-
-<main>
-
-
-<section>
-
-    <h2>Technology Projects</h2>
-
-
-    <div class="projects-grid">
-
-
-        <article class="project technology">
-
-            <h3>
-                Personal Portfolio Website
-            </h3>
-
-            <p>
-                This project is a responsive portfolio website
-                created using HTML, CSS, and JavaScript.
-            </p>
-
-            <p>
-                I created multiple connected pages using navigation
-                links and used semantic HTML elements to organize
-                content.
-            </p>
-
-            <h4>Skills Used:</h4>
-
-            <ul>
-
-                <li>HTML</li>
-
-                <li>CSS</li>
-
-                <li>Responsive Design</li>
-
-                <li>Flexbox</li>
-
-                <li>JavaScript</li>
-
-            </ul>
-
-        </article>
-
-
-
-        <article class="project research">
-
-            <h3>
-                Stagehand Safety Research Project
-            </h3>
-
-            <p>
-                This research project explores how live event crews
-                balance safety and efficiency while working under
-                time pressure.
-            </p>
-
-            <p>
-                The project connects my professional stagehand
-                experience with research, writing, and critical
-                thinking skills.
-            </p>
-
-            <h4>Skills Used:</h4>
-
-            <ul>
-
-                <li>Research</li>
-
-                <li>Professional Writing</li>
-
-                <li>Critical Thinking</li>
-
-                <li>Source Analysis</li>
-
-            </ul>
-
-        </article>
-
-
-
-        <article class="project technology">
-
-            <h3>
-                Future IT Projects
-            </h3>
-
-            <p>
-                As I continue studying Information Technology,
-                I plan to develop more projects involving
-                programming, web applications, and tools that
-                solve real-world problems.
-            </p>
-
-            <h4>Future Skills:</h4>
-
-            <ul>
-
-                <li>Advanced JavaScript</li>
-
-                <li>Programming</li>
-
-                <li>Database Development</li>
-
-                <li>Cybersecurity Concepts</li>
-
-            </ul>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<section class="skills-list-section">
-
-    <h2>
-        My Skills List
-    </h2>
-
-    <p>
-        Add a skill you are currently learning or would like
-        to develop while studying Information Technology.
-    </p>
-
-
-    <div class="skill-input-area">
-
-        <label for="skillInput">
-            Add a skill:
-        </label>
-
-
-        <input
-            id="skillInput"
-            type="text"
-            placeholder="Example: Networking"
-        >
-
-
-        <button
-            id="addSkillButton"
-            type="button"
-        >
-            Add Skill
-        </button>
-
-    </div>
-
-
-    <ul id="skillList">
-
-        <li>
-
-            HTML
-
-            <button
-                class="remove-skill"
-                type="button"
-            >
-                Remove
-            </button>
-
-        </li>
-
-
-        <li>
-
-            CSS
-
-            <button
-                class="remove-skill"
-                type="button"
-            >
-                Remove
-            </button>
-
-        </li>
-
-
-        <li>
-
-            JavaScript
-
-            <button
-                class="remove-skill"
-                type="button"
-            >
-                Remove
-            </button>
-
-        </li>
-
-    </ul>
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-    <button
-        id="themeButton"
-        type="button"
+    <!-- The Seahawks have a game plan. So does this portfolio. -->
+
+    <a
+        class="skip-link"
+        href="#main-content"
     >
-        Dark Theme
-    </button>
+        Skip to main content
+    </a>
 
 
-    <p>
+    <header class="site-header">
 
-        © <span id="year"></span> My Portfolio |
+        <div class="header-inner">
 
-        Built with HTML, CSS, and JavaScript
+            <a
+                class="brand"
+                href="index.html"
+            >
 
-    </p>
+                <span class="brand-mark">
+                    A
+                </span>
 
-</footer>
+                <span>
+                    <strong>ANTHONY</strong>
+                    <small>IT • PRODUCTION • TECHNOLOGY</small>
+                </span>
+
+            </a>
+
+            <nav
+                class="main-navigation"
+                aria-label="Main navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a
+                    href="projects.html"
+                    aria-current="page"
+                >
+                    Projects
+                </a>
+
+            </nav>
+
+            <button
+                id="themeButton"
+                class="theme-button"
+                type="button"
+            >
+                Dark Mode
+            </button>
+
+        </div>
+
+    </header>
 
 
-<script src="script.js"></script>
+    <main id="main-content">
+
+        <!-- PROJECT HERO -->
+
+        <section class="projects-hero">
+
+            <div>
+
+                <p class="eyebrow">
+                    WORK • EXPERIENCE • TECHNOLOGY
+                </p>
+
+                <h1>
+                    What I have
+                    <span>built and worked on.</span>
+                </h1>
+
+                <p>
+                    This page connects my professional production background
+                    with the Information Technology skills I am developing.
+                </p>
+
+            </div>
+
+            <div class="mission-box">
+
+                <span>
+                    CURRENT MISSION
+                </span>
+
+                <strong>
+                    BUILD
+                </strong>
+
+                <strong>
+                    LEARN
+                </strong>
+
+                <strong>
+                    LEVEL UP
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- REAL WORLD -->
+
+        <section class="real-world-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    REAL-WORLD EXPERIENCE
+                </p>
+
+                <h2>
+                    Before the code, there was production.
+                </h2>
+
+                <p>
+                    These experiences are a major part of what I bring
+                    into Information Technology.
+                </p>
+
+            </div>
+
+            <div class="project-grid">
+
+
+                <article class="project-card production-card">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🎤
+                        </span>
+
+                        <span class="project-type">
+                            EXPERIENCE 01
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Live Events & Stagehand Work
+                    </h3>
+
+                    <p>
+                        Years of stagehand work gave me experience working
+                        behind the scenes of concerts, sporting events,
+                        and large productions.
+                    </p>
+
+                    <ul class="project-list">
+
+                        <li>
+                            Equipment setup and preparation
+                        </li>
+
+                        <li>
+                            Crew communication
+                        </li>
+
+                        <li>
+                            Working under deadlines
+                        </li>
+
+                        <li>
+                            Safety awareness
+                        </li>
+
+                        <li>
+                            Real-time problem solving
+                        </li>
+
+                    </ul>
+
+                    <div class="tag-row">
+
+                        <span>
+                            Production
+                        </span>
+
+                        <span>
+                            Teamwork
+                        </span>
+
+                        <span>
+                            Safety
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card production-card">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            ⚡
+                        </span>
+
+                        <span class="project-type">
+                            EXPERIENCE 02
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        JDL FX
+                    </h3>
+
+                    <p>
+                        Working with JDL FX introduced me to special effects
+                        production and another technical environment where
+                        preparation and precision were important.
+                    </p>
+
+                    <ul class="project-list">
+
+                        <li>
+                            Special effects production
+                        </li>
+
+                        <li>
+                            Technical preparation
+                        </li>
+
+                        <li>
+                            Team coordination
+                        </li>
+
+                        <li>
+                            Deadline-driven work
+                        </li>
+
+                    </ul>
+
+                    <div class="tag-row">
+
+                        <span>
+                            Special Effects
+                        </span>
+
+                        <span>
+                            Technical
+                        </span>
+
+                        <span>
+                            Production
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card production-card">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🏈
+                        </span>
+
+                        <span class="project-type">
+                            EXPERIENCE 03
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        SkyCam & Football Production
+                    </h3>
+
+                    <p>
+                        Stagehand work eventually opened the opportunity
+                        to work with SkyCam and football game production,
+                        bringing together two major parts of my background.
+                    </p>
+
+                    <ul class="project-list">
+
+                        <li>
+                            Football game production
+                        </li>
+
+                        <li>
+                            Technical equipment
+                        </li>
+
+                        <li>
+                            Fast-paced environments
+                        </li>
+
+                        <li>
+                            Team coordination
+                        </li>
+
+                    </ul>
+
+                    <div class="tag-row">
+
+                        <span>
+                            Football
+                        </span>
+
+                        <span>
+                            Production
+                        </span>
+
+                        <span>
+                            Technology
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card production-card">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🎶
+                        </span>
+
+                        <span class="project-type">
+                            EXPERIENCE 04
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Concert & Entertainment Events
+                    </h3>
+
+                    <p>
+                        I have worked behind the scenes for a wide variety
+                        of performers and events throughout my stagehand career.
+                    </p>
+
+                    <p class="artist-summary">
+                        Ginuwine • Trace Adkins • Sullivan King • Excision •
+                        KISS • Tool • Bert Kreischer • Gabriel Iglesias
+                        • and many others.
+                    </p>
+
+                    <div class="tag-row">
+
+                        <span>
+                            Events
+                        </span>
+
+                        <span>
+                            Entertainment
+                        </span>
+
+                        <span>
+                            Live Production
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- IT PROJECTS -->
+
+        <section class="it-projects-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    INFORMATION TECHNOLOGY
+                </p>
+
+                <h2>
+                    The next chapter is digital.
+                </h2>
+
+                <p>
+                    These projects represent the technical skills I am
+                    currently developing.
+                </p>
+
+            </div>
+
+            <div class="project-grid">
+
+
+                <article class="project-card featured-it">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            💻
+                        </span>
+
+                        <span class="project-type">
+                            IT PROJECT 01
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Personal Portfolio Website
+                    </h3>
+
+                    <p>
+                        A responsive multi-page portfolio built to combine
+                        my personal story, professional experience, and
+                        Information Technology development.
+                    </p>
+
+                    <div class="tech-stack">
+
+                        <span>
+                            HTML
+                        </span>
+
+                        <span>
+                            CSS
+                        </span>
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            Responsive Design
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card featured-it">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🛡️
+                        </span>
+
+                        <span class="project-type">
+                            IT PROJECT 02
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Stagehand Safety Research Project
+                    </h3>
+
+                    <p>
+                        A research project examining how live event crews
+                        balance safety and efficiency while working under
+                        time pressure.
+                    </p>
+
+                    <p>
+                        The project connects professional experience with
+                        research, writing, source analysis, and critical thinking.
+                    </p>
+
+                    <div class="tech-stack">
+
+                        <span>
+                            Research
+                        </span>
+
+                        <span>
+                            Writing
+                        </span>
+
+                        <span>
+                            Analysis
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card featured-it">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🎬
+                        </span>
+
+                        <span class="project-type">
+                            IT PROJECT 03
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Movie Quotes
+                    </h3>
+
+                    <p>
+                        An interactive JavaScript project that displays
+                        random movie quotes and demonstrates DOM manipulation
+                        and user interaction.
+                    </p>
+
+                    <button
+                        id="movieQuoteButton"
+                        type="button"
+                    >
+                        Generate Movie Quote
+                    </button>
+
+                    <div
+                        id="movieQuoteResult"
+                        class="quote-result"
+                        aria-live="polite"
+                    >
+                        Your movie quote will appear here.
+                    </div>
+
+                    <div class="tech-stack">
+
+                        <span>
+                            JavaScript
+                        </span>
+
+                        <span>
+                            DOM
+                        </span>
+
+                        <span>
+                            Interaction
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="project-card future-project">
+
+                    <div class="project-card-top">
+
+                        <span class="project-icon">
+                            🚀
+                        </span>
+
+                        <span class="project-type">
+                            FUTURE
+                        </span>
+
+                    </div>
+
+                    <h3>
+                        Future IT Projects
+                    </h3>
+
+                    <p>
+                        As I continue studying Information Technology,
+                        I plan to build projects involving programming,
+                        networking, databases, troubleshooting, and
+                        other real-world technology problems.
+                    </p>
+
+                    <div class="future-list">
+
+                        <span>
+                            Advanced JavaScript
+                        </span>
+
+                        <span>
+                            Programming
+                        </span>
+
+                        <span>
+                            Databases
+                        </span>
+
+                        <span>
+                            Networking
+                        </span>
+
+                        <span>
+                            Cybersecurity Concepts
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SKILLS -->
+
+        <section class="skills-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    SKILLS
+                </p>
+
+                <h2>
+                    What I bring to the table.
+                </h2>
+
+            </div>
+
+            <div class="skill-category-grid">
+
+                <div class="skill-category">
+
+                    <span class="skill-category-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Real-World
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Technical Problem Solving
+                        </li>
+
+                        <li>
+                            Teamwork
+                        </li>
+
+                        <li>
+                            Live Production
+                        </li>
+
+                        <li>
+                            Equipment Setup
+                        </li>
+
+                        <li>
+                            Safety Awareness
+                        </li>
+
+                        <li>
+                            Adaptability
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-category">
+
+                    <span class="skill-category-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Technology
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            HTML
+                        </li>
+
+                        <li>
+                            CSS
+                        </li>
+
+                        <li>
+                            JavaScript
+                        </li>
+
+                        <li>
+                            Responsive Design
+                        </li>
+
+                        <li>
+                            Web Development
+                        </li>
+
+                        <li>
+                            Research
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-category">
+
+                    <span class="skill-category-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Developing
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Programming
+                        </li>
+
+                        <li>
+                            Networking
+                        </li>
+
+                        <li>
+                            Databases
+                        </li>
+
+                        <li>
+                            Troubleshooting
+                        </li>
+
+                        <li>
+                            Cybersecurity Concepts
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DYNAMIC SKILLS -->
+
+        <section class="dynamic-skills-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    INTERACTIVE SKILLS
+                </p>
+
+                <h2>
+                    Build your skill list.
+                </h2>
+
+                <p>
+                    Add skills you are currently learning or want to
+                    develop.
+                </p>
+
+            </div>
+
+            <div class="skill-input-area">
+
+                <label for="skillInput">
+                    Add a skill
+                </label>
+
+                <div class="skill-input-row">
+
+                    <input
+                        id="skillInput"
+                        type="text"
+                        placeholder="Example: Networking"
+                    >
+
+                    <button
+                        id="addSkillButton"
+                        type="button"
+                    >
+                        Add Skill
+                    </button>
+
+                </div>
+
+            </div>
+
+            <ul id="skillList">
+
+                <li>
+
+                    <span>
+                        HTML
+                    </span>
+
+                    <button
+                        class="remove-skill"
+                        type="button"
+                    >
+                        Remove
+                    </button>
+
+                </li>
+
+                <li>
+
+                    <span>
+                        CSS
+                    </span>
+
+                    <button
+                        class="remove-skill"
+                        type="button"
+                    >
+                        Remove
+                    </button>
+
+                </li>
+
+                <li>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <button
+                        class="remove-skill"
+                        type="button"
+                    >
+                        Remove
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- GOALS -->
+
+        <section class="goals-section">
+
+            <div>
+
+                <p class="eyebrow">
+                    NEXT LEVEL
+                </p>
+
+                <h2>
+                    Information Technology Goals
+                </h2>
+
+                <p>
+                    My goal is to continue turning curiosity into practical
+                    technical skills.
+                </p>
+
+            </div>
+
+            <button
+                id="goalsButton"
+                type="button"
+            >
+                Show My Goals
+            </button>
+
+            <div
+                id="goalsMessage"
+                class="goals-message"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- QUOTE API -->
+
+        <section class="quote-section">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    API DEMONSTRATION
+                </p>
+
+                <h2>
+                    Random Motivation
+                </h2>
+
+                <p>
+                    This project also demonstrates JavaScript working
+                    with an external API.
+                </p>
+
+            </div>
+
+            <button
+                id="quoteButton"
+                type="button"
+            >
+                Get a Random Quote
+            </button>
+
+            <div
+                id="quoteResult"
+                class="quote-result"
+                aria-live="polite"
+            >
+                Click the button for a quote.
+            </div>
+
+        </section>
+
+
+        <!-- CAPSTONE -->
+
+        <section class="capstone-section">
+
+            <div>
+
+                <p class="eyebrow">
+                    CAPSTONE DEVELOPMENT
+                </p>
+
+                <h2>
+                    This is only the beginning.
+                </h2>
+
+                <p>
+                    My portfolio is a working project that will continue
+                    to improve as my Information Technology knowledge grows.
+                </p>
+
+                <p>
+                    I plan to keep improving the design, accessibility,
+                    responsive behavior, JavaScript functionality, and
+                    the number of completed IT projects represented here.
+                </p>
+
+            </div>
+
+            <div class="capstone-status">
+
+                <span>
+                    STATUS
+                </span>
+
+                <strong>
+                    IN PROGRESS
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <strong>
+                    ANTHONY
+                </strong>
+
+                <p>
+                    From the field to the stage to technology.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+            </div>
+
+            <p class="copyright">
+                &copy; <span id="year"></span> Anthony's Portfolio
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
 
