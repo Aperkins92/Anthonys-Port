@@ -11,14 +11,13 @@ html {
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
     margin: 0;
     min-height: 100vh;
 
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
     color: #1f2937;
 
-    /* FIXED BACKGROUND IMAGE */
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.25),
@@ -27,37 +26,29 @@ body {
         url("images/Seahawks1.jpg");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-
-    /* This keeps the background fixed while the page scrolls */
     background-attachment: fixed;
 
-    background-color: #0f172a;
-}
-
-/* Main page container */
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 30px 20px;
+    background-color: #f6f8fb;
 }
 
 /* Header */
+
 header {
     max-width: 1000px;
     margin: 20px auto;
     padding: 25px;
 
     background: rgba(255, 255, 255, 0.92);
-    border-radius: 15px;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 
     text-align: center;
 }
 
-/* Headings */
 h1,
 h2,
 h3,
@@ -67,20 +58,15 @@ h4 {
 
 h1 {
     margin-top: 0;
-    font-size: 2.5rem;
-}
-
-h2 {
-    margin-top: 0;
 }
 
 /* Navigation */
+
 nav {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
-
     flex-wrap: wrap;
 }
 
@@ -89,22 +75,28 @@ nav a {
     text-decoration: none;
     font-weight: 700;
 
-    padding: 8px 14px;
-    border-radius: 8px;
+    padding: 8px 12px;
 
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+    border-radius: 6px;
+
+    transition: 0.2s ease;
 }
 
 nav a:hover {
     background-color: #006778;
     color: white;
-    transform: translateY(-2px);
+}
+
+/* Main */
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Sections */
+
 section,
 article {
     background: rgba(255, 255, 255, 0.94);
@@ -112,54 +104,15 @@ article {
     padding: 25px;
     margin-bottom: 25px;
 
-    border-radius: 15px;
+    border-radius: 12px;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 
-    backdrop-filter: blur(4px);
-}
-
-/* Links */
-a {
-    color: #006778;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Buttons */
-button {
-    border: none;
-    border-radius: 8px;
-
-    padding: 10px 18px;
-
-    background-color: #006778;
-    color: white;
-
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-button:focus {
-    outline: 3px solid #8cc63f;
-    outline-offset: 2px;
+    backdrop-filter: blur(3px);
 }
 
 /* Projects */
+
 .projects-grid {
     display: flex;
     flex-wrap: wrap;
@@ -173,23 +126,48 @@ button:focus {
 
     background: rgba(255, 255, 255, 0.9);
 
-    border-radius: 12px;
+    border-radius: 10px;
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .project:hover {
     transform: translateY(-5px);
-
-    box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* Project filter buttons */
+/* Buttons */
+
+button {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #006778;
+    color: white;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+button:focus {
+    outline: 3px solid #8cc63f;
+    outline-offset: 2px;
+}
+
+/* Filter buttons */
+
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -197,20 +175,21 @@ button:focus {
 
     flex-wrap: wrap;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-/* Contact form */
+/* Contact Form */
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 label {
@@ -225,7 +204,8 @@ select {
     padding: 12px;
 
     border: 2px solid #d1d5db;
-    border-radius: 8px;
+
+    border-radius: 6px;
 
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
@@ -245,11 +225,11 @@ select:focus {
 
     border-color: #006778;
 
-    box-shadow:
-        0 0 0 3px rgba(0, 103, 120, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 103, 120, 0.15);
 }
 
-/* Validation errors */
+/* Validation */
+
 .error-message {
     display: block;
 
@@ -261,25 +241,30 @@ select:focus {
     font-weight: 600;
 }
 
-/* Active input animation */
+/* Input animation */
+
 .input-active {
     transform: scale(1.01);
+
     transition: transform 0.15s ease;
 }
 
-/* Email */
+/* Contact Email */
+
 .contact-email {
     margin-top: 15px;
 }
 
 .contact-email a {
+    color: #006778;
     font-weight: 700;
 }
 
 /* Skills */
+
 #skillList {
-    padding-left: 0;
     list-style: none;
+    padding-left: 0;
 }
 
 #skillList li {
@@ -287,8 +272,9 @@ select:focus {
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 10px;
     padding: 10px 14px;
+
+    margin-bottom: 10px;
 
     background: rgba(255, 255, 255, 0.85);
 
@@ -300,19 +286,21 @@ select:focus {
     font-size: 0.85rem;
 }
 
-/* API section */
+/* API */
+
 #apiResult {
     margin-top: 15px;
     padding: 15px;
 
+    min-height: 50px;
+
     background: rgba(0, 103, 120, 0.08);
 
-    border-radius: 10px;
-
-    min-height: 50px;
+    border-radius: 8px;
 }
 
 /* Footer */
+
 footer {
     max-width: 1000px;
     margin: 30px auto;
@@ -321,26 +309,29 @@ footer {
 
     background: rgba(255, 255, 255, 0.94);
 
-    border-radius: 15px;
+    border-radius: 12px;
 
     text-align: center;
 
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 footer p {
     margin: 8px 0;
 }
 
-/* Theme button */
+/* Theme Button */
+
 #themeButton {
     margin-top: 10px;
 }
 
-/* Dark mode */
+/* Dark Mode */
+
 body.dark-mode {
     color: #f8fafc;
 
+    /* Keep Seahawks background fixed in dark mode */
     background-image:
         linear-gradient(
             rgba(0, 0, 0, 0.70),
@@ -349,9 +340,8 @@ body.dark-mode {
         url("images/Seahawks1.jpg");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-
     background-attachment: fixed;
 
     background-color: #020617;
@@ -362,7 +352,6 @@ body.dark-mode {
 .dark-mode article,
 .dark-mode footer {
     background: rgba(15, 23, 42, 0.94);
-
     color: #f8fafc;
 }
 
@@ -422,7 +411,10 @@ body.dark-mode {
     color: #ffffff;
 }
 
+/* Seahawks Super Bowl prediction stays here */
+
 /* Tablet */
+
 @media (max-width: 768px) {
     header {
         margin: 15px;
@@ -456,7 +448,9 @@ body.dark-mode {
 }
 
 /* Phone */
+
 @media (max-width: 480px) {
+
     body {
         background-attachment: fixed;
     }
