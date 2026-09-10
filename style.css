@@ -658,7 +658,6 @@ footer a {
 
 /* =========================================================
    DARK MODE
-   THIS IS THE IMPORTANT FIX
 ========================================================= */
 
 body.dark-mode {
@@ -668,10 +667,14 @@ body.dark-mode {
 
     background-image:
         linear-gradient(
-            rgba(0, 10, 22, 0.88),
-            rgba(0, 21, 43, 0.94)
+            rgba(0, 10, 22, 0.52),
+            rgba(0, 21, 43, 0.68)
         ),
-        url("images/Seahawks1.jpg");
+        url("Images/Seahawks1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -994,3 +997,34 @@ body.dark-mode td {
 
 /* If the CSS gets weird, breathe, inspect, and troubleshoot.
    The next play is coming. */
+
+.footer-theme-button {
+    margin-top: 0.5rem;
+} 
+
+.project-card,
+.content-card,
+.about-card,
+.card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.project-card:hover,
+.content-card:hover,
+.about-card:hover,
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* Keep headings and links easy to see in dark mode. */
+body.dark-mode .project-card h2,
+body.dark-mode .content-card h2,
+body.dark-mode .about-card h2,
+body.dark-mode .card h3 {
+    color: #69BE28;
+}
