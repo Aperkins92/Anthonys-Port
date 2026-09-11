@@ -859,6 +859,28 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
+    /* =========================================================
+       MADE IT THIS FAR BUTTON
+    ========================================================= */
+
+    const finalMessageButton =
+        document.querySelector("#finalMessageButton");
+
+    const finalMessage =
+        document.querySelector("#finalMessage");
+
+    if (
+        finalMessageButton &&
+        finalMessage
+    ) {
+        finalMessageButton.addEventListener(
+            "click",
+            function () {
+                finalMessage.textContent =
+                    "You made it all the way to the bottom! Thanks for checking out my story, my work, and my journey into IT. Keep learning, keep building, and keep leveling up! Go Hawks! 💙💚";
+            }
+        );
+    }
 
     /* =========================================================
        AUTOMATIC COPYRIGHT YEAR
