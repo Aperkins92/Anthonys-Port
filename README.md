@@ -112,31 +112,3 @@ Montserrat is used for headings, navigation, and buttons.
 Roboto is used for body text.
 
 Cards, spacing, borders, and typography are repeated throughout the site to keep the design consistent.
-
-## Testing Checklist
-
-Before submitting the project:
-
-- Test Home page.
-- Test About page.
-- Test Projects page.
-- Test every navigation link.
-- Test the Contact link.
-- Test Dark Theme.
-- Test the Home interactive button.
-- Test the About page button.
-- Test project filters.
-- Test the contact form with empty fields.
-- Test the contact form with invalid email.
-- Test the contact form with invalid phone number.
-- Test buttons using Tab and Enter/Space.
-- Test at 320px.
-- Test at 1200px.
-- Confirm there is no horizontal scrolling.
-- Run WAVE on all three deployed pages.
-- Fix any remaining WAVE errors before submitting.
-- Confirm GitHub Pages loads all three pages.
-
-## GitHub Pages
-
-The final submission should be the live GitHub Pages URL for this portfolio.
