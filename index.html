@@ -2,16 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Personal portfolio website showcasing IT skills, projects, work experience, and goals.">
+    <meta name="description"
+        content="Anthony's personal portfolio showcasing IT skills, projects, work experience, and goals.">
 
     <title>My Portfolio | IT & Creative Projects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -22,104 +25,64 @@
     <!-- The 12s are always watching. Blue. Green. Code. -->
     <!-- If you found this, you are officially in the source-code huddle. -->
 
-
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
-
     <header>
-
         <div class="header-container">
 
             <div class="logo">
-                <h1>My Portfolio</h1>
+                <p>My Portfolio</p>
             </div>
 
-            <button
-                id="menuButton"
-                type="button"
-                aria-expanded="false"
-                aria-label="Open navigation menu">
-                Menu
-            </button>
-
-            <nav id="navMenu">
-
+            <nav aria-label="Main navigation">
                 <ul>
-
                     <li>
-                        <a href="index.html">
-                            Home
-                        </a>
+                        <a href="index.html" aria-current="page">Home</a>
                     </li>
 
                     <li>
-                        <a href="about.html">
-                            About Me
-                        </a>
+                        <a href="about.html">About Me</a>
                     </li>
 
                     <li>
-                        <a href="projects.html">
-                            Projects
-                        </a>
+                        <a href="projects.html">Projects</a>
                     </li>
 
                     <li>
-                        <a href="#contact">
-                            Contact
-                        </a>
+                        <a href="#contact">Contact</a>
                     </li>
 
                     <li>
                         <button
-                            id="themeButton"
                             class="theme-button"
                             type="button"
-                            aria-label="Toggle dark mode">
+                            aria-label="Switch to dark mode">
                             Dark Theme
                         </button>
                     </li>
-
                 </ul>
-
             </nav>
 
         </div>
-
     </header>
-
-
-    <!-- =====================================================
-         MAIN CONTENT
-    ====================================================== -->
 
     <main>
 
         <!-- HERO -->
 
         <section class="hero">
-
             <div class="hero-content">
 
                 <p id="welcomeMessage">
                     Welcome to my portfolio.
                 </p>
 
-                <h1>
-                    Welcome to My Portfolio
-                </h1>
+                <h1>Welcome to My Portfolio</h1>
 
                 <p>
-                    IT, creativity, problem solving,
-                    and a lifelong passion for learning.
+                    IT, creativity, problem solving, and a lifelong passion
+                    for learning.
                 </p>
 
-                <br>
-
-                <button
-                    id="messageButton"
-                    type="button">
+                <button id="messageButton" type="button">
                     Show Me a Message
                 </button>
 
@@ -129,105 +92,71 @@
                 </p>
 
             </div>
-
         </section>
 
 
-        <!-- =================================================
-             INTRODUCTION
-        ================================================== -->
+        <!-- WELCOME -->
 
         <section>
-
             <div class="content-card">
 
-                <h2>
-                    Welcome
-                </h2>
+                <h2>Welcome</h2>
 
                 <p>
-                    Welcome to my personal portfolio.
-                    This website is a place to showcase
-                    my work, interests, skills, goals,
-                    and the projects I have been building
-                    while developing my IT knowledge.
+                    Welcome to my personal portfolio. This website is a place
+                    to showcase my work, interests, skills, goals, and the
+                    projects I have been building while developing my IT
+                    knowledge.
                 </p>
 
                 <p>
-                    My background has taken me from Yakima,
-                    Washington, into football, live events,
-                    stagehand work, special effects,
-                    camera operations, and now further
-                    into the world of information technology.
+                    My background has taken me from Yakima, Washington, into
+                    football, live events, stagehand work, special effects,
+                    camera operations, and now further into information
+                    technology.
                 </p>
 
                 <p>
-                    I enjoy learning by doing, solving
-                    problems, working with a team, and
-                    figuring out how things work.
+                    I enjoy learning by doing, solving problems, working with
+                    a team, and figuring out how things work.
                 </p>
 
             </div>
-
         </section>
 
 
-        <!-- =================================================
-             SKILLS
-        ================================================== -->
+        <!-- SKILLS -->
 
         <section>
-
             <div class="content-card">
 
-                <h2>
-                    Skills & Interests
-                </h2>
+                <h2>Skills & Interests</h2>
 
                 <div class="skills-container">
 
-                    <span class="tag">
-                        HTML
-                    </span>
+                    <span class="tag">HTML</span>
 
-                    <span class="tag">
-                        CSS
-                    </span>
+                    <span class="tag">CSS</span>
 
-                    <span class="tag">
-                        JavaScript
-                    </span>
+                    <span class="tag">JavaScript</span>
 
-                    <span class="tag">
-                        Problem Solving
-                    </span>
+                    <span class="tag">Problem Solving</span>
 
-                    <span class="tag">
-                        Teamwork
-                    </span>
+                    <span class="tag">Teamwork</span>
 
-                    <span class="tag">
-                        Troubleshooting
-                    </span>
+                    <span class="tag">Troubleshooting</span>
 
-                    <span class="tag">
-                        Live Events
-                    </span>
+                    <span class="tag">Live Events</span>
 
-                    <span class="tag">
-                        Football
-                    </span>
+                    <span class="tag">Football</span>
 
                 </div>
 
             </div>
-
         </section>
 
 
-        <!-- =================================================
-             EXPERIENCE
-        ================================================== -->
+        <!-- EXPERIENCE -->
 
         <section>
 
@@ -235,24 +164,18 @@
 
                 <article class="card">
 
-                    <h3>
-                        Stagehand Experience
-                    </h3>
+                    <h2>Stagehand Experience</h2>
 
                     <p>
-                        I have worked as a stagehand for
-                        many years, helping set up concerts,
-                        events, productions, equipment,
-                        staging, and other live-event
-                        environments.
+                        I have worked as a stagehand for many years, helping
+                        set up concerts, events, productions, equipment,
+                        staging, and other live-event environments.
                     </p>
 
                     <p>
-                        This work taught me the importance
-                        of communication, teamwork,
-                        troubleshooting, preparation,
-                        and staying calm when things
-                        change quickly.
+                        This work taught me communication, teamwork,
+                        troubleshooting, preparation, and staying calm when
+                        things change quickly.
                     </p>
 
                 </article>
@@ -260,23 +183,18 @@
 
                 <article class="card">
 
-                    <h3>
-                        Football & SkyCam
-                    </h3>
+                    <h2>Football & SkyCam</h2>
 
                     <p>
-                        My passion for football eventually
-                        connected with my professional
-                        experience when my stagehand work
-                        led to opportunities involving
-                        SkyCam.
+                        My passion for football eventually connected with my
+                        professional experience when my stagehand work led to
+                        opportunities involving SkyCam.
                     </p>
 
                     <p>
-                        I have worked many football games
-                        and experienced the production side
-                        of the sport I have followed for
-                        most of my life.
+                        I have worked football games and experienced the
+                        production side of the sport I have followed for most
+                        of my life.
                     </p>
 
                 </article>
@@ -284,21 +202,17 @@
 
                 <article class="card">
 
-                    <h3>
-                        IT Journey
-                    </h3>
+                    <h2>IT Journey</h2>
 
                     <p>
-                        I am continuing to build my IT
-                        knowledge through hands-on practice,
-                        web development, troubleshooting,
+                        I am continuing to build my IT knowledge through
+                        hands-on practice, web development, troubleshooting,
                         and personal projects.
                     </p>
 
                     <p>
-                        This portfolio is one of the projects
-                        I am using to demonstrate that
-                        progress.
+                        This portfolio is one of the projects I am using to
+                        demonstrate that progress.
                     </p>
 
                 </article>
@@ -308,24 +222,31 @@
         </section>
 
 
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
+        <!-- CONTACT -->
 
         <section id="contact">
 
             <div class="content-card">
 
-                <h2>
-                    Contact Me
-                </h2>
+                <h2>Contact Me</h2>
 
                 <p>
-                    Use the form below to send a message.
+                    Use the form below to practice sending a message.
+                    The form validates the fields with JavaScript before
+                    allowing the submission.
+                </p>
+
+                <p class="contact-email">
+                    Email me:
+                    <a href="mailto:Adperkins1992@gmail.com">
+                        Adperkins1992@gmail.com
+                    </a>
                 </p>
 
 
-                <form id="contactForm">
+                <form id="contactForm" novalidate>
+
+                    <!-- NAME -->
 
                     <div>
 
@@ -337,15 +258,20 @@
                             type="text"
                             id="name-id-input"
                             name="name"
-                            placeholder="Enter your name">
+                            autocomplete="name"
+                            placeholder="Enter your name"
+                            aria-describedby="nameError">
 
                         <p
                             id="nameError"
-                            class="error">
+                            class="error"
+                            aria-live="polite">
                         </p>
 
                     </div>
 
+
+                    <!-- EMAIL -->
 
                     <div>
 
@@ -357,15 +283,20 @@
                             type="email"
                             id="email-id"
                             name="email"
-                            placeholder="Enter your email">
+                            autocomplete="email"
+                            placeholder="Enter your email"
+                            aria-describedby="emailError">
 
                         <p
                             id="emailError"
-                            class="error">
+                            class="error"
+                            aria-live="polite">
                         </p>
 
                     </div>
 
+
+                    <!-- PHONE -->
 
                     <div>
 
@@ -377,15 +308,20 @@
                             type="tel"
                             id="phone"
                             name="phone"
-                            placeholder="Enter your phone number">
+                            autocomplete="tel"
+                            placeholder="Enter your phone number"
+                            aria-describedby="phoneError">
 
                         <p
                             id="phoneError"
-                            class="error">
+                            class="error"
+                            aria-live="polite">
                         </p>
 
                     </div>
 
+
+                    <!-- SUBJECT -->
 
                     <div>
 
@@ -397,15 +333,19 @@
                             type="text"
                             id="subject"
                             name="subject"
-                            placeholder="Enter a subject">
+                            placeholder="Enter a subject"
+                            aria-describedby="subjectError">
 
                         <p
                             id="subjectError"
-                            class="error">
+                            class="error"
+                            aria-live="polite">
                         </p>
 
                     </div>
 
+
+                    <!-- MESSAGE -->
 
                     <div>
 
@@ -416,18 +356,20 @@
                         <textarea
                             id="message"
                             name="message"
-                            placeholder="Enter your message"></textarea>
+                            placeholder="Enter your message"
+                            aria-describedby="messageError">
+                        </textarea>
 
                         <p
                             id="messageError"
-                            class="error">
+                            class="error"
+                            aria-live="polite">
                         </p>
 
                     </div>
 
 
-                    <button
-                        type="submit">
+                    <button type="submit">
                         Send Message
                     </button>
 
@@ -444,10 +386,6 @@
 
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
 
     <footer>
 

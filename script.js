@@ -1,61 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /*
-       01000111 01101111 00100000 01001000 01100001
-       01110111 01101011 01110011
-    */
 
-    /*
-       Learn -> Practice -> Fail -> Improve -> Level Up
-    */
-
-    /*
-       The bug is not the final boss.
-       It is just the next training arc.
-    */
-
-    /*
-       Blue outside. Green inside. JavaScript underneath.
-    */
-
-
-    /* =========================================================
-       MOBILE MENU
-    ========================================================= */
-
-    const menuButton = document.querySelector("#menuButton");
-    const navMenu = document.querySelector("#navMenu");
-
-    if (menuButton && navMenu) {
-        menuButton.addEventListener("click", function () {
-
-            navMenu.classList.toggle("show");
-
-            const expanded =
-                navMenu.classList.contains("show");
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                expanded
-            );
-        });
-    }
-
-
-    /* =========================================================
+    /* =========================================
        DARK MODE
-    ========================================================= */
+    ========================================= */
 
     const themeButtons =
         document.querySelectorAll(".theme-button");
+
 
     function updateThemeButtons(isDark) {
 
         themeButtons.forEach(function (button) {
 
-            button.textContent = isDark
-                ? "Light Theme"
-                : "Dark Theme";
+            button.textContent =
+                isDark
+                    ? "Light Theme"
+                    : "Dark Theme";
 
             button.setAttribute(
                 "aria-label",
@@ -63,47 +24,36 @@ document.addEventListener("DOMContentLoaded", function () {
                     ? "Switch to light mode"
                     : "Switch to dark mode"
             );
+
         });
+
     }
 
 
-    function enableDarkMode() {
+    function setTheme(isDark) {
 
-        document.body.classList.add("dark-mode");
+        document.body.classList.toggle(
+            "dark-mode",
+            isDark
+        );
 
         localStorage.setItem(
             "theme",
-            "dark"
+            isDark
+                ? "dark"
+                : "light"
         );
 
-        updateThemeButtons(true);
-    }
+        updateThemeButtons(isDark);
 
-
-    function disableDarkMode() {
-
-        document.body.classList.remove("dark-mode");
-
-        localStorage.setItem(
-            "theme",
-            "light"
-        );
-
-        updateThemeButtons(false);
     }
 
 
     const savedTheme =
         localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
 
-        enableDarkMode();
-
-    } else {
-
-        disableDarkMode();
-    }
+    setTheme(savedTheme === "dark");
 
 
     themeButtons.forEach(function (button) {
@@ -112,41 +62,42 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                if (
+                const isDark =
                     document.body.classList.contains(
                         "dark-mode"
-                    )
-                ) {
+                    );
 
-                    disableDarkMode();
+                setTheme(!isDark);
 
-                } else {
-
-                    enableDarkMode();
-                }
             }
         );
+
     });
 
 
-    /* =========================================================
+
+    /* =========================================
        TIME-BASED WELCOME MESSAGE
-    ========================================================= */
+    ========================================= */
 
     const welcomeMessage =
-        document.querySelector("#welcomeMessage");
+        document.querySelector(
+            "#welcomeMessage"
+        );
+
 
     if (welcomeMessage) {
 
-        const currentHour =
+        const hour =
             new Date().getHours();
 
-        if (currentHour < 12) {
+
+        if (hour < 12) {
 
             welcomeMessage.textContent =
                 "Good morning! Welcome to my portfolio.";
 
-        } else if (currentHour < 18) {
+        } else if (hour < 18) {
 
             welcomeMessage.textContent =
                 "Good afternoon! Welcome to my portfolio.";
@@ -155,19 +106,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
             welcomeMessage.textContent =
                 "Good evening! Welcome to my portfolio.";
+
         }
+
     }
 
 
-    /* =========================================================
-       INTERACTIVE MESSAGE BUTTON
-    ========================================================= */
+
+    /* =========================================
+       INTERACTIVE HOME MESSAGE
+    ========================================= */
 
     const messageButton =
-        document.querySelector("#messageButton");
+        document.querySelector(
+            "#messageButton"
+        );
+
 
     const interactiveMessage =
-        document.querySelector("#interactiveMessage");
+        document.querySelector(
+            "#interactiveMessage"
+        );
+
 
     if (
         messageButton &&
@@ -191,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "IT is about solving problems and never giving up.",
 
                     "Welcome to the source-code huddle!"
+
                 ];
 
 
@@ -203,406 +164,317 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 interactiveMessage.textContent =
                     messages[randomIndex];
+
             }
         );
+
     }
 
 
-    /* =========================================================
-       SMOOTH SCROLLING
-    ========================================================= */
 
-    const links =
+    /* =========================================
+       ABOUT PAGE FINAL MESSAGE
+    ========================================= */
+
+    const finalMessageButton =
+        document.querySelector(
+            "#finalMessageButton"
+        );
+
+
+    const finalMessage =
+        document.querySelector(
+            "#finalMessage"
+        );
+
+
+    if (
+        finalMessageButton &&
+        finalMessage
+    ) {
+
+        finalMessageButton.addEventListener(
+            "click",
+            function () {
+
+                finalMessage.textContent =
+                    "You made it all the way to the bottom! Thanks for checking out my story, my work, and my journey into IT. Keep learning, keep building, and keep leveling up! Go Hawks! 💙💚";
+
+            }
+        );
+
+    }
+
+
+
+    /* =========================================
+       PROJECT FILTERS
+    ========================================= */
+
+    const filterButtons =
         document.querySelectorAll(
-            'a[href^="#"]'
+            ".filter-button"
         );
 
-    links.forEach(function (link) {
 
-        link.addEventListener(
-            "click",
-            function (event) {
-
-                const targetID =
-                    link.getAttribute("href");
-
-                if (
-                    !targetID ||
-                    targetID === "#"
-                ) {
-
-                    return;
-                }
-
-
-                const target =
-                    document.querySelector(
-                        targetID
-                    );
-
-
-                if (target) {
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth"
-                    });
-                }
-            }
+    const projectCards =
+        document.querySelectorAll(
+            ".project-card"
         );
-    });
-
-
-    /* =========================================================
-       SKILLS LIST
-    ========================================================= */
-
-    const skillInput =
-        document.querySelector("#skillInput");
-
-    const addSkillButton =
-        document.querySelector("#addSkillButton");
-
-    const skillList =
-        document.querySelector("#skillList");
 
 
     if (
-        skillInput &&
-        addSkillButton &&
-        skillList
+        filterButtons.length &&
+        projectCards.length
     ) {
 
-        addSkillButton.addEventListener(
-            "click",
-            function () {
+        filterButtons.forEach(
+            function (button) {
 
-                const skill =
-                    skillInput.value.trim();
+                button.addEventListener(
+                    "click",
+                    function () {
 
+                        const filter =
+                            button.dataset.filter;
 
-                if (skill === "") {
 
-                    return;
-                }
+                        filterButtons.forEach(
+                            function (item) {
 
+                                item.classList.remove(
+                                    "active"
+                                );
 
-                const listItem =
-                    document.createElement("li");
+                                item.setAttribute(
+                                    "aria-pressed",
+                                    "false"
+                                );
 
-
-                listItem.textContent =
-                    skill;
-
-
-                skillList.appendChild(
-                    listItem
-                );
-
-
-                skillInput.value = "";
-
-
-                skillInput.focus();
-            }
-        );
-
-
-        skillInput.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (event.key === "Enter") {
-
-                    event.preventDefault();
-
-                    addSkillButton.click();
-                }
-            }
-        );
-    }
-
-
-    /* =========================================================
-       IT GOALS BUTTON
-    ========================================================= */
-
-    const goalsButton =
-        document.querySelector("#goalsButton");
-
-    const goalsMessage =
-        document.querySelector("#goalsMessage");
-
-
-    if (
-        goalsButton &&
-        goalsMessage
-    ) {
-
-        goalsButton.addEventListener(
-            "click",
-            function () {
-
-                goalsMessage.textContent =
-                    "My goal is to keep building my IT skills, " +
-                    "create useful projects, solve problems, " +
-                    "and continue leveling up one project at a time.";
-            }
-        );
-    }
-
-
-    /* =========================================================
-       MOVIE QUOTE GENERATOR
-    ========================================================= */
-
-    const movieQuoteButton =
-        document.querySelector(
-            "#movieQuoteButton"
-        );
-
-    const movieQuoteResult =
-        document.querySelector(
-            "#movieQuoteResult"
-        );
-
-
-    const movieQuotes = [
-
-        {
-            quote: "May the Force be with you.",
-            movie: "Star Wars"
-        },
-
-        {
-            quote: "I'll be back.",
-            movie: "The Terminator"
-        },
-
-        {
-            quote: "Why so serious?",
-            movie: "The Dark Knight"
-        },
-
-        {
-            quote: "There's no place like home.",
-            movie: "The Wizard of Oz"
-        },
-
-        {
-            quote: "You talking to me?",
-            movie: "Taxi Driver"
-        },
-
-        {
-            quote:
-                "Keep your friends close, but your enemies closer.",
-            movie: "The Godfather Part II"
-        },
-
-        {
-            quote: "Just keep swimming.",
-            movie: "Finding Nemo"
-        },
-
-        {
-            quote: "To infinity and beyond!",
-            movie: "Toy Story"
-        },
-
-        {
-            quote: "Houston, we have a problem.",
-            movie: "Apollo 13"
-        },
-
-        {
-            quote: "I see dead people.",
-            movie: "The Sixth Sense"
-        }
-
-    ];
-
-
-    if (
-        movieQuoteButton &&
-        movieQuoteResult
-    ) {
-
-        movieQuoteButton.addEventListener(
-            "click",
-            function () {
-
-                const randomIndex =
-                    Math.floor(
-                        Math.random() *
-                        movieQuotes.length
-                    );
-
-
-                const selectedQuote =
-                    movieQuotes[randomIndex];
-
-
-                movieQuoteResult.textContent =
-                    `“${selectedQuote.quote}” — ${selectedQuote.movie}`;
-            }
-        );
-    }
-
-
-    /* =========================================================
-       RANDOM MOTIVATION QUOTE
-    ========================================================= */
-
-    const quoteButton =
-        document.querySelector("#quoteButton");
-
-    const quoteResult =
-        document.querySelector("#quoteResult");
-
-
-    const fallbackQuotes = [
-
-        {
-            quote:
-                "The secret of getting ahead is getting started.",
-            author: "Mark Twain"
-        },
-
-        {
-            quote:
-                "Success is the sum of small efforts, repeated day in and day out.",
-            author: "Robert Collier"
-        },
-
-        {
-            quote:
-                "It always seems impossible until it's done.",
-            author: "Nelson Mandela"
-        },
-
-        {
-            quote:
-                "Great things are done by a series of small things brought together.",
-            author: "Vincent van Gogh"
-        },
-
-        {
-            quote:
-                "The future depends on what you do today.",
-            author: "Mahatma Gandhi"
-        },
-
-        {
-            quote:
-                "Do what you can, with what you have, where you are.",
-            author: "Theodore Roosevelt"
-        }
-
-    ];
-
-
-    function showFallbackQuote() {
-
-        if (!quoteResult) {
-
-            return;
-        }
-
-
-        const randomIndex =
-            Math.floor(
-                Math.random() *
-                fallbackQuotes.length
-            );
-
-
-        const selectedQuote =
-            fallbackQuotes[randomIndex];
-
-
-        quoteResult.textContent =
-            `“${selectedQuote.quote}” — ${selectedQuote.author}`;
-    }
-
-
-    if (
-        quoteButton &&
-        quoteResult
-    ) {
-
-        quoteButton.addEventListener(
-            "click",
-            async function () {
-
-                quoteResult.textContent =
-                    "Loading quote...";
-
-
-                try {
-
-                    const response =
-                        await fetch(
-                            "https://dummyjson.com/quotes/random",
-                            {
-                                method: "GET",
-                                cache: "no-store"
                             }
                         );
 
 
-                    if (!response.ok) {
-
-                        throw new Error(
-                            "Quote API request failed."
+                        button.classList.add(
+                            "active"
                         );
-                    }
 
 
-                    const data =
-                        await response.json();
-
-
-                    if (
-                        !data.quote ||
-                        !data.author
-                    ) {
-
-                        throw new Error(
-                            "Quote API returned incomplete data."
+                        button.setAttribute(
+                            "aria-pressed",
+                            "true"
                         );
+
+
+                        projectCards.forEach(
+                            function (card) {
+
+                                const show =
+                                    filter === "all" ||
+                                    card.dataset.category === filter;
+
+
+                                card.classList.toggle(
+                                    "is-hidden",
+                                    !show
+                                );
+
+                            }
+                        );
+
                     }
+                );
 
-
-                    quoteResult.textContent =
-                        `“${data.quote}” — ${data.author}`;
-
-
-                } catch (error) {
-
-                    console.warn(
-                        "Online quote unavailable. Using local quote.",
-                        error
-                    );
-
-
-                    showFallbackQuote();
-                }
             }
         );
+
     }
 
 
-    /* =========================================================
+
+    /* =========================================
        CONTACT FORM VALIDATION
-    ========================================================= */
+    ========================================= */
 
     const contactForm =
-        document.querySelector("#contactForm");
+        document.querySelector(
+            "#contactForm"
+        );
 
 
     if (contactForm) {
+
+        const fields = {
+
+            name: {
+                input:
+                    document.querySelector(
+                        "#name-id-input"
+                    ),
+
+                error:
+                    document.querySelector(
+                        "#nameError"
+                    ),
+
+                message:
+                    "Please enter your name."
+            },
+
+
+            email: {
+                input:
+                    document.querySelector(
+                        "#email-id"
+                    ),
+
+                error:
+                    document.querySelector(
+                        "#emailError"
+                    ),
+
+                message:
+                    "Please enter your email."
+            },
+
+
+            phone: {
+                input:
+                    document.querySelector(
+                        "#phone"
+                    ),
+
+                error:
+                    document.querySelector(
+                        "#phoneError"
+                    ),
+
+                message:
+                    "Please enter your phone number."
+            },
+
+
+            subject: {
+                input:
+                    document.querySelector(
+                        "#subject"
+                    ),
+
+                error:
+                    document.querySelector(
+                        "#subjectError"
+                    ),
+
+                message:
+                    "Please enter a subject."
+            },
+
+
+            message: {
+                input:
+                    document.querySelector(
+                        "#message"
+                    ),
+
+                error:
+                    document.querySelector(
+                        "#messageError"
+                    ),
+
+                message:
+                    "Please enter a message."
+            }
+
+        };
+
+
+        const formMessage =
+            document.querySelector(
+                "#formMessage"
+            );
+
+
+
+        function clearError(field) {
+
+            if (field.error) {
+
+                field.error.textContent =
+                    "";
+
+            }
+
+
+            if (field.input) {
+
+                field.input.removeAttribute(
+                    "aria-invalid"
+                );
+
+            }
+
+        }
+
+
+
+        function showError(
+            field,
+            message
+        ) {
+
+            if (field.error) {
+
+                field.error.textContent =
+                    message;
+
+            }
+
+
+            if (field.input) {
+
+                field.input.setAttribute(
+                    "aria-invalid",
+                    "true"
+                );
+
+            }
+
+        }
+
+
+
+        /* Clear errors while typing */
+
+        Object.values(fields).forEach(
+            function (field) {
+
+                if (field.input) {
+
+                    field.input.addEventListener(
+                        "input",
+                        function () {
+
+                            clearError(field);
+
+
+                            if (formMessage) {
+
+                                formMessage.textContent =
+                                    "";
+
+                            }
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* Submit validation */
 
         contactForm.addEventListener(
             "submit",
@@ -614,173 +486,78 @@ document.addEventListener("DOMContentLoaded", function () {
                 let valid = true;
 
 
-                const name =
-                    document.querySelector(
-                        "#name-id-input"
-                    );
+
+                /* Clear old errors */
+
+                Object.values(fields).forEach(
+                    function (field) {
+
+                        clearError(field);
+
+                    }
+                );
 
 
-                const email =
-                    document.querySelector(
-                        "#email-id"
-                    );
+
+                /* Required fields */
+
+                Object.values(fields).forEach(
+                    function (field) {
+
+                        if (
+                            field.input &&
+                            field.input.value.trim() === ""
+                        ) {
+
+                            showError(
+                                field,
+                                field.message
+                            );
+
+                            valid = false;
+
+                        }
+
+                    }
+                );
 
 
-                const phone =
-                    document.querySelector(
-                        "#phone"
-                    );
 
-
-                const subject =
-                    document.querySelector(
-                        "#subject"
-                    );
-
-
-                const message =
-                    document.querySelector(
-                        "#message"
-                    );
-
-
-                const nameError =
-                    document.querySelector(
-                        "#nameError"
-                    );
-
-
-                const emailError =
-                    document.querySelector(
-                        "#emailError"
-                    );
-
-
-                const phoneError =
-                    document.querySelector(
-                        "#phoneError"
-                    );
-
-
-                const subjectError =
-                    document.querySelector(
-                        "#subjectError"
-                    );
-
-
-                const messageError =
-                    document.querySelector(
-                        "#messageError"
-                    );
-
-
-                const formMessage =
-                    document.querySelector(
-                        "#formMessage"
-                    );
-
-
-                /* Clear errors */
-
-                if (nameError) {
-
-                    nameError.textContent = "";
-                }
-
-
-                if (emailError) {
-
-                    emailError.textContent = "";
-                }
-
-
-                if (phoneError) {
-
-                    phoneError.textContent = "";
-                }
-
-
-                if (subjectError) {
-
-                    subjectError.textContent = "";
-                }
-
-
-                if (messageError) {
-
-                    messageError.textContent = "";
-                }
-
-
-                if (formMessage) {
-
-                    formMessage.textContent = "";
-                }
-
-
-                /* Name */
+                /* Email validation */
 
                 if (
-                    name &&
-                    name.value.trim() === ""
+                    fields.email.input &&
+                    fields.email.input.value.trim() !== ""
                 ) {
-
-                    if (nameError) {
-
-                        nameError.textContent =
-                            "Please enter your name.";
-                    }
-
-
-                    valid = false;
-                }
-
-
-                /* Email */
-
-                if (email) {
 
                     const emailPattern =
                         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
                     if (
-                        email.value.trim() === ""
-                    ) {
-
-                        if (emailError) {
-
-                            emailError.textContent =
-                                "Please enter your email.";
-                        }
-
-
-                        valid = false;
-
-
-                    } else if (
                         !emailPattern.test(
-                            email.value.trim()
+                            fields.email.input.value.trim()
                         )
                     ) {
 
-                        if (emailError) {
-
-                            emailError.textContent =
-                                "Please enter a valid email.";
-                        }
-
+                        showError(
+                            fields.email,
+                            "Please enter a valid email."
+                        );
 
                         valid = false;
+
                     }
+
                 }
 
 
-                /* Phone */
+
+                /* Phone validation */
 
                 if (
-                    phone &&
-                    phone.value.trim() !== ""
+                    fields.phone.input &&
+                    fields.phone.input.value.trim() !== ""
                 ) {
 
                     const phonePattern =
@@ -789,153 +566,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     if (
                         !phonePattern.test(
-                            phone.value.trim()
+                            fields.phone.input.value.trim()
                         )
                     ) {
 
-                        if (phoneError) {
-
-                            phoneError.textContent =
-                                "Please enter a valid phone number.";
-                        }
-
+                        showError(
+                            fields.phone,
+                            "Please enter a valid phone number."
+                        );
 
                         valid = false;
+
                     }
+
                 }
 
 
-                /* Subject */
 
-                if (
-                    subject &&
-                    subject.value.trim() === ""
-                ) {
+                /* Form result */
 
-                    if (subjectError) {
+                if (formMessage) {
 
-                        subjectError.textContent =
-                            "Please enter a subject.";
+                    if (valid) {
+
+                        formMessage.textContent =
+                            "Thank you! Your message passed validation.";
+
+                    } else {
+
+                        formMessage.textContent =
+                            "Please correct the errors above before submitting.";
+
                     }
 
-
-                    valid = false;
                 }
 
 
-                /* Message */
 
-                if (
-                    message &&
-                    message.value.trim() === ""
-                ) {
-
-                    if (messageError) {
-
-                        messageError.textContent =
-                            "Please enter a message.";
-                    }
-
-
-                    valid = false;
-                }
-
-
-                /* Successful form */
+                /* Reset after successful validation */
 
                 if (valid) {
 
-                    if (formMessage) {
-
-                        formMessage.textContent =
-                            "Thank you! Your message is ready to be sent.";
-                    }
-
-
                     contactForm.reset();
+
+
+                    Object.values(fields).forEach(
+                        function (field) {
+
+                            clearError(field);
+
+                        }
+                    );
+
                 }
 
             }
         );
+
     }
 
-    /* =========================================================
-       MADE IT THIS FAR BUTTON
-    ========================================================= */
 
-    const finalMessageButton =
-        document.querySelector("#finalMessageButton");
 
-    const finalMessage =
-        document.querySelector("#finalMessage");
-
-    if (
-        finalMessageButton &&
-        finalMessage
-    ) {
-        finalMessageButton.addEventListener(
-            "click",
-            function () {
-                finalMessage.textContent =
-                    "You made it all the way to the bottom! Thanks for checking out my story, my work, and my journey into IT. Keep learning, keep building, and keep leveling up! Go Hawks! 💙💚";
-            }
-        );
-    }
-
-    /* =========================================================
+    /* =========================================
        AUTOMATIC COPYRIGHT YEAR
-    ========================================================= */
+    ========================================= */
 
     const yearElement =
-        document.querySelector("#year");
+        document.querySelector(
+            "#year"
+        );
 
 
     if (yearElement) {
 
         yearElement.textContent =
             new Date().getFullYear();
+
     }
-
-
-    /* =========================================================
-       IMAGE ERROR HANDLING
-    ========================================================= */
-
-    const images =
-        document.querySelectorAll("img");
-
-
-    images.forEach(function (image) {
-
-        image.addEventListener(
-            "error",
-            function () {
-
-                console.warn(
-                    "Image could not be loaded:",
-                    image.src
-                );
-
-
-                image.alt =
-                    "Portfolio image could not be loaded.";
-            }
-        );
-    });
-
-
-    console.log(
-        "💙💚 GO HAWKS!"
-    );
-
-
-    console.log(
-        "Anime training arc activated."
-    );
-
-
-    console.log(
-        "If you're reading this, you found the developer huddle."
-    );
 
 });
